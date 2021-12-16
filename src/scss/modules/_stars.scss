@@ -1,0 +1,12 @@
+@use 'sass:math';
+@import '../utilities/variables';
+@import '../utilities/placeholders';
+
+.stars {
+    position: absolute;
+    @extend %randomStarPlacement;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background-color: map-get($bg-colors, 'lightest-star');
+}

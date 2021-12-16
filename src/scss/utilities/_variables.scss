@@ -1,0 +1,11 @@
+@use 'sass:math';
+
+$bg-colors: (
+    base-color: black, 
+    lightest-star:white,
+    light-star: rgb(235, 232, 221),
+    base-star: rgb(223, 217, 200),
+    dark-star: rgb(201, 192, 170),
+    darkest-star: rgb(185, 173, 138)
+);
+
