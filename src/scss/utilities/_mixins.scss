@@ -1,0 +1,64 @@
+@use 'sass:math';
+
+// Animation for causing the star to twinkle
+@mixin twinkle {
+    @keyframes twinkle {
+        0% {
+            transform: scale(1);
+        }
+    
+        40% {
+            transform: scale(1.35);
+        }
+    
+        80% {
+            transform: scale(1.6);
+        }
+    
+        100% {
+            transform: scale(1);
+        }
+    }
+    animation: twinkle 2s ease-out;
+}
+
+// A mixin causing a star to become a shooting star
+@mixin shooting {
+    @keyframes shooting {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            top: 50%;
+            left: 50%;
+            opacity: 0;
+        }
+    }
+    animation: shooting 2s ease-out 2s backwards;
+}
+
+// A mixin to generate the stars
+@mixin starGenerator {
+    $star-colors-list: map-get($bg-colors, star-colors);
+    @for $i from 1 through 250 {
+        &--#{$i} {
+            position: absolute;
+            top: math.floor(math.random() * 100%);
+            left: math.floor(math.random() * 100%);
+            width: math.random(2) * 1px;
+            height: math.random(2) * 1px;
+            border-radius: 50%;
+            @each $starColor in $star-colors-list {
+                @if math.random(5) == index($star-colors-list, $starColor) {
+                    background-color: $starColor;
+                }
+            }
+            &__twinkle {
+                @include twinkle; 
+            }
+            &__shooting {
+                @include shooting;
+            }
+        }
+    }
+}

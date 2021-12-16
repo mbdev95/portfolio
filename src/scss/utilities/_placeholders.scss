@@ -1,6 +1,0 @@
-@use 'sass:math';
-
-%randomStarPlacement {
-    top: math.random() * 100%;
-    left: math.random() * 100%;
-}
