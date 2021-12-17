@@ -2,7 +2,7 @@
 
 // Animation for causing the star to twinkle and then become a shooting star
 @mixin animation {
-    @keyframes startTwinkle {
+    @keyframes twinkle {
         40% {
             transform: scale(1.35);
         }
@@ -19,9 +19,13 @@
         }
     }
 
-    animation: startTwinkle 2s ease-out 0.5s, 
+    animation: twinkle 2s ease-out 0.5s, 
                disappearing 2s ease-out 2.5s, 
-               startTwinkle 2s ease-out math.random(5) + 4.5s;
+               twinkle 2s ease-out math.random(5) + 4.5s;
+}
+
+@mixin shooting {
+    display: none;
 }
 
 // A mixin to generate the stars
@@ -43,6 +47,9 @@
             }
             &__animation {
                 @include animation; 
+            }
+            &__shooting {
+                @include shooting;
             }
         }
     }
