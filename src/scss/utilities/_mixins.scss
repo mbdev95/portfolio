@@ -1,31 +1,33 @@
 @use 'sass:math';
 
-// Animation for causing the star to twinkle and then become a shooting star
-@mixin animation {
-    @keyframes twinkle {
-        40% {
-            transform: scale(1.35);
-        }
-    
-        80% {
-            transform: scale(1.6);
-        }
-    }
-
-    @keyframes disappearing {
-        100% {
-            top: 50%;
-            left: 50%;
-        }
-    }
-
-    animation: twinkle 2s ease-out 0.5s, 
-               disappearing 2s ease-out 2.5s, 
-               twinkle 2s ease-out math.random(5) + 4.5s;
+// Custom css properties for star movement to hold random number generated in JavaScript
+:root {
+    --random-shooting-x: 0vw;
+    --random-shooting-y: 0vh;
 }
 
-@mixin shooting {
-    display: none;
+// Keyframes for twinkling disappearing and shooting star animations
+@keyframes twinkle {
+    40% {
+        transform: scale(1.35);
+    }
+
+    80% {
+        transform: scale(1.6);
+    }
+}
+
+@keyframes disappearing {
+    100% {
+        top: 50%;
+        left: 50%;
+    }
+}
+
+@keyframes shooting {
+    100% {
+        transform: translate(var(--random-shooting-x), var(--random-shooting-y));
+    }
 }
 
 // A mixin to generate the stars
@@ -45,11 +47,18 @@
                     background-color: $starColor;
                 }
             }
-            &__animation {
-                @include animation; 
+// Animation for causing the star to twinkle and then become a shooting star
+            &__start-animation {
+                animation: twinkle 2s ease-out 0.5s, 
+                disappearing 2s ease-out 2.5s 
             }
+// An animation for causing stars to twinkle
+            &__twinkling {
+                animation: twinkle 2s ease-out; 
+            }
+// An animation for causing stars to shoot across the page
             &__shooting {
-                @include shooting;
+                animation: shooting 20s ease-out forwards;
             }
         }
     }
