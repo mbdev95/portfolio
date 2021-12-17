@@ -1,5 +1,9 @@
 @import "../utilities/variables";
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: map-get($bg-colors, 'base-color');
 }
