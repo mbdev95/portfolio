@@ -1,45 +1,13 @@
 @use 'sass:math';
 
-// Custom css properties for star movement to hold random number generated in JavaScript
-:root {
-    --random-shooting-x: 0vw;
-    --random-shooting-y: 0vh;
-}
-
-// Keyframes for twinkling disappearing and shooting star animations
-@keyframes twinkle {
-    40% {
-        transform: scale(1.35);
-        filter: blur(0.3px);
-    }
-
-    80% {
-        transform: scale(1.6);
-        filter: blur(0.4px);
-    }
-}
-
-@keyframes disappearing {
-    100% {
-        top: 50%;
-        left: 50%;
-    }
-}
-
-@keyframes shooting {
-    0% {
-        transform: translateX(10%);
-    }
-    100% {
-        transform: translateX(100%);
-    }
-}
-
 // A mixin to generate the stars
 @mixin starGenerator {
     $star-colors-list: map-get($bg-colors, star-colors);
-    @for $i from 1 through 250 {
+    @for $i from 1 through $numberOfStars {
         &--#{$i} {
+            position: absolute;
+            left: -1%;
+            top: math.random() * 99.5%;
             width: math.random(2) * 1px;
             height: math.random(2) * 1px;
             border-radius: (math.random() * 10%) + 45%;
@@ -57,13 +25,11 @@
                 animation: twinkle 2s ease-out 0.5s, 
                 disappearing 2s ease-out 2.5s; 
             }
-// An animation for causing stars to twinkle
-            &__twinkling {
-                animation: twinkle 2s ease-out; 
-            }
+
 // An animation for causing stars to shoot infinitely across the page and restart at the left side of the page once the star reaches the right edge of the page
             &__shooting {
-                animation: shooting 5s ease-out backwards;
+                animation: shooting var(--star-speed) linear var(--star-delay) infinite backwards,
+                           twinkle var(--twinkle-speed) ease-out var(--twinkle-delay) infinite;
             }
         }
     }

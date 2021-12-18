@@ -1,5 +1,42 @@
 @import '../utilities/mixins';
 
+// Custom css properties for delaying star movement and for star speed.  These properties hold random numbers generated in JavaScript
+:root {
+    --star-speed: 0s;
+    --star-delay: 0s;
+    --twinkle-speed: 0s;
+    --twinkle-delay: 0s;
+}
+
+// Keyframes for twinkling disappearing and shooting star animations
+@keyframes twinkle {
+    40% {
+        transform: scale(1.35);
+        filter: blur(0.3px);
+    }
+
+    80% {
+        transform: scale(1.6);
+        filter: blur(0.4px);
+    }
+}
+
+@keyframes disappearing {
+    100% {
+        top: 50%;
+        left: 50%;
+    }
+}
+
+@keyframes shooting {
+    0% {
+        left: -1%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
 .star {
     @include starGenerator;
 }
