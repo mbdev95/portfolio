@@ -10,10 +10,12 @@
 @keyframes twinkle {
     40% {
         transform: scale(1.35);
+        filter: blur(0.3px);
     }
 
     80% {
         transform: scale(1.6);
+        filter: blur(0.4px);
     }
 }
 
@@ -25,8 +27,11 @@
 }
 
 @keyframes shooting {
+    0% {
+        transform: translateX(10%);
+    }
     100% {
-        transform: translate(var(--random-shooting-x), var(--random-shooting-y));
+        transform: translateX(100%);
     }
 }
 
@@ -35,9 +40,6 @@
     $star-colors-list: map-get($bg-colors, star-colors);
     @for $i from 1 through 250 {
         &--#{$i} {
-            position: absolute;
-            top: math.floor(math.random() * 100%);
-            left: math.floor(math.random() * 100%);
             width: math.random(2) * 1px;
             height: math.random(2) * 1px;
             border-radius: (math.random() * 10%) + 45%;
@@ -49,16 +51,19 @@
             }
 // Animation for causing the star to twinkle and then become a shooting star
             &__start-animation {
+                position: absolute;
+                left: math.floor(math.random() * 100vw);
+                top: math.floor(math.random() * 100vh);
                 animation: twinkle 2s ease-out 0.5s, 
-                disappearing 2s ease-out 2.5s 
+                disappearing 2s ease-out 2.5s; 
             }
 // An animation for causing stars to twinkle
             &__twinkling {
                 animation: twinkle 2s ease-out; 
             }
-// An animation for causing stars to shoot across the page
+// An animation for causing stars to shoot infinitely across the page and restart at the left side of the page once the star reaches the right edge of the page
             &__shooting {
-                animation: shooting 20s ease-out forwards;
+                animation: shooting 5s ease-out backwards;
             }
         }
     }
