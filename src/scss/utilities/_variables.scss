@@ -1,10 +1,34 @@
+@font-face {
+    font-family: 'Xolonium';
+    src: url('../../fonts/Xolonium.eot'),
+         url('../../fonts/Xolonium.ttf'),
+         url('../../fonts/Xolonium.woff'),
+         url('../../fonts/Xolonium.woff2');
+}
+
 // Star colors are in a list so they can be indexed and randomly assigned to a star.
 $bg-colors: (
-    base-color: black, 
+    base-color: black,
     star-colors:( white, rgb(235, 232, 221), rgb(223, 217, 200), rgb(201, 192, 170), rgb(185, 173, 138) )
 );
 
+$text-color: rgb(235, 226, 226); 
+
 $numberOfStars: 250;
+
+$base-font: 'Xolonium', Verdana, Tahoma, sans-serif;
+
+// Font Weights
+
+$font-weight--thin: 300;
+$font-weight--medium: 400;
+$font-weight--bold: 700;
+$font-weight--ultra-bold: 900;
+
+// Text
+
+$base__font-size : 16px;
+
 
 
 

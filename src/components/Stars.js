@@ -8,19 +8,32 @@ const Stars = (props) => {
 
     const shooting = () => {
         for (let i = 1; i < numberOfStars + 1; i++) {
+            const star = document.getElementsByClassName(`star--${i}`)[0];
             const randomStarSpeed = Math.floor(Math.random() * 25) + 5;
             const randomStarDelay = Math.floor(Math.random() * 10);
             const randomTwinkleSpeed = Math.floor(Math.random() * 7) + 2;
             const randomTwinkleDelay = Math.floor(Math.random() * 30) + 0.5;;
-            document.getElementsByClassName(`star--${i}`)[0].classList.add(`star--${i}__shooting`);
-            document.getElementsByClassName(`star--${i}`)[0].style.setProperty(`--star-speed`, randomStarSpeed + 's');
-            document.getElementsByClassName(`star--${i}`)[0].style.setProperty(`--star-delay`, randomStarDelay + 's');
-            document.getElementsByClassName(`star--${i}`)[0].style.setProperty(`--twinkle-speed`, randomTwinkleSpeed + 's');
-            document.getElementsByClassName(`star--${i}`)[0].style.setProperty(`--twinkle-delay`, randomTwinkleDelay + 's');
+            star.classList.add(`star--${i}__shooting`);
+            star.style.setProperty(`--star-speed`, randomStarSpeed + 's');
+            star.style.setProperty(`--star-delay`, randomStarDelay + 's');
+            star.style.setProperty(`--twinkle-speed`, randomTwinkleSpeed + 's');
+            star.style.setProperty(`--twinkle-delay`, randomTwinkleDelay + 's');
+        }
+    }
+
+    const totalPageHeight = () => {
+        const body = document.getElementsByTagName('BODY')[0];
+        const html = document.getElementsByTagName('HTML')[0];
+        const viewportHeight = window.innerHeight;
+        const totalPageHeight = Math.max(html.scrollHeight, body.scrollHeight, html.clientHeight, body.offsetHeight, html.offsetHeight );
+        for (let i = 1; i < numberOfStars + 1; i++) {
+            const pageHeight = Math.floor(Math.random() * (100 - ((viewportHeight/totalPageHeight) * 100) + 100));
+            document.getElementsByClassName(`star--${i}`)[0].style.setProperty('--percentage-below-viewport', pageHeight + '%');
         }
     }
 
     useEffect(() => {
+        totalPageHeight();
         setTimeout(() => {
             for (let i = 1; i < numberOfStars + 1; i++) {
                 document.getElementsByClassName(`star--${i}`)[0].classList.remove(`star--${i}__start-animation`);
@@ -32,6 +45,11 @@ const Stars = (props) => {
         return () => clearInterval();
     }, [])
 
+    window.addEventListener('resize', () => {
+        totalPageHeight();
+        shooting();
+    })
+
     const starMultiplier = () => {
         let stars = [];
         for (let i = 1; i < numberOfStars + 1; i++) {
@@ -41,7 +59,9 @@ const Stars = (props) => {
     }
 
     return (
-        starMultiplier()
+        <>
+            {starMultiplier()}
+        </>
     )
 }
 

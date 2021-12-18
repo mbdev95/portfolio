@@ -7,7 +7,7 @@
         &--#{$i} {
             position: absolute;
             left: -1%;
-            top: math.random() * 99.5%;
+            top: var(--percentage-below-viewport);
             width: math.random(2) * 1px;
             height: math.random(2) * 1px;
             border-radius: (math.random() * 10%) + 45%;
@@ -20,8 +20,7 @@
 // Animation for causing the star to twinkle and then become a shooting star
             &__start-animation {
                 position: absolute;
-                left: math.floor(math.random() * 100vw);
-                top: math.floor(math.random() * 100vh);
+                left: math.floor(math.random() * 100%);
                 animation: twinkle 2s ease-out 0.5s, 
                 disappearing 2s ease-out 2.5s; 
             }

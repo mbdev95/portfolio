@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import '../scss/App.scss';
 import Stars from './Stars.js';
+import EntryText from './EntryText';
 
 class App extends Component {
   state = {
@@ -9,7 +10,8 @@ class App extends Component {
   render() {
     return (
       <>
-        <Stars numberOfStars={250} />
+        <EntryText />
+        <Stars numberOfStars={250} onresize={() => console.log('hi')} />
       </>
     );
   }
