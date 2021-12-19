@@ -6,8 +6,8 @@
     @for $i from 1 through $numberOfStars {
         &--#{$i} {
             position: absolute;
-            left: -1%;
-            top: var(--percentage-below-viewport);
+            left: -5px;
+            top: var(--percentage-below-top);
             width: math.random(2) * 1px;
             height: math.random(2) * 1px;
             border-radius: (math.random() * 10%) + 45%;
@@ -21,15 +21,54 @@
             &__start-animation {
                 position: absolute;
                 left: math.floor(math.random() * 100%);
-                animation: twinkle 2s ease-out 0.5s, 
+                animation: twinkle 3s ease-out, 
                 disappearing 2s ease-out 2.5s; 
             }
-
 // An animation for causing stars to shoot infinitely across the page and restart at the left side of the page once the star reaches the right edge of the page
             &__shooting {
                 animation: shooting var(--star-speed) linear var(--star-delay) infinite backwards,
                            twinkle var(--twinkle-speed) ease-out var(--twinkle-delay) infinite;
             }
         }
+    }
+}
+
+// A mixin for creating the intro text shadow 3D effect
+@mixin introTextShadow() {
+    $introTextShadows: ();
+    @for $i from 1 through 50 {
+        $x: 0.125 * $i + px;
+        $y: 0.125 * $i + px;
+        $rgb: 255 - $i * 5;
+        $shadow: $x $y rgb($rgb, $rgb, $rgb);
+        $introTextShadows: append($introTextShadows, $shadow, comma);
+    }
+    text-shadow: $introTextShadows;
+}
+
+// A media query mixin creator to create media query statements.
+@mixin mq($break) {
+    @if $break == "small" {
+        @media (min-width: $brkpoint-sm) {
+            @content;
+        }
+    }
+    @else if $break == "medium" {
+        @media (min-width: $brkpoint-md) {
+            @content;
+        }
+    }
+    @else if $break == "large" {
+        @media (min-width: $brkpoint-lg) {
+            @content;
+        }
+    }
+    @else if $break == "extra-large" {
+        @media (min-width: $brkpoint-xl) {
+            @content;
+        }
+    }
+    @else {
+        @error "Whoops! No value could be retrieved for `#{$break}`. "
     }
 }

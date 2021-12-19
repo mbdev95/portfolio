@@ -24,11 +24,10 @@ const Stars = (props) => {
     const totalPageHeight = () => {
         const body = document.getElementsByTagName('BODY')[0];
         const html = document.getElementsByTagName('HTML')[0];
-        const viewportHeight = window.innerHeight;
         const totalPageHeight = Math.max(html.scrollHeight, body.scrollHeight, html.clientHeight, body.offsetHeight, html.offsetHeight );
         for (let i = 1; i < numberOfStars + 1; i++) {
-            const pageHeight = Math.floor(Math.random() * (100 - ((viewportHeight/totalPageHeight) * 100) + 100));
-            document.getElementsByClassName(`star--${i}`)[0].style.setProperty('--percentage-below-viewport', pageHeight + '%');
+            const pageHeight = Math.floor(Math.random() * totalPageHeight);
+            document.getElementsByClassName(`star--${i}`)[0].style.setProperty('--percentage-below-top', pageHeight + 'px');
         }
     }
 
@@ -38,10 +37,10 @@ const Stars = (props) => {
             for (let i = 1; i < numberOfStars + 1; i++) {
                 document.getElementsByClassName(`star--${i}`)[0].classList.remove(`star--${i}__start-animation`);
             }
-        }, 4450);
+        }, 5450);
         setTimeout(() => {
             shooting();
-        }, 4500);
+        }, 5500);
         return () => clearInterval();
     }, [])
 

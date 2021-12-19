@@ -1,7 +1,37 @@
-@import '../utilities/functions';
-
 .entryText {
     text-align: center;
-    font-size: 7em;
+    font-size: 2.4em;
     line-height: 1.4;
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 10%;
+    opacity: 0;
+
+    &__fade-in {
+        transition: opacity 3s ease-out;
+        opacity: 1;
+    }
+
+    @include mq('small') {
+        font-size: 3.8em;
+    }
+    @include mq('medium') {
+        margin-left: 0.5%;
+        font-size: 5em;
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+    @include mq('large') {
+        font-size: 5.8em;
+        margin-top: 0%;
+    }
+    @include mq('extra-large') {
+        font-size: 6.4em;
+    }
+
+    span {
+        @include introTextShadow;
+        margin-left: 1%;
+    }
 }
+
