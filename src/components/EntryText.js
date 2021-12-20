@@ -6,7 +6,15 @@ const EntryText = () => {
         document.getElementsByClassName('entryText')[0].classList.add('entryText__fade-in');
     }
 
-    useEffect(() => fadeTextIn(), []);
+    useEffect(() => { 
+        fadeTextIn();
+        setTimeout(() => {
+            const introLettersAmount = document.querySelectorAll('.entryText span').length;
+            for ( let i = 0; i < introLettersAmount; i++ ) {
+                document.querySelectorAll('.entryText span')[i].classList.add(`entryText--${i + 1}__rotate-away`);
+            }
+        }, 3500); 
+    }, []);
 
     return (
         <div className='entryText'>

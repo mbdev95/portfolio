@@ -21,8 +21,8 @@
             &__start-animation {
                 position: absolute;
                 left: math.floor(math.random() * 100%);
-                animation: twinkle 3s ease-out, 
-                disappearing 2s ease-out 2.5s; 
+                animation: twinkle 3.5s ease-out, 
+                disappearing 2s ease-out 3.5s; 
             }
 // An animation for causing stars to shoot infinitely across the page and restart at the left side of the page once the star reaches the right edge of the page
             &__shooting {
