@@ -1,9 +1,14 @@
-@keyframes blackHoleLetters {
+// Variables for holding random values to randomize the vanishing of the initial letters
+:root {
+    --translate-x: 0;
+    --translate-y: 0;
+    --top-entry-letter: 0;
+    --left-entry-letter: 0;
+}
 
+@keyframes blackHoleLetters {
     100% {
-        transform: rotateZ(360deg) scale(0); 
-        // top: 50%;
-        // left: 50%;
+        transform: translate(var(--translate-x), var(--translate-y)) rotateZ(360deg) scale(0); 
     }
 }
 
@@ -17,7 +22,7 @@
     opacity: 0;
 
     &__fade-in {
-        transition: opacity 3s ease-out;
+        transition: opacity 2s ease-out;
         opacity: 1;
     }
 
@@ -35,17 +40,14 @@
         margin-top: 0%;
     }
     @include mq('extra-large') {
-        font-size: 6.4em;
+        font-size: 6.3em;
     }
 
     span {
         @include introTextShadow;
+        perspective: 1000px;
         margin-left: 1%;
     }
-    &--12__rotate-away {
-        position: absolute;
-        perspective: 1000px;
-        animation: blackHoleLetters 2s linear forwards;
-    }
+    @include vanishingLetters;
 }
 
