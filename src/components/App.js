@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
 import '../scss/App.scss';
-import Stars from './Stars.js';
-import EntryText from './EntryText';
+import Stars from './effects/Stars.js';
+import EntryText from './effects/EntryText';
+import Home from './pages/Home';
+import Portfolio from './pages/Portfolio';
+import About from './pages/About';
 
 class App extends Component {
   state = {
@@ -12,6 +15,9 @@ class App extends Component {
       <>
         <EntryText />
         <Stars numberOfStars={250} onresize={() => console.log('hi')} />
+        <Home />
+        <Portfolio />
+        <About />
       </>
     );
   }

@@ -26,6 +26,7 @@ const EntryText = () => {
     useEffect(() => { 
         fadeTextIn();
         setTimeout(() => fadeTextOut(), 4500); 
+        setTimeout(() => document.getElementsByClassName('entryText')[0].remove(), 6500);
     }, []);
 
     return (

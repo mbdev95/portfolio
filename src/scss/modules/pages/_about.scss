@@ -1,0 +1,5 @@
+.about {
+    @extend %main-container;
+    @include buttons;
+    @include sliding;
+}

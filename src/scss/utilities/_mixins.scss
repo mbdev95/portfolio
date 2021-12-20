@@ -46,15 +46,19 @@
     text-shadow: $introTextShadows;
 }
 
-// A mixin for making all the letters disappear into black hole
-@mixin vanishingLetters {
-    @for $i from 1 through $number-intro-letters {
-        &--#{$i}__rotate-away {
-            position: absolute;
-            top: var(--top-entry-letter);
-            left: var(--left-entry-letter);
-            animation: blackHoleLetters 2s linear forwards;
-        }
+// A mixin for styling buttons
+@mixin buttons {
+    button {
+        background-color: rgb(241, 224, 147);
+    }
+
+    button:hover {
+        cursor: pointer;
+        background-color: rgb(238, 229, 192);
+    }
+
+    button:first-of-type {
+        margin-bottom: 10px;
     }
 }
 

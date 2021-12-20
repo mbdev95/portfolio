@@ -1,0 +1,7 @@
+.home {
+    @extend %main-container;
+    @include buttons;
+    @include sliding;
+}
+
+

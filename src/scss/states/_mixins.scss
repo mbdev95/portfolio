@@ -1,0 +1,24 @@
+// A mixin for making all the letters disappear into black hole
+@mixin vanishingLetters {
+    @for $i from 1 through $number-intro-letters {
+        &--#{$i}__rotate-away {
+            position: absolute;
+            top: var(--top-entry-letter);
+            left: var(--left-entry-letter);
+            animation: blackHoleLetters 1.5s linear forwards;
+        }
+    }
+}
+
+// A mixin for creating the sliding in and out animations for each page
+@mixin sliding {
+    &__translateXIn {
+        transition: transform 4s ease-out;
+        transform: translateX(90vw);
+    }
+
+    &__translateXOut {
+        transition: transform 4s ease-out;
+        transform: translateX(180vw);
+    }
+}

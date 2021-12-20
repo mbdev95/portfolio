@@ -6,6 +6,11 @@
     overflow-x: hidden;
 }
 
+html, .root, body {
+    width: 100vw;
+    height: 100vh;
+}
+
 body {
     background-color: map-get($bg-colors, 'base-color');
     font-family: $base-font;
