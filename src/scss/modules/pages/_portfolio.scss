@@ -1,4 +1,5 @@
 .portfolio {
     @extend %main-container;
     @include buttons;
+    @include sliding;
 }

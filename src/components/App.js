@@ -7,20 +7,35 @@ import Portfolio from './pages/Portfolio';
 import About from './pages/About';
 
 class App extends Component {
-  state = {
-    numberOfStars: 250
-  }
-  render() {
-    return (
-      <>
-        <EntryText />
-        <Stars numberOfStars={250} onresize={() => console.log('hi')} />
-        <Home />
-        <Portfolio />
-        <About />
-      </>
-    );
-  }
+
+    state = {
+        numberOfStars: 250
+    }
+
+    slide = (pageIn, pageOut) => {
+        if (pageOut === null) {
+          document.getElementsByClassName(pageIn)[0].classList.add(`${pageIn}__translateXIn`); 
+        } else {
+            document.getElementsByClassName(pageIn)[0].classList.add(`${pageIn}__translateXIn`);
+            document.getElementsByClassName(pageOut)[0].classList.remove(`${pageOut}__translateXIn`);
+            document.getElementsByClassName(pageOut)[0].classList.add(`${pageOut}__translateXOut`);
+            setTimeout(() => {
+                document.getElementsByClassName(pageOut)[0].classList.remove(`${pageOut}__translateXOut`);
+            }, 2000);
+        }
+    }
+
+    render() {
+        return (
+            <>
+                <EntryText />
+                <Stars numberOfStars={250} />
+                <Home slide={this.slide} />
+                <Portfolio slide={this.slide} />
+                <About slide={this.slide} />
+            </>
+        );
+    }
 }
 
 export default App;
