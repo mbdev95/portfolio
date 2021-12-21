@@ -1,17 +1,20 @@
-import react, {useEffect} from "react";
+import {useEffect, useContext} from "react";
+import {pageInfoContext} from '../context';
 
-const Home = (props) => {
+const Home = () => {
+
+    const slide = useContext(pageInfoContext).slide;
 
     useEffect(() => {
-        setTimeout(() => props.slide('home', null), 5500);
+        setTimeout(() => slide('home', null), 5500);
     }, []);
 
     return (
         <>
             <div className="home">
                 <h1>This is the Home Page</h1>
-                <button type="button" onClick={event => props.slide(event.target.textContent.toLowerCase(), 'home')}>Portfolio</button>
-                <button type="button" onClick={event => props.slide(event.target.textContent.toLowerCase(), 'home')}>About</button>
+                <button type="button" onClick={event => slide(event.target.textContent.toLowerCase(), 'home')}>Portfolio</button>
+                <button type="button" onClick={event => slide(event.target.textContent.toLowerCase(), 'home')}>About</button>
             </div>
         </>
     )

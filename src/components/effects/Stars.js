@@ -1,10 +1,9 @@
-import React, {useEffect} from 'react';
+import {useEffect, useContext} from 'react';
+import {pageInfoContext} from '../context';
 
-const Stars = (props) => {
+const Stars = () => {
 
-    const {
-        numberOfStars
-    } = props
+    const numberOfStars = useContext(pageInfoContext).numberOfStars;
 
     const shooting = () => {
         for (let i = 1; i < numberOfStars + 1; i++) {
