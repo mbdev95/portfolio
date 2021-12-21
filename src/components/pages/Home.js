@@ -6,7 +6,7 @@ const Home = () => {
     const slide = useContext(pageInfoContext).slide;
 
     useEffect(() => {
-        setTimeout(() => slide('home', null), 5500);
+        setTimeout(() => slide('home', null), 6000);
     }, []);
 
     return (

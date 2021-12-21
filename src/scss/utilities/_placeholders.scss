@@ -1,12 +1,21 @@
 %main-container {
     position: absolute;    
-    top: 10%;
+    top: 5%;
     left: -80%;
     width: 80%;
-    height: 80%;
+    height: 90%;
     display: flex;
     flex-direction: column;
     text-align: center;
     border-radius: $box-br;
     background-color: $box-bg-color;
+    letter-spacing: 2px;
+}
+
+%project-buttons {
+    padding: 5px 8px;
+    color: $text-color;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
 }
