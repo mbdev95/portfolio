@@ -17,11 +17,11 @@ const Portfolio = () => {
             <button type='button' onClick={(event) => slide(event.target.textContent.toLowerCase(), 'portfolio')}>About</button>
             <hr/>
             <div className='projects'>
-                <FilmFestival />
-                {/* <ExpressFood />
-                <RandomQuotes />
                 <WarOfWeapons />
-                <RestaurantReviewLocator /> */}
+                <RestaurantReviewLocator /> 
+                <FilmFestival />
+                <ExpressFood />
+                <RandomQuotes />
             </div>
         </div>
     );
