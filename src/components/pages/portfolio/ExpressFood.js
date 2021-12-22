@@ -1,7 +1,10 @@
+import mysqlLogo from '../../../img/programmingLogos/mysql.jpg';
+
 const ExpressFood = () => {
     return (
-        <div className='portfolio--2'>
+        <div className='portfolio--project'>
             <h2>Express Food Database</h2>
+            <img src={mysqlLogo} alt='MySQL Logo'/>
             <p>I created a database for the fictitious food delivery company, ExpressFood, using UML diagrams and MySQL. Additionally, I queried my database using MySQL.</p>
             <h3>Skills Used:</h3>
             <ul>

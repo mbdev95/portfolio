@@ -1,7 +1,10 @@
+import html5Logo from '../../../img/programmingLogos/html.png';
+
 const RandomQuotes = () => {
     return (
-        <div className='portfolio--3'>
+        <div className='portfolio--project'>
             <h2>Orwellian Randon Quotation Generator</h2>
+            <img src={html5Logo} alt='HTML5 Logo'/>
             <p>The Orwellian Random Quotation Generator was developed using JavaScript logic to randomly select from a series of quotes in either 'Animal Farm' or '1984'.</p>
             <h3>Skills Used:</h3>
             <ul>

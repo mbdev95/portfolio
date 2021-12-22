@@ -64,47 +64,50 @@
 }
 
 // A mixin for styling each project in the portfolio
-@mixin projects {
-    @for $i from 1 through $number-of-projects {
-        &--#{$i} {
-            button {
-                border-radius: 500px;
-                width: 100%;
-                background-color: rgb(29, 29, 170);
-            }
+@mixin project {
+    &--project {
+        h2 {
+            margin-top: 6px;
+            margin-bottom: 0px;
+        }
 
-            button:hover {
-                cursor: pointer;
-                background-color: rgb(47, 47, 160);
-            }
+        img {
+            margin-top: 10px;
+            width: 80%;
+        }
 
-            h2 {
-                margin-top: 6px;
-                margin-bottom: 0px;
-            }
+        h3 {
+            margin-top: 13.5px;
+            margin-bottom: 13.5px;
+        }
 
-            h3 {
-                margin-top: 13.5px;
-                margin-bottom: 13.5px;
-            }
+        h3, p, ul, li {
+            text-align: start;
+        }
 
-            h3, p, ul, li {
-                text-align: start;
-            }
+        ul {
+            list-style: none;
+            padding: 0px;
+        }
 
-            ul {
-                list-style: none;
-                padding: 0px;
-            }
+        ul li:before {
+            content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+            color: $text-color; /* Change the color */
+            font-weight: bold; /* If you want it to be bold */
+            display: inline-block; /* Needed to add space between the bullet and the text */
+            width: 1em; /* Also needed for space (tweak if needed) */
+            height: 1em;
+        }
 
-            ul li:before {
-                content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
-                color: $text-color; /* Change the color */
-                font-weight: bold; /* If you want it to be bold */
-                display: inline-block; /* Needed to add space between the bullet and the text */
-                width: 1em; /* Also needed for space (tweak if needed) */
-                height: 1em;
-            }
+        button {
+            border-radius: 500px;
+            width: 100%;
+            background-color: rgb(29, 29, 170);
+        }
+
+        button:hover {
+            cursor: pointer;
+            background-color: rgb(47, 47, 160);
         }
     }
 }

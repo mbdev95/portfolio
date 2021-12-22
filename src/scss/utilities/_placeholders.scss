@@ -1,5 +1,6 @@
 %main-container {
-    position: absolute;    
+    scroll-padding-bottom: 20px;
+    position: absolute;
     top: 5%;
     left: -80%;
     width: 80%;
@@ -11,6 +12,12 @@
     background-color: $box-bg-color;
     letter-spacing: 2px;
 }
+
+%portfolio-header {
+    display: flex;
+    flex-direction: column;
+}
+
 
 %project-buttons {
     padding: 5px 8px;

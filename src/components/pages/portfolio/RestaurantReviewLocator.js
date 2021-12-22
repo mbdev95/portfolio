@@ -1,7 +1,10 @@
+import reactLogo from '../../../img/programmingLogos/react.png';
+
 const RestaurantReviewLocator = () => {
     return (
-        <div className='portfolio--5'>
+        <div className='portfolio--project'>
             <h2>Restaruant Review Locator</h2>
+            <img src={reactLogo} alt='react logo'/>
             <p>I developed a Restarant Review Locator application using React and Google Maps' APIs.  The Google Maps' APIs retrieved an array of restaurant and review data which was communicated throughout the application using React.</p>
             <h3>Skills Used:</h3>
             <ul>

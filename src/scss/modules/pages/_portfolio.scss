@@ -1,14 +1,22 @@
+:root {
+    --project-height: 0;
+}
+
 .portfolio {
     @extend %main-container;
     @include buttons;
     @include sliding;
-    @include projects;
+    @include project;
+
+    &--header {
+        @extend %portfolio-header;
+    }
 
     & > .projects {
         width: 95%;
         margin-left: 5%;
         padding-right: 5%;
-        height: 70%;
+        height: var(--project-height);
     }
 
     h1 {

@@ -1,7 +1,10 @@
+import cssLogo from '../../../img/programmingLogos/css.png';
+
 const FilmFestival = () => {
     return (
-        <div className='portfolio--1'>
+        <div className='portfolio--project'>
             <h2>Brooklyn Bridge Film Festival</h2>
+            <img src={cssLogo} alt='CSS3 Logo'/>
             <p>I created a marketing page for the fictitious Brooklyn Bridge Film Festival using HTML5, CSS3, and Bootstrap.</p>
             <h3>Skills Used:</h3>
             <ul>
