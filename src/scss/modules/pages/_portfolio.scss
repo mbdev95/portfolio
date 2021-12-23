@@ -13,9 +13,7 @@
     }
 
     & > .projects {
-        width: 95%;
-        margin-left: 5%;
-        padding-right: 5%;
+        @extend %sub-container;
         height: var(--project-height);
     }
 

@@ -3,6 +3,69 @@
     @include buttons;
     @include sliding;
     overflow-y: visible;
+
+    & > hr:first-of-type {
+        width: 100%;
+    }
+
+    &--profile {
+        @extend %sub-container;
+        
+        p {
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        hr {
+            margin-top: 12px;
+            margin-bottom: 12px;
+        }
+
+        p, ul {
+            text-align: start;
+        }
+
+        @include lists;
+
+        p:last-of-type {
+            margin-bottom: 10px;
+        }
+
+        .previewProjects {
+            display: none;
+        }
+
+        @include mq('medium') {
+            &--skills {
+                display: none;
+            }
+
+            @include previewProjects;
+        }
+    }
+
+    &--socialMedia {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    &--socialMedia a {
+        width: 20%;
+
+        img {
+            width: 100%;
+        }
+        
+        &:hover {
+            cursor: pointer;
+            transition: transform 0.2s ease-out;
+            transform: scale(1.1);
+        }
+
+        @include mq('medium') {
+            width: 5%;
+        }
+    }
 }
 
 

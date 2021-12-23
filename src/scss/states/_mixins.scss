@@ -13,12 +13,24 @@
 // A mixin for creating the sliding in and out animations for each page
 @mixin sliding {
     &__translateXIn {
-        transition: transform 2s ease-out;
+        transition: transform 1s ease-out;
         transform: translateX(90vw);
     }
 
     &__translateXOut {
-        transition: transform 2s ease-out;
+        transition: transform 1s ease-out;
         transform: translateX(180vw);
+    }
+
+    @include mq('large') {
+        &__translateXIn {
+            transition: transform 2s ease-out;
+            transform: translateX(90vw);
+        }
+    
+        &__translateXOut {
+            transition: transform 2s ease-out;
+            transform: translateX(180vw);
+        }
     }
 }
