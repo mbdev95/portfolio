@@ -71,9 +71,13 @@
             margin-bottom: 0px;
         }
 
+        img:first-of-type {
+            background: white;
+        }
+
         img {
             margin-top: 10px;
-            width: 80%;
+            width: 55%;
         }
 
         h3 {
@@ -109,32 +113,44 @@
             cursor: pointer;
             background-color: rgb(47, 47, 160);
         }
+
+        @include mq('extra-large') {
+            img {
+                width: 66%;
+            }
+        }
+        
+        @include mq('medium') {
+            img[alt^='Brooklyn'] {
+                width: 80%;
+            }
+        }
     }
 }
 
 // A media query mixin creator to create media query statements.
 @mixin mq($break) {
-    @if $break == "small" {
+    @if $break == 'small' {
         @media (min-width: $brkpoint-sm) {
             @content;
         }
     }
-    @else if $break == "medium" {
+    @else if $break == 'medium' {
         @media (min-width: $brkpoint-md) {
             @content;
         }
     }
-    @else if $break == "large" {
+    @else if $break == 'large' {
         @media (min-width: $brkpoint-lg) {
             @content;
         }
     }
-    @else if $break == "extra-large" {
+    @else if $break == 'extra-large' {
         @media (min-width: $brkpoint-xl) {
             @content;
         }
     }
     @else {
-        @error "Whoops! No value could be retrieved for `#{$break}`. "
+        @error 'Whoops! No value could be retrieved for `#{$break}`. '
     }
 }
