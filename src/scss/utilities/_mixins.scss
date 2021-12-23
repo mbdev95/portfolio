@@ -121,7 +121,7 @@
         }
         
         @include mq('medium') {
-            img[alt^='Brooklyn'] {
+            img[alt^='Brooklyn'], img[alt^='Express'] {
                 width: 80%;
             }
         }

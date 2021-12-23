@@ -2,4 +2,5 @@
     @extend %main-container;
     @include buttons;
     @include sliding;
+    overflow-y: visible;
 }
