@@ -4,8 +4,14 @@
     @include sliding;
     overflow-y: visible;
 
+    h1 {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
     & > hr:first-of-type {
         width: 100%;
+        background-color: $text-color;
     }
 
     &--profile {
@@ -17,55 +23,85 @@
         }
 
         hr {
+            background-color: $text-color;
+            height: 1px;
+            width: 100%;
             margin-top: 12px;
             margin-bottom: 12px;
+        }
+
+        &--socialMedia {
+            display: flex;
+            justify-content: space-around;
+        }
+    
+        &--socialMedia a {  
+            width: 20%;  
+            img {
+                width: 100%;
+            }
+            
+            &:hover {
+                cursor: pointer;
+                transition: transform 0.2s ease-out;
+                transform: scale(1.1);
+            }
+    
+            @include mq('medium') {
+                width: 5%;
+            }
         }
 
         p, ul {
             text-align: start;
         }
 
-        @include lists;
-
         p:last-of-type {
             margin-bottom: 10px;
         }
 
-        .previewProjects {
-            display: none;
-        }
+        @include lists;
 
         @include mq('medium') {
-            &--skills {
-                display: none;
+            justify-content: space-evenly;
+            li {
+                display: inline;
+                padding-right: 10px;
+                line-height: 1.75;
             }
 
-            @include previewProjects;
+            &--socialMedia a {    
+                width: 12%;
+            }
+        }
+
+        @include mq('large') {
+            justify-content: space-around;
+
+            .home--profile--skills h2 {
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+
+            .home--profile--skills p:last-of-type {
+                display: none;
+            }
         }
     }
 
-    &--socialMedia {
-        display: flex;
-        justify-content: space-around;
-    }
-
-    &--socialMedia a {
-        width: 20%;
-
-        img {
-            width: 100%;
-        }
-        
-        &:hover {
-            cursor: pointer;
-            transition: transform 0.2s ease-out;
-            transform: scale(1.1);
-        }
-
-        @include mq('medium') {
-            width: 5%;
-        }
+    @include mq('medium') {
+        width: 30% !important;
+        overflow: hidden;
     }
 }
+
+.previewProjects {
+    display: none;
+    @include mq('medium') {
+        // @include previewProjects;
+    }
+}
+
+
 
 

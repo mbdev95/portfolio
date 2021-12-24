@@ -131,19 +131,19 @@
 }
 
 @mixin previewProjects {
-    .previewProjects {
-        display: flex;
-        flex-direction: column;
-        &--project {
-            padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    &--project {
+        width: 45%;
+        height: 9%;
+        padding-left: 10px;
+        padding-right: 10px;
+        border: 1px solid $text-color;
+        @include lists;
+        li {
+            display: inline;
             padding-right: 10px;
-            border: 1px solid $text-color;
-            @include lists;
-            li {
-                display: inline;
-                padding-right: 10px;
-                line-height: 1.75;
-            }
+            line-height: 1.75;
         }
     }
 }
