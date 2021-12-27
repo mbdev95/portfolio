@@ -13,13 +13,29 @@
     letter-spacing: 2px;
 }
 
+%home {
+    display: flex;
+    flex-direction: column;
+    background-color: $box-bg-color;
+}
+
 %sub-container {
-    width: 90%;
-    height: 100%;
-    margin-left: 5%;
+    width: 100%;
+    padding-left: 5%;
     padding-right: 5%;
     display: flex;
     flex-direction: column;
+}
+
+%home-main {
+    overflow-x: hidden;
+    position: absolute;
+    top: 5%;
+    left: -80%;
+    width: 80%;
+    height: 90%;
+    border-radius: $box-br;  
+    letter-spacing: 2px;
 }
 
 %portfolio-header {

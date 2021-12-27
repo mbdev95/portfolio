@@ -134,11 +134,12 @@
     display: flex;
     flex-direction: column;
     &--project {
-        width: 45%;
+        width: 55%;
         height: 9%;
         padding-left: 10px;
         padding-right: 10px;
         border: 1px solid $text-color;
+        border-radius: $box-br;
         @include lists;
         li {
             display: inline;
@@ -146,6 +147,13 @@
             line-height: 1.75;
         }
     }
+}
+
+@mixin home-sideBar {
+    display: flex;
+    flex-direction: column;
+    background-color: $box-bg-color;
+    width: 40% !important;
 }
 
 @mixin lists {

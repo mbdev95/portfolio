@@ -1,21 +1,32 @@
 .home {
-    @extend %main-container;
     @include buttons;
     @include sliding;
+    @extend %home-main;
     overflow-y: visible;
+    
+    &--header {
+        @extend %home;
 
-    h1 {
-        margin-left: 5%;
-        margin-right: 5%;
-    }
+        h1 {
+            text-align: center;
+            margin-left: 5%;
+            margin-right: 5%;
+        }
 
-    & > hr:first-of-type {
-        width: 100%;
-        background-color: $text-color;
+        & > hr:first-of-type {
+            width: 100%;
+            background-color: $text-color;
+        }
+
+        @include mq('medium') {
+            @include home-sideBar;
+        }
+
     }
 
     &--profile {
         @extend %sub-container;
+        @extend %home;
         
         p {
             margin-top: 0px;
@@ -63,6 +74,7 @@
         @include lists;
 
         @include mq('medium') {
+            @include home-sideBar;
             justify-content: space-evenly;
             li {
                 display: inline;
@@ -89,18 +101,19 @@
         }
     }
 
+    .previewProjects {
+        display: none;
+        @include mq('medium') {
+            @include previewProjects;
+        }
+    }
+
     @include mq('medium') {
-        width: 30% !important;
         overflow: hidden;
     }
 }
 
-.previewProjects {
-    display: none;
-    @include mq('medium') {
-        // @include previewProjects;
-    }
-}
+
 
 
 

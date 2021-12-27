@@ -8,7 +8,7 @@ import WarOfWeapons from './portfolio/WarOfWeapons';
 
 const Portfolio = () => {
 
-    const slide = useContext(pageInfoContext).slide;
+    const pageSlide = useContext(pageInfoContext).pageSlide;
 
     const projectHeightCalculator = () => {
         const portfolioHeaderHeight = document.querySelector('.portfolio--header').offsetHeight;
@@ -23,8 +23,8 @@ const Portfolio = () => {
         <div className='portfolio'>
             <div className='portfolio--header'>
                 <h1>Mark's Portfolio</h1>
-                <button type='button' onClick={(event) => slide(event.target.textContent.toLowerCase(), 'portfolio')}>Home</button>
-                <button type='button' onClick={(event) => slide(event.target.textContent.toLowerCase(), 'portfolio')}>About</button>
+                <button type='button' onClick={(event) => pageSlide(event.target.textContent.toLowerCase(), 'portfolio')}>Home</button>
+                <button type='button' onClick={(event) => pageSlide(event.target.textContent.toLowerCase(), 'portfolio')}>About</button>
                 <hr/>
             </div>
             <div className='projects'>
