@@ -135,19 +135,56 @@
     flex-direction: column;
     @for $i from 1 through $numberOfProjects {
         &--project--#{$i} {
+            background-color: $box-bg-color;
             position: absolute;
-            top: 1px;
+            top: calc((($i - 1)* $projectHeight) + (($i - 1) * $projectSeparation));
             left: 45%;
             width: 55%;
             height: $projectHeight;
             padding-left: 10px;
             padding-right: 10px;
-            border: 1px solid $text-color;
+            border-radius: 5px;
+            transition: background-color 0.325s ease-out;
             @include lists;
+
             li {
                 display: inline;
                 padding-right: 10px;
                 line-height: 1.75;
+            }
+
+            h2 {
+                text-align: center;
+                margin-top: 10px;
+                margin-bottom: 0px;
+            }
+
+            ul {
+                margin: 10px 0;
+            }
+
+            &:hover {
+                cursor: pointer;
+                background-color: rgba(17, 17, 73, 0.35);
+            }
+
+            &:active {
+                background-color: transparent;
+            }
+
+            @media (max-width: 1225px) and (max-height: 1000px) {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                ul {
+                    display: none;
+                }
+
+                h2 {
+                    margin: 0;
+                }
+
             }
         }
     }

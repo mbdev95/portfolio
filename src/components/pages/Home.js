@@ -18,7 +18,7 @@ const Home = () => {
     useEffect(() => {
         homeProfileHeight();
         setTimeout(() => pageSlide('home', null), 6000);
-    }, []);
+    }, [pageSlide]);
 
     document.addEventListener('resize', () => homeProfileHeight());
 
@@ -34,12 +34,12 @@ const Home = () => {
                 <div className='home--profile'>
                     <p>-- A Software engineer from a galaxy up north --</p>
                     <hr/>
-                    <p>Educated with a diploma in Front-End Web Development from <a href='https://openclassrooms.com/en/about-us' target='_blank'>OpenClassrooms</a>.</p>
+                    <p>Educated with a diploma in Front-End Web Development from <a href='https://openclassrooms.com/en/about-us' target='_blank' rel='noreferrer'>OpenClassrooms</a>.</p>
                     <hr/>
                     <div className='home--profile--socialMedia'>
-                        <a href='https://www.linkedin.com/in/mb-developer/' target='_blank'><img src={linkedIn} alt='LinkedIn Logo'/></a>
-                        <a href='https://github.com/mbdev95' target='_blank'><img src={GitHub} alt='GitHub Logo'/></a>
-                        <a href="https://drive.google.com/file/d/1n0NB2EoaBSwEKQFYxxccZPMg-a6-USHs/view?usp=sharing" target='_blank'><img src={resume} alt='Resume Icon'/></a>
+                        <a href='https://www.linkedin.com/in/mb-developer/' target='_blank' rel='noreferrer'><img src={linkedIn} alt='LinkedIn Logo'/></a>
+                        <a href='https://github.com/mbdev95' target='_blank' rel='noreferrer'><img src={GitHub} alt='GitHub Logo'/></a>
+                        <a href="https://drive.google.com/file/d/1n0NB2EoaBSwEKQFYxxccZPMg-a6-USHs/view?usp=sharing" target='_blank' rel='noreferrer'><img src={resume} alt='Resume Icon'/></a>
                     </div>
                     <hr/>
                     <div className='home--profile--skills'>
