@@ -35,10 +35,6 @@ export const Provider = (props) => {
         return logoImage;
     }
 
-    const previewProjectSlide = () => {
-        
-    }
-
     return (
         <>
             <pageInfoContext.Provider value={{

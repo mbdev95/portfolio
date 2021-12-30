@@ -1,3 +1,4 @@
+// Importing main font with a space style
 @font-face {
     font-family: 'Xolonium';
     src: url('../../fonts/Xolonium.eot'),
@@ -12,29 +13,33 @@ $bg-colors: (
     star-colors:( white, rgb(235, 232, 221), rgb(223, 217, 200), rgb(201, 192, 170), rgb(185, 173, 138) )
 );
 
+// Main text color
 $text-color: rgb(235, 226, 226); 
 
+// Number of stars
 $numberOfStars: 250;
 
+// Base font
 $base-font: 'Xolonium', Verdana, Tahoma, sans-serif;
 
 // Text
-
 $base__font-size : 16px;
 
 // Breaking Points
-
 $brkpoint-sm: 480px;
 $brkpoint-md: 768px;
 $brkpoint-lg: 1025px;
 $brkpoint-xl: 1200px;
 
 // Number of Intro Span Letters
-
 $number-intro-letters: 42;
 
-// Layout Box Variables
-$box-br: 1%;
+// Projects in Portfolio Variables
+$numberOfProjects: 5;
+$projectHeight: calc((100% / $numberOfProjects) - ((100% / $numberOfProjects) / $numberOfProjects));
+$projectSeparation: calc((($projectHeight * $numberOfProjects) / ($numberOfProjects - 1)) / ($numberOfProjects - 1));
+
+// Box Variables
 $box-opacity: 0.7;
 $box-bg-color: rgba(17, 17, 73, $box-opacity);
 

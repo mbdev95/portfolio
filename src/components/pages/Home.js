@@ -8,9 +8,19 @@ const Home = () => {
 
     const pageSlide = useContext(pageInfoContext).pageSlide;
 
+    const homeProfileHeight = () => {
+        const homeHeight = document.getElementsByClassName('home')[0].offsetHeight;
+        const homeHeaderHeight = document.getElementsByClassName('home--header')[0].offsetHeight;
+        const homeProfileHeight = homeHeight - homeHeaderHeight;
+        document.getElementsByClassName('home')[0].style.setProperty('--home-profile-height', homeProfileHeight + 'px');
+    }
+
     useEffect(() => {
+        homeProfileHeight();
         setTimeout(() => pageSlide('home', null), 6000);
     }, []);
+
+    document.addEventListener('resize', () => homeProfileHeight());
 
     return (
         <>
@@ -47,11 +57,11 @@ const Home = () => {
                             <li>WordPress</li>
                         </ul>
                         <hr/>
-                        <p>&#169; mbdev95</p>
                     </div>
-                </div>  
+                    <p>&#169; mbdev95</p>
+                </div> 
                 <div className='previewProjects'>
-                    <div className='previewProjects--project'>
+                    <div className='previewProjects--project--1'>
                         <h2>War of Weapons Board Game</h2>
                         <ul>
                             <li>Object-oriented JavaScript</li>
@@ -59,14 +69,14 @@ const Home = () => {
                             <li>CSS Grid</li>
                         </ul>
                     </div>
-                    <div className='previewProjects--project'>
+                    <div className='previewProjects--project--2'>
                         <h2>Restaurant Review Locator</h2>
                         <ul>
                             <li>React</li>
                             <li>REST-APIs</li>
                         </ul>
                     </div>
-                    <div className='previewProjects--project'>
+                    <div className='previewProjects--project--3'>
                         <h2>Brooklyn Bridge Film Festival</h2>
                         <ul>
                             <li>Bootstrap</li>
@@ -74,14 +84,14 @@ const Home = () => {
                             <li>HTML5</li>
                         </ul>
                     </div>
-                    <div className='previewProjects--project'>
+                    <div className='previewProjects--project--4'>
                         <h2>Express Food Database</h2>
                         <ul>
                             <li>UML Diagrams</li>
                             <li>MySQL Database and Queries</li>
                         </ul>
                     </div>
-                    <div className='previewProjects--project'>
+                    <div className='previewProjects--project--5'>
                         <h2>Orwellian Random Quote Generator</h2>
                         <ul>
                             <li>Vanilla JavaScript</li>
