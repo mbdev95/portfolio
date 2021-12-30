@@ -6,7 +6,7 @@ import { pageInfoContext } from '../../context';
 
 const RestaurantReviewLocator = () => {
     return (
-        <div className='portfolio--project'>
+        <div className='portfolio--project' id='RestaurantReviewLocator'>
             <h2>Restaruant Review Locator</h2>
             {useContext(pageInfoContext).projectPhotoSelector(<img src={reactLogo} alt='react logo'/>, <img src={restaurantReviewLocatorMedium} alt='Restaurant Review Locator Application'/>, <img src={restaurantReviewLocatorLarge} alt='Restaurant Review Locator Application' />)}
             <p>I developed a Restarant Review Locator application using React and Google Maps' APIs.  The Google Maps' APIs retrieved an array of restaurant and review data which was communicated throughout the application using React.</p>

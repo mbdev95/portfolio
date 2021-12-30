@@ -51,11 +51,16 @@
     button {
         @extend %project-buttons;
         background-color: rgb(39, 58, 226);
+        transition: background-color 0.3s ease-in-out;
     }
 
     button:hover {
         cursor: pointer;
-        background-color: rgb(66, 81, 219);
+        background-color: rgba(70, 83, 207, 0.35);
+    }
+
+    button:active {
+        background-color: transparent;
     }
 
     button:first-of-type {
@@ -133,6 +138,11 @@
 @mixin previewProjects {
     display: flex;
     flex-direction: column;
+
+    & a {
+        color: $text-color;
+    }
+
     @for $i from 1 through $numberOfProjects {
         &--project--#{$i} {
             background-color: $box-bg-color;
@@ -201,14 +211,21 @@
     ul {
         list-style: none;
         padding: 0px;
+        display: flex;
+        flex-wrap: wrap;
     }
 
     ul li:before {
         content: "\2022";  
         color: $text-color; 
-        display: inline-block; 
         width: 1em; 
         height: 1em;
+        padding-right: 10px;
+        line-height: 1.75;
+    }
+
+    ul li {
+        padding-right: 15px;
     }
 }
 

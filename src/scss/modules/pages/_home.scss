@@ -12,6 +12,10 @@
         @extend %home;
         border-radius: 5px 5px 0 0;
 
+        & a button {
+            width: 100%;
+        }
+
         h1 {
             text-align: center;
             margin-left: 5%;
@@ -38,6 +42,10 @@
         p {
             margin-top: 0px;
             margin-bottom: 0px;
+        }
+
+        p a:hover {
+            color: rgb(131, 75, 180);
         }
 
         hr {
@@ -84,11 +92,6 @@
             min-height: var(--home-profile-height);
             @include home-sideBar;
             justify-content: space-evenly;
-            li {
-                display: inline;
-                padding-right: 10px;
-                line-height: 1.75;
-            }
 
             &--socialMedia a {    
                 width: 12%;
