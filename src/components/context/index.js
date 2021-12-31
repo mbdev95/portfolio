@@ -8,20 +8,23 @@ export const Provider = (props) => {
         if (pageOut === null) {
           document.getElementsByClassName(pageIn)[0].classList.add(`${pageIn}__translateXIn`); 
         } else {
+            window.history.replaceState({ id: window.history.length }, `${pageIn} url`, pageIn);
             document.getElementsByClassName(pageIn)[0].classList.add(`${pageIn}__translateXIn`);
             document.getElementsByClassName(pageOut)[0].classList.remove(`${pageOut}__translateXIn`);
             document.getElementsByClassName(pageOut)[0].classList.add(`${pageOut}__translateXOut`);
             if ( viewportWidth >= 1025 )
                 setTimeout(() => {
                     document.getElementsByClassName(pageOut)[0].classList.remove(`${pageOut}__translateXOut`);
-                }, 2000); 
+                }, 1000); 
             else {
                 setTimeout(() => {
                     document.getElementsByClassName(pageOut)[0].classList.remove(`${pageOut}__translateXOut`);
-                }, 1000); 
+                }, 500); 
             }
         }
     }
+
+    window.addEventListener('popstate', () => console.log('hi'));
 
     const [viewportWidth, setViewportWidth] = useState(document.documentElement.clientWidth);
     window.addEventListener('resize', () => setViewportWidth(document.documentElement.clientWidth) );

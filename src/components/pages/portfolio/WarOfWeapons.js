@@ -6,7 +6,7 @@ import { pageInfoContext } from '../../context';
 
 const WarOfWeapons = () => {
     return (
-        <div className='portfolio--project' id='portfolio'>
+        <div className='portfolio--project' id='WarOfWeapons'>
             <h2>War of Weapons Board Game</h2>
             {useContext(pageInfoContext).projectPhotoSelector(<img src={javascriptLogo} alt='javascript logo'/>, <img src={WarOfWeaponsMedium} alt='War of Weapons Board Game'/>, <img src={WarOfWeaponsLarge} alt='War of Weapons Game'/>)}
             <p>The board game was created using object-oriented JavaScript and jQuery.  The board game involves players moving over a css grid board, and collecting a weapon which will inflict a certain amount of damage. Once the two players meet on the board they will fight, having a choice to defend or attack.  The player with the weapon that inflicts the most damage will win.</p>

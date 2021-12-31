@@ -12,7 +12,7 @@ const SideBar = () => {
         <>
             <div className='home--header'>
                 <h1>Mark Bucholski</h1>
-                <a href='#portfolio'><button type='button' onClick={event => pageSlide(event.target.textContent.toLowerCase(), 'home')}>Portfolio</button></a>
+                <button type='button' onClick={event => pageSlide(event.target.textContent.toLowerCase(), 'home')}>Portfolio</button>
                 <button type='button' onClick={event => pageSlide(event.target.textContent.toLowerCase(), 'home')}>About</button>
                 <hr/>
             </div>

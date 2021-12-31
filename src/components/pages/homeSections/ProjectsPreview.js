@@ -7,7 +7,7 @@ const ProjectsPreview = () => {
 
     return (
         <div className='previewProjects'>
-            <a href='#portfolio' onClick={() => pageSlide('portfolio', 'home')}>
+            <a href='#WarOfWeapons' onClick={() => pageSlide('portfolio', 'home')}>
                 <div className='previewProjects--project--1'>
                     <h2>War of Weapons Board Game</h2>
                     <ul>
