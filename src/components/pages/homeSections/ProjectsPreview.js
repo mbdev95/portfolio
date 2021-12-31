@@ -6,8 +6,8 @@ const ProjectsPreview = () => {
     const pageSlide = useContext(pageInfoContext).pageSlide;
 
     return (
-        <div className='previewProjects'>
-            <a href='#WarOfWeapons' onClick={() => pageSlide('portfolio', 'home')}>
+        <div className='previewProjects' >
+            <a href='#WarOfWeapons' onClick={() => pageSlide('portfolio', 'home') }>
                 <div className='previewProjects--project--1'>
                     <h2>War of Weapons Board Game</h2>
                     <ul>

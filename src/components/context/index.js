@@ -8,7 +8,7 @@ export const Provider = (props) => {
         if (pageOut === null) {
           document.getElementsByClassName(pageIn)[0].classList.add(`${pageIn}__translateXIn`); 
         } else {
-            window.history.replaceState({ id: window.history.length }, `${pageIn} url`, pageIn);
+            window.history.pushState({ id: window.history.length }, `${pageIn} url`, pageIn);
             document.getElementsByClassName(pageIn)[0].classList.add(`${pageIn}__translateXIn`);
             document.getElementsByClassName(pageOut)[0].classList.remove(`${pageOut}__translateXIn`);
             document.getElementsByClassName(pageOut)[0].classList.add(`${pageOut}__translateXOut`);
@@ -24,7 +24,12 @@ export const Provider = (props) => {
         }
     }
 
-    window.addEventListener('popstate', () => console.log('hi'));
+    // *** USE LOGIC TO OBTAIN HASH AND PAGE NAME AND THEN NAVIGATE TO PAGE USING PAGESLIDE() FUNCTION!
+    window.addEventListener('popstate', () => {
+        console.log(window.location.href);
+        console.log(window.location.pathname);
+        console.log(window.location.hash);
+    });
 
     const [viewportWidth, setViewportWidth] = useState(document.documentElement.clientWidth);
     window.addEventListener('resize', () => setViewportWidth(document.documentElement.clientWidth) );
