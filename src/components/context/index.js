@@ -24,11 +24,11 @@ export const Provider = (props) => {
         }
     }
 
-    // *** USE LOGIC TO OBTAIN HASH AND PAGE NAME AND THEN NAVIGATE TO PAGE USING PAGESLIDE() FUNCTION!
-    window.addEventListener('popstate', () => {
-        console.log(window.location.href);
-        console.log(window.location.pathname);
-        console.log(window.location.hash);
+
+    window.addEventListener('popstate', (e) => {
+        if ( e.state !== null ) {
+            console.log('backward forwards')
+        }
     });
 
     const [viewportWidth, setViewportWidth] = useState(document.documentElement.clientWidth);
