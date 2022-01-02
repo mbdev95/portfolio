@@ -7,7 +7,7 @@ const ProjectsPreview = () => {
 
     return (
         <div className='previewProjects' >
-            <a href='#WarOfWeapons' onClick={() => pageSlide('portfolio', 'home') }>
+            <a href='#WarOfWeapons' onClick={() => pageSlide('portfolio', 'home', true) }>
                 <div className='previewProjects--project--1'>
                     <h2>War of Weapons Board Game</h2>
                     <ul>
@@ -17,7 +17,7 @@ const ProjectsPreview = () => {
                     </ul>
                 </div>
             </a>
-            <a href='#RestaurantReviewLocator' onClick={() => pageSlide('portfolio', 'home')}>
+            <a href='#RestaurantReviewLocator' onClick={() => pageSlide('portfolio', 'home', true)}>
                 <div className='previewProjects--project--2'>
                     <h2>Restaurant Review Locator</h2>
                     <ul>
@@ -26,7 +26,7 @@ const ProjectsPreview = () => {
                     </ul>
                 </div>
             </a>
-            <a href='#BrooklynBridgeFilmFestival' onClick={() => pageSlide('portfolio', 'home')}>
+            <a href='#BrooklynBridgeFilmFestival' onClick={() => pageSlide('portfolio', 'home', true)}>
                 <div className='previewProjects--project--3'>
                     <h2>Brooklyn Bridge Film Festival</h2>
                     <ul>
@@ -36,7 +36,7 @@ const ProjectsPreview = () => {
                     </ul>
                 </div>
             </a>
-            <a href='#ExpressFoodDatabase' onClick={() => pageSlide('portfolio', 'home')}>
+            <a href='#ExpressFoodDatabase' onClick={() => pageSlide('portfolio', 'home', true)}>
                 <div className='previewProjects--project--4'>
                     <h2>Express Food Database</h2>
                     <ul>
@@ -45,7 +45,7 @@ const ProjectsPreview = () => {
                     </ul>
                 </div>
             </a>
-            <a href='#OrwellianRandomQuoteGenerator' onClick={() => pageSlide('portfolio', 'home')}>
+            <a href='#OrwellianRandomQuoteGenerator' onClick={() => pageSlide('portfolio', 'home', true)}>
                 <div className='previewProjects--project--5'>
                     <h2>Orwellian Random Quote Generator</h2>
                     <ul>

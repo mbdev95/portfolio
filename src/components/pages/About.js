@@ -6,8 +6,8 @@ const About = () => {
     return (
         <div className="about">
             <h1>This is the About Page</h1>
-            <button type="button" onClick={event => pageSlide(event.target.textContent.toLowerCase(), 'about')}>Home</button>
-            <button type="button" onClick={event => pageSlide(event.target.textContent.toLowerCase(), 'about')}>Portfolio</button>
+            <button type="button" onClick={event => pageSlide(event.target.textContent.toLowerCase(), 'about', false)}>Home</button>
+            <button type="button" onClick={event => pageSlide(event.target.textContent.toLowerCase(), 'about', false)}>Portfolio</button>
         </div>
     )
 }

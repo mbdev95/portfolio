@@ -12,8 +12,8 @@ const SideBar = () => {
         <>
             <div className='home--header'>
                 <h1>Mark Bucholski</h1>
-                <button type='button' onClick={event => pageSlide(event.target.textContent.toLowerCase(), 'home')}>Portfolio</button>
-                <button type='button' onClick={event => pageSlide(event.target.textContent.toLowerCase(), 'home')}>About</button>
+                <button type='button' onClick={event => pageSlide(event.target.textContent.toLowerCase(), 'home', false)}>Portfolio</button>
+                <button type='button' onClick={event => pageSlide(event.target.textContent.toLowerCase(), 'home', false)}>About</button>
                 <hr/>
             </div>
             <div className='home--profile'>

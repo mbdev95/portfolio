@@ -23,8 +23,8 @@ const Portfolio = () => {
         <div className='portfolio'>
             <div className='portfolio--header'>
                 <h1>Mark's Portfolio</h1>
-                <button type='button' onClick={(event) => pageSlide(event.target.textContent.toLowerCase(), 'portfolio')}>Home</button>
-                <button type='button' onClick={(event) => pageSlide(event.target.textContent.toLowerCase(), 'portfolio')}>About</button>
+                <button type='button' onClick={(event) => pageSlide(event.target.textContent.toLowerCase(), 'portfolio', false)}>Home</button>
+                <button type='button' onClick={(event) => pageSlide(event.target.textContent.toLowerCase(), 'portfolio', false)}>About</button>
                 <hr/>
             </div>
             <div className='projects'>
