@@ -1,5 +1,6 @@
 import {useContext, useEffect} from 'react';
 import {pageInfoContext} from '../context';
+import {Link} from 'react-router-dom';
 import ExpressFood from './portfolio/ExpressFood';
 import FilmFestival from './portfolio/FilmFestival';
 import RandomQuotes from './portfolio/RandomQuotes';
@@ -23,8 +24,8 @@ const Portfolio = () => {
         <div className='portfolio'>
             <div className='portfolio--header'>
                 <h1>Mark's Portfolio</h1>
-                <button type='button' onClick={(event) => pageSlide(event.target.textContent.toLowerCase(), 'portfolio', false)}>Home</button>
-                <button type='button' onClick={(event) => pageSlide(event.target.textContent.toLowerCase(), 'portfolio', false)}>About</button>
+                <Link exact='true' to='/'><button type='button' onClick={(event) => pageSlide(event.target.textContent.toLowerCase(), 'portfolio')}>Home</button></Link>
+                <Link to='/about'><button type='button' onClick={(event) => pageSlide(event.target.textContent.toLowerCase(), 'portfolio')}>About</button></Link>
                 <hr/>
             </div>
             <div className='projects'>

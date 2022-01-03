@@ -15,7 +15,6 @@ const Home = () => {
     }
 
     useEffect(() => {
-        window.history.replaceState({ id: window.history.length }, 'original url', window.location.origin);
         homeProfileHeight();
         setTimeout(() => pageSlide('home', null), 6000);    
     }, [pageSlide]);

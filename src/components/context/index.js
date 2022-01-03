@@ -4,20 +4,11 @@ export const pageInfoContext = React.createContext();
 
 export const Provider = (props) => {
 
-    const pageSlide = (pageIn, pageOut, isProjectLink) => {
+    const pageSlide = (pageIn, pageOut) => {
         if (pageOut === null) {
-          document.getElementsByClassName(pageIn)[0].classList.add(`${pageIn}__translateXIn`); 
+            document.getElementsByClassName(pageIn)[0].classList.add(`${pageIn}__translateXIn`); 
         } else {
-            if ( isProjectLink ) {
-                window.history.pushState({ id: window.history.length }, `${pageIn} url`, '');
-            } else {
-                window.history.pushState({ id: window.history.length }, `${pageIn} url`, pageIn);
-            }
-            if ( pageIn === '' && pageOut !== 'home' ) {
-                document.getElementsByClassName('home')[0].classList.add(`home__translateXIn`);
-            } else {
-                document.getElementsByClassName(pageIn)[0].classList.add(`${pageIn}__translateXIn`);
-            }
+            document.getElementsByClassName(pageIn)[0].classList.add(`${pageIn}__translateXIn`);
             document.getElementsByClassName(pageOut)[0].classList.remove(`${pageOut}__translateXIn`);
             document.getElementsByClassName(pageOut)[0].classList.add(`${pageOut}__translateXOut`);
             if ( viewportWidth >= 1025 )
@@ -32,33 +23,34 @@ export const Provider = (props) => {
         }
     }
 
-    const  isInViewport = element => {
-        const rect = element.getBoundingClientRect();
-        return (
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-        );
-    }
+    // const  isInViewport = element => {
+    //     const rect = element.getBoundingClientRect();
+    //     return (
+    //         rect.top >= 0 &&
+    //         rect.left >= 0 &&
+    //         rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    //         rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    //     );
+    // }
     
 
-    window.addEventListener('popstate', (e) => {
-        if ( e.state !== null ) {
-            let newPage = window.location.pathname.slice(1);
-            let oldPage = '';
-            const home = document.getElementsByClassName('home')[0];
-            const portfolio = document.getElementsByClassName('portfolio')[0];
-            if ( isInViewport(home) === true ) {
-                oldPage = 'home';
-            } else if ( isInViewport(portfolio) === true ) {
-                oldPage = 'portfolio';
-            } else {
-                oldPage = 'about';
-            }
-            pageSlide(newPage, oldPage);
-        }
-    });
+    // window.addEventListener('popstate', (e) => {
+    //     if ( e.state !== null ) {
+    //         let newPage = window.location.pathname.slice(1);
+    //         console.log(newPage);
+    //         let oldPage = '';
+    //         const home = document.getElementsByClassName('home')[0];
+    //         const portfolio = document.getElementsByClassName('portfolio')[0];
+    //         if ( isInViewport(home) === true ) {
+    //             oldPage = 'home';
+    //         } else if ( isInViewport(portfolio) === true ) {
+    //             oldPage = 'portfolio';
+    //         } else {
+    //             oldPage = 'about';
+    //         }
+    //         pageSlide(newPage, oldPage);
+    //     }
+    // });
 
     const [viewportWidth, setViewportWidth] = useState(document.documentElement.clientWidth);
     window.addEventListener('resize', () => setViewportWidth(document.documentElement.clientWidth) );

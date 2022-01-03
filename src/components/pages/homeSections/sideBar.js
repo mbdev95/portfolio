@@ -3,6 +3,7 @@ import GitHub from '../../../img/socialMediaIcons/github.png';
 import resume from '../../../img/socialMediaIcons/resume.png';
 import {useContext} from 'react';
 import {pageInfoContext} from '../../context';
+import {Link} from 'react-router-dom';
 
 const SideBar = () => {
 
@@ -12,8 +13,8 @@ const SideBar = () => {
         <>
             <div className='home--header'>
                 <h1>Mark Bucholski</h1>
-                <button type='button' onClick={event => pageSlide(event.target.textContent.toLowerCase(), 'home', false)}>Portfolio</button>
-                <button type='button' onClick={event => pageSlide(event.target.textContent.toLowerCase(), 'home', false)}>About</button>
+                <Link to='/portfolio'><button type='button' onClick={event => pageSlide(event.target.textContent.toLowerCase(), 'home')}>Portfolio</button></Link>
+                <Link to='/about'><button type='button' onClick={event => pageSlide(event.target.textContent.toLowerCase(), 'home')}>About</button></Link>
                 <hr/>
             </div>
             <div className='home--profile'>
