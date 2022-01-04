@@ -4,8 +4,8 @@
 
 .home {
     @include buttons;
-    @include sliding;
-    @extend %home-main;
+    @extend %main-container;
+    letter-spacing: 2px;
     overflow-y: auto;
     
     &--header {

@@ -4,8 +4,8 @@
 
 .portfolio {
     @extend %main-container;
+    @extend %main-container-about-portfolio;
     @include buttons;
-    @include sliding;
     @include project;
 
     &--header {

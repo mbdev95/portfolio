@@ -5,7 +5,7 @@ import {pageInfoContext} from '../context';
 
 const Home = () => {
 
-    const pageSlide = useContext(pageInfoContext).pageSlide;
+    const firstSlide = useContext(pageInfoContext).firstSlide;
 
     const homeProfileHeight = () => {
         const homeHeight = document.getElementsByClassName('home')[0].offsetHeight;
@@ -16,14 +16,14 @@ const Home = () => {
 
     useEffect(() => {
         homeProfileHeight();
-        setTimeout(() => pageSlide('home', null), 6000);    
-    }, [pageSlide]);
+        // setTimeout(() => firstSlide('home'), 6000);    
+    }, []);
 
     document.addEventListener('resize', () => homeProfileHeight());
 
     return (
         <>
-            <div className='home' id='home'>
+            <div className='home'>
                 <SideBar /> 
                 <ProjectsPreview />
             </div>

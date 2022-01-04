@@ -1,6 +1,6 @@
 .about {
     @extend %main-container;
+    @extend %main-container-about-portfolio;
     @include buttons;
-    @include sliding;
     overflow-y: visible;
 }

@@ -1,20 +1,16 @@
 import linkedIn from '../../../img/socialMediaIcons/linkedin.png';
 import GitHub from '../../../img/socialMediaIcons/github.png';
 import resume from '../../../img/socialMediaIcons/resume.png';
-import {useContext} from 'react';
-import {pageInfoContext} from '../../context';
 import {Link} from 'react-router-dom';
 
 const SideBar = () => {
-
-    const pageSlide = useContext(pageInfoContext).pageSlide;
 
     return (
         <>
             <div className='home--header'>
                 <h1>Mark Bucholski</h1>
-                <Link to='/portfolio'><button type='button' onClick={event => pageSlide(event.target.textContent.toLowerCase(), 'home')}>Portfolio</button></Link>
-                <Link to='/about'><button type='button' onClick={event => pageSlide(event.target.textContent.toLowerCase(), 'home')}>About</button></Link>
+                <Link to='/portfolio'><button type='button' >Portfolio</button></Link>
+                <Link to='/about'><button type='button' >About</button></Link>
                 <hr/>
             </div>
             <div className='home--profile'>

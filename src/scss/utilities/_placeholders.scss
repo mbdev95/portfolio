@@ -5,12 +5,15 @@
     left: -80%;
     width: 80%;
     height: 90%;
+    letter-spacing: 2px;
+    border-radius: 5px;
+}
+
+%main-container-about-portfolio {
     display: flex;
     flex-direction: column;
     text-align: center;
     background-color: $box-bg-color;
-    letter-spacing: 2px;
-    border-radius: 5px;
 }
 
 %home {
@@ -25,16 +28,6 @@
     padding-right: 5%;
     display: flex;
     flex-direction: column;
-}
-
-%home-main {
-    overflow-x: hidden;
-    position: absolute;
-    top: 5%;
-    left: -80%;
-    width: 80%;
-    height: 90%;
-    letter-spacing: 2px;
 }
 
 %portfolio-header {

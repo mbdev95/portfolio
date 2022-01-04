@@ -1,27 +1,35 @@
-import React, {useState} from 'react';
+import React, {useState, useRef} from 'react';
 
 export const pageInfoContext = React.createContext();
 
 export const Provider = (props) => {
 
-    const pageSlide = (pageIn, pageOut) => {
-        if (pageOut === null) {
-            document.getElementsByClassName(pageIn)[0].classList.add(`${pageIn}__translateXIn`); 
-        } else {
-            document.getElementsByClassName(pageIn)[0].classList.add(`${pageIn}__translateXIn`);
-            document.getElementsByClassName(pageOut)[0].classList.remove(`${pageOut}__translateXIn`);
-            document.getElementsByClassName(pageOut)[0].classList.add(`${pageOut}__translateXOut`);
-            if ( viewportWidth >= 1025 )
-                setTimeout(() => {
-                    document.getElementsByClassName(pageOut)[0].classList.remove(`${pageOut}__translateXOut`);
-                }, 1000); 
-            else {
-                setTimeout(() => {
-                    document.getElementsByClassName(pageOut)[0].classList.remove(`${pageOut}__translateXOut`);
-                }, 500); 
-            }
-        }
-    }
+    // const [pageOut, setPageOut] = useState('home');
+
+    // const pageSlide = (pageIn, firstPage) => {
+    //     if ( document.getElementsByClassName(pageIn)[0] === undefined ) {
+    //         return null;
+    //     }
+    //     if (firstPage === null) {
+    //         document.getElementsByClassName(pageIn)[0].classList.add(`${pageIn}__translateXIn`); 
+    //     } else {
+    //         document.getElementsByClassName(pageIn)[0].classList.add(`${pageIn}__translateXIn`);
+    //         console.log(document.getElementsByClassName(pageOut)[0]);
+    //         document.getElementsByClassName(pageOut)[0].classList.remove(`${pageOut}__translateXIn`);
+    //         document.getElementsByClassName(pageOut)[0].classList.add(`${pageOut}__translateXOut`);
+    //         if ( viewportWidth >= 1025 )
+    //             setTimeout(() => {
+    //                 document.getElementsByClassName(pageOut)[0].classList.remove(`${pageOut}__translateXOut`);
+    //             }, 1000); 
+    //         else {
+    //             setTimeout(() => {
+    //                 document.getElementsByClassName(pageOut)[0].classList.remove(`${pageOut}__translateXOut`);
+    //             }, 500); 
+    //         }
+    //     }
+    //     setPageOut(pageIn);
+    // }
+
 
     // const  isInViewport = element => {
     //     const rect = element.getBoundingClientRect();
@@ -52,8 +60,22 @@ export const Provider = (props) => {
     //     }
     // });
 
+    // const firstSlide = (firstPage) => {
+    //     document.getElementsByClassName(firstPage)[0].style.transition = 'transform 0.75s ease-out';   
+    //     document.getElementsByClassName(firstPage)[0].style.transform = 'translateX(90vw)';
+    // }
+
     const [viewportWidth, setViewportWidth] = useState(document.documentElement.clientWidth);
     window.addEventListener('resize', () => setViewportWidth(document.documentElement.clientWidth) );
+
+    
+    const isLargeViewport = () => { 
+        if ( viewportWidth >= 1025 ) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     const projectPhotoSelector = (logoImage, applicationImageMedium, applicationImageLarge) => {
         if ( viewportWidth >= 768 && viewportWidth < 1200 || applicationImageLarge === null && viewportWidth >= 768 ) {
@@ -68,8 +90,9 @@ export const Provider = (props) => {
         <>
             <pageInfoContext.Provider value={{
                 numberOfStars: 250,
-                pageSlide: pageSlide,
-                projectPhotoSelector: projectPhotoSelector
+                // firstSlide: firstSlide,
+                projectPhotoSelector: projectPhotoSelector,
+                isLargeViewport: isLargeViewport(),
             } }>
                 {props.children}
             </pageInfoContext.Provider>

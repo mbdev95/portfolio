@@ -1,0 +1,53 @@
+// A mixin for creating the sliding in and out animations for each page
+
+.translate-appear {
+    transform: translateX(0vw);
+}
+
+.translate-appear-active {
+    transition: transform 0.5s ease-out 6s;
+    transform: translateX(90vw);
+}
+
+.translate-appear-done {
+    transform: translateX(0vw);
+}
+
+.translate-enter {
+    transform: translateX(0vw);
+}
+
+.translate-enter-active {
+    transition: transform 0.5s ease-out;
+    transform: translateX(90vw);
+}
+
+// translate-enter-done {
+//     transform: translateX(0vw);
+// }
+
+.translate-exit {
+    transform: translateX(0vw);
+}
+
+.translate-exit-active {
+    transition: transform 0.5s ease-out;
+    transform: translateX(180vw);
+}
+
+@include mq('large') {
+    .translate-appear-active {
+        transition: transform 1s ease-out 6s;
+        transform: translateX(90vw);
+    }
+
+    .translate-enter-active {
+        transition: transform 1s ease-out;
+        transform: translateX(90vw);
+    }
+
+    .translate-exit-active {
+        transition: transform 1s ease-out;
+        transform: translateX(180vw);
+    }
+}
