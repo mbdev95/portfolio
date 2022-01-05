@@ -22,9 +22,8 @@ const WarOfWeapons = () => {
                 <li key={5}>Bootstrap</li>
                 <li key={6}>HTML5</li>
             </ul>
-            <a href='https://github.com/mbdev95/OpenClassrooms-Project-6-War-Of-Weapons-Board-Game/blob/master/README.md' target='_blank'><button type='button'>Application Explanation</button></a>
-            <a href='https://mbdev95.github.io/OpenClassrooms-Project-6-War-Of-Weapons-Board-Game/' target='_blank'><button type='button'>Application Live</button></a>
-            <hr/>
+            <a href='https://github.com/mbdev95/OpenClassrooms-Project-6-War-Of-Weapons-Board-Game/blob/master/README.md' target='_blank' rel='noreferrer'><button type='button'>Application Explanation</button></a>
+            <a href='https://mbdev95.github.io/OpenClassrooms-Project-6-War-Of-Weapons-Board-Game/' target='_blank' rel='noreferrer'><button type='button'>Application Live</button></a>
         </div>
     );
 }

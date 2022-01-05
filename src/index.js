@@ -8,15 +8,13 @@ import {Provider} from './components/context';
 
 
 ReactDOM.render(
-    <React.StrictMode>
-        <Provider>
-            <BrowserRouter>
-                <Routes>
-                    <Route path='*' element={<App />} />
-                </Routes>
-            </BrowserRouter>
-        </Provider>
-    </React.StrictMode>,
+    <Provider>
+        <BrowserRouter>
+            <Routes>
+                <Route path='*' element={<App />} />
+            </Routes>
+        </BrowserRouter>
+    </Provider>,
     document.getElementById('root')
 );
 

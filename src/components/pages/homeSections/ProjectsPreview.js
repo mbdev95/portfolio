@@ -1,10 +1,9 @@
-import {Link} from 'react-router-dom';
+import { HashLink as Link } from 'react-router-hash-link';
 
 const ProjectsPreview = () => {
-
     return (
         <div className='previewProjects' >
-            <Link to='/portfolio#WarOfWeapons' >
+            <Link to='/portfolio' >
                 <div className='previewProjects--project--1'>
                     <h2>War of Weapons Board Game</h2>
                     <ul>

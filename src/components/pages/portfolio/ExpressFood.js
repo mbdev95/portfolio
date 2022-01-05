@@ -7,6 +7,7 @@ import { pageInfoContext } from '../../context';
 const ExpressFood = () => {
     return (
         <div className='portfolio--project' id='ExpressFoodDatabase'>
+            <hr/>
             <h2>Express Food Database</h2>
             {useContext(pageInfoContext).projectPhotoSelector(<img src={mysqlLogo} alt='MySQL Logo'/>, <img src={ExpressFoodMedium} alt='Express Food UML Class Diagram'/>, <img src={ExpressFoodLarge} alt='Express Food UML Class Diagram'/>)}
             <p>I created a database for the fictitious food delivery company, ExpressFood, using UML diagrams and MySQL. Additionally, I queried my database using MySQL.</p>
@@ -15,8 +16,7 @@ const ExpressFood = () => {
                 <li key={1}>MySQL</li>
                 <li key={2}>UML Diagrams</li>
             </ul>
-            <a href='https://github.com/mbdev95/OpenClassrooms-Project-4-Database-For-Express-Food/blob/master/README.md' target='_blank'><button type='button'>Application Explanation</button></a>
-            <hr/>
+            <a href='https://github.com/mbdev95/OpenClassrooms-Project-4-Database-For-Express-Food/blob/master/README.md' target='_blank' rel='noreferrer'><button type='button'>Application Explanation</button></a>
         </div>
     );
 }

@@ -23,7 +23,7 @@ const Stars = () => {
     const totalPageHeight = () => {
         const body = document.getElementsByTagName('BODY')[0];
         const html = document.getElementsByTagName('HTML')[0];
-        const totalPageHeight = Math.max(html.scrollHeight, body.scrollHeight, html.clientHeight, body.offsetHeight, html.offsetHeight );
+        const totalPageHeight = Math.max(html.scrollHeight, body.scrollHeight, html.clientHeight, body.offsetHeight, html.offsetHeight);
         for (let i = 1; i < numberOfStars + 1; i++) {
             const pageHeight = Math.floor(Math.random() * totalPageHeight);
             document.getElementsByClassName(`star--${i}`)[0].style.setProperty('--percentage-below-top', pageHeight + 'px');
@@ -41,7 +41,7 @@ const Stars = () => {
             shooting();
         }, 5500);
         return () => clearInterval();
-    }, [])
+    }, [numberOfStars, shooting, totalPageHeight])
 
     window.addEventListener('resize', () => {
         totalPageHeight();

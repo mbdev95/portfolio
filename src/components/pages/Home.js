@@ -16,7 +16,6 @@ const Home = () => {
 
     useEffect(() => {
         homeProfileHeight();
-        // setTimeout(() => firstSlide('home'), 6000);    
     }, []);
 
     document.addEventListener('resize', () => homeProfileHeight());
