@@ -5,15 +5,8 @@ import EntryText from './effects/EntryText';
 import Home from './pages/Home';
 import Portfolio from './pages/Portfolio';
 import About from './pages/About';
-import {
-    Routes,
-    Route,
-    useLocation
-} from "react-router-dom";
-import {
-    CSSTransition,
-    TransitionGroup,
-} from 'react-transition-group';
+import { Routes, Route, useLocation } from "react-router-dom";
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 const App = () => {
 
@@ -28,7 +21,7 @@ const App = () => {
             return (
                 <TransitionGroup>
                     <CSSTransition key={location.key} appear={true} timeout={context.isLargeViewport ? 1000 : 500} classNames='translate' > 
-                        <Routes location={location}>
+                        <Routes location={location} >
                             <Route exact path='/' element={<Home />} />
                             <Route path='/portfolio' element={<Portfolio />} />
                             <Route path='/about' element={<About />} />

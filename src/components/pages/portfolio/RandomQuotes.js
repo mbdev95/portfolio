@@ -4,8 +4,11 @@ import { useContext } from 'react';
 import { pageInfoContext } from '../../context';
 
 const RandomQuotes = () => {
+
+    const context = useContext(pageInfoContext);
+
     return (
-        <div className='portfolio--project' id='OrwellianRandomQuoteGenerator'>
+        <div className='portfolio--project' id='OrwellianRandomQuoteGenerator' >
             <hr/>
             <h2>Orwellian Randon Quotation Generator</h2>
             {useContext(pageInfoContext).projectPhotoSelector(<img src={html5Logo} alt='HTML5 Logo'/>, <img src={RandomQuotationGenerator} alt='Orwellian Random Quotation Generator'/>, null)}

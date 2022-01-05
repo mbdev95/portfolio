@@ -4,8 +4,11 @@ import { useContext } from 'react';
 import { pageInfoContext } from '../../context';
 
 const FilmFestival = () => {
+
+    const context = useContext(pageInfoContext);
+
     return (
-        <div className='portfolio--project' id='BrooklynBridgeFilmFestival'>
+        <div className='portfolio--project' id='BrooklynBridgeFilmFestival' >
             <hr/>
             <h2>Brooklyn Bridge Film Festival</h2>
             {useContext(pageInfoContext).projectPhotoSelector(<img src={cssLogo} alt='CSS3 Logo' />, <img src={BrooklynBridgeFilmFestival} alt='Brooklyn Bridge Film Festival 3D Cubes' />, null)}

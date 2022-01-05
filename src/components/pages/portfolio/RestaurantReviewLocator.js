@@ -5,8 +5,11 @@ import { useContext } from 'react';
 import { pageInfoContext } from '../../context';
 
 const RestaurantReviewLocator = () => {
+
+    const context = useContext(pageInfoContext);
+
     return (
-        <div className='portfolio--project' id='RestaurantReviewLocator'>
+        <div className='portfolio--project' id='RestaurantReviewLocator' >
             <hr/>
             <h2>Restaruant Review Locator</h2>
             {useContext(pageInfoContext).projectPhotoSelector(<img src={reactLogo} alt='react logo'/>, <img src={restaurantReviewLocatorMedium} alt='Restaurant Review Locator Application'/>, <img src={restaurantReviewLocatorLarge} alt='Restaurant Review Locator Application' />)}
