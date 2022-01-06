@@ -20,7 +20,7 @@ const Portfolio = () => {
     }, [] );
 
     return (
-        <div className='portfolio'>
+        <div className='portfolio' >
             <div className='portfolio--header'>
                 <h1>Mark's Portfolio</h1>
                 <Link exact='true' to='/' ><button type='button' >Home</button></Link>
