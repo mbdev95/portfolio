@@ -142,6 +142,7 @@
 @mixin previewProjects {
     display: flex;
     flex-direction: column;
+    background-color: $box-bg-color;
 
     & a {
         color: $text-color;
@@ -230,6 +231,19 @@
 
     ul li {
         padding-right: 15px;
+    }
+}
+
+@mixin nav {
+    display: flex;
+    justify-content: space-between;
+
+    a {
+        width: 45%;
+    }
+    
+    button {
+        border-radius: 5px;
     }
 }
 

@@ -1,19 +1,41 @@
 import linkedIn from '../../../img/socialMediaIcons/linkedin.png';
 import GitHub from '../../../img/socialMediaIcons/github.png';
 import resume from '../../../img/socialMediaIcons/resume.png';
+import {useEffect} from 'react';
 import {Link} from 'react-router-dom';
 
 const SideBar = () => {
+
+    const homeProfileHeight = () => {
+        const body = document.getElementsByTagName('BODY')[0];
+        const html = document.getElementsByTagName('HTML')[0];
+        const totalPageHeight = Math.max(html.scrollHeight, body.scrollHeight, html.clientHeight, body.offsetHeight, html.offsetHeight);
+        const homeHeaderHeight = document.getElementsByClassName('home--header')[0].offsetHeight;
+        const minProfileHeight = Math.round((totalPageHeight * 0.9) - homeHeaderHeight);
+        const homeProfileHeight = document.getElementsByClassName('home--profile')[0].offsetHeight;
+        if ( homeProfileHeight < minProfileHeight ) {
+            document.getElementsByClassName('home--profile')[0].style.setProperty('--min-home-profile-height', minProfileHeight + 'px');
+            document.getElementsByClassName('home--profile')[0].style.setProperty('--justify-content-home-profile', 'space-evenly');
+        }
+    }
+
+    useEffect(() => {
+        homeProfileHeight();
+    }, []);
+
+    document.addEventListener('resize', () => homeProfileHeight());
 
     return (
         <>
             <div className='home--header'>
                 <h1>Mark Bucholski</h1>
-                <Link to='/portfolio'><button type='button' >Portfolio</button></Link>
-                <Link to='/about'><button type='button' >About</button></Link>
+                <div className='home--header--nav'>
+                    <Link to='/portfolio'><button type='button' >Portfolio</button></Link>
+                    <Link to='/about'><button type='button' >About</button></Link>
+                </div>
                 <hr/>
             </div>
-            <div className='home--profile'>
+            <div className='home--profile .large-profile-height'>
                 <p>-- A Software engineer from a galaxy up north --</p>
                 <hr/>
                 <p>Educated with a diploma in Front-End Web Development from <a href='https://openclassrooms.com/en/about-us' target='_blank' rel='noreferrer'>OpenClassrooms</a>.</p>
@@ -38,8 +60,8 @@ const SideBar = () => {
                         <li>HTML5</li>
                         <li>WordPress</li>
                     </ul>
-                    <hr/>
                 </div>
+                <hr/>
                 <p>&#169; mbdev95</p>
             </div> 
         </>

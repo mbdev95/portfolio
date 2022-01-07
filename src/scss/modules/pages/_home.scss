@@ -1,5 +1,6 @@
 :root {
-    --home-profile-height: 100%;
+    --min-home-profile-height: auto;
+    --justify-content-home-profile: none;
 }
 
 .home {
@@ -7,33 +8,47 @@
     @extend %main-container;
     letter-spacing: 2px;
     overflow-y: auto;
+
+    hr {
+        @extend %hr;
+    }
     
     &--header {
-        @extend %home;
+        @extend %sub-container;
         border-radius: 5px 5px 0 0;
 
         h1 {
             text-align: center;
-            margin-left: 5%;
-            margin-right: 5%;
+            margin: 12px;
         }
 
-        & > hr:first-of-type {
-            width: 99%;
-            background-color: $text-color;
-            margin-bottom: 20px;
+        &--nav {
+            @include nav;
+            a {
+                @media (min-width: $brkpoint-md) and (max-width: $brkpoint-lg) {
+                    width: 100%;
+                }
+            }
+            button {
+                @media (min-width: $brkpoint-md) and (max-width: $brkpoint-lg) {
+                    border-radius: 0%;
+                }
+            }
+            @media (min-width: $brkpoint-md) and (max-width: $brkpoint-lg) {
+                display: block;
+            }
         }
 
         @include mq('medium') {
-            @include home-sideBar;
+            @include home-sideBar;            
         }
-
     }
 
     &--profile {
         @extend %sub-container;
-        @extend %home;
         border-radius: 0 0 5px 5px;
+        min-height: var(--min-home-profile-height);
+        justify-content: var(--justify-content-home-profile);
         
         p {
             margin-top: 0px;
@@ -42,14 +57,6 @@
 
         p a:hover {
             color: rgb(131, 75, 180);
-        }
-
-        hr {
-            background-color: $text-color;
-            height: 1px;
-            width: 100%;
-            margin-top: 12px;
-            margin-bottom: 12px;
         }
 
         &--socialMedia {
@@ -82,12 +89,16 @@
             margin-bottom: 10px;
         }
 
+        h2 {
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
         @include lists;
 
         @include mq('medium') {
-            min-height: var(--home-profile-height);
             @include home-sideBar;
-            justify-content: space-evenly;
 
             &--socialMedia a {    
                 width: 12%;
@@ -128,6 +139,8 @@
     }
     
 }
+
+
 
 
 

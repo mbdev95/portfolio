@@ -7,19 +7,9 @@
     height: 90%;
     letter-spacing: 2px;
     border-radius: 5px;
-}
-
-%main-container-about-portfolio {
     display: flex;
     flex-direction: column;
     text-align: center;
-    background-color: $box-bg-color;
-}
-
-%home {
-    display: flex;
-    flex-direction: column;
-    background-color: $box-bg-color;
 }
 
 %sub-container {
@@ -28,13 +18,8 @@
     padding-right: 5%;
     display: flex;
     flex-direction: column;
+    background-color: $box-bg-color;
 }
-
-%portfolio-header {
-    display: flex;
-    flex-direction: column;
-}
-
 
 %project-buttons {
     padding: 5px 8px;
@@ -43,4 +28,13 @@
     margin-bottom: 10px;
     letter-spacing: 2px;
 }
+
+%hr {
+    background-color: $text-color;
+    height: 1px;
+    width: 100%;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
 
