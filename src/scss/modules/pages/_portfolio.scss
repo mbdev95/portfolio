@@ -17,22 +17,31 @@
     }
 
     &--header {
-        width: 100%;
-        padding-left: 5%;
-        padding-right: 5%;
+        @extend %sub-container;
+        padding-top: 12px;
         h1 {
             margin: 10px 0px;
             @media (min-width: $brkpoint-md) and (max-width: $brkpoint-lg) {
                 width: 55%;
-                text-align: start;
             }
         }
 
         &--nav {
             @include nav;
             @media (min-width: $brkpoint-md) and (max-width: $brkpoint-lg) {
-                width: 40%;
+                width: 42%;
             }
+            button[type='button'] {
+                @media (min-width: $brkpoint-md) and (max-width: $brkpoint-lg) {
+                    margin-bottom: 0px;
+                } 
+            }
+        }
+
+        @media (min-width: $brkpoint-md) and (max-width: $brkpoint-lg) {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
     }
 

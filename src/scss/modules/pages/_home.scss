@@ -8,6 +8,7 @@
     @extend %main-container;
     letter-spacing: 2px;
     overflow-y: auto;
+    background-color: $box-bg-color;
 
     hr {
         @extend %hr;
@@ -140,6 +141,7 @@
 
     @include mq('medium') {
         overflow-y: hidden;
+        background-color: transparent;
     }
     
 }

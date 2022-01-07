@@ -10,12 +10,33 @@
     
     &--header {
         @extend %sub-container;
+        padding-top: 12px;
         h1 {
             margin-top: 10px;
             margin-bottom: 10px;
         }
+
         &--nav {
-            @include nav; 
+            @include nav;
+            @media (min-width: $brkpoint-md) and (max-width: $brkpoint-lg) {
+                width: 42%;
+            }
+            button[type='button'] {
+                @media (min-width: $brkpoint-md) and (max-width: $brkpoint-lg) {
+                    margin-bottom: 0px;
+                } 
+            }
         }
+
+        @media (min-width: $brkpoint-md) and (max-width: $brkpoint-lg) {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    &--main {
+        @extend %sub-container;
+        text-align: start;
     }
 }

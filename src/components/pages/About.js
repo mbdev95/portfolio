@@ -9,7 +9,11 @@ const About = () => {
                     <Link exact='true' to='/'><button type="button" >Home</button></Link>
                     <Link to='/portfolio'><button type="button" >Portfolio</button></Link>
                 </div>
+            </div>
+            <div className='about--main'>
                 <hr/>
+                <br/>
+                <p>This is the start of the about section...</p>
             </div>
         </div>
     )
