@@ -1,4 +1,5 @@
-import {useEffect} from 'react';
+import {useEffect, useContext} from 'react';
+import { pageInfoContext } from '../context';
 import {Link} from 'react-router-dom';
 import ExpressFood from './portfolio/ExpressFood';
 import FilmFestival from './portfolio/FilmFestival';
@@ -19,10 +20,12 @@ const Portfolio = () => {
         projectHeightCalculator();
     }, [] );
 
+    const h1Text = useContext(pageInfoContext).h1Text;
+
     return (
         <div className='portfolio'>
             <div className='portfolio--header'>
-                <h1>Mark's Portfolio</h1>
+                {h1Text('portfolio')}
                 <div className='portfolio--header--nav'>
                     <Link exact='true' to='/' ><button type='button' >Home</button></Link>
                     <Link to='/about'><button type='button' >About</button></Link>

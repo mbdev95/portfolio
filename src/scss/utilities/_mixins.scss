@@ -66,10 +66,6 @@
     button:active {
         background-color: transparent;
     }
-
-    button:first-of-type {
-        margin-bottom: 10px;
-    }
 }
 
 // A mixin for styling each project in the portfolio
@@ -99,6 +95,14 @@
         }
 
         @include lists;
+
+        a[href^='https://github.com/mbdev95'] button {
+            margin-bottom: 10px;
+        }
+
+        // #OrwellianRandomQuoteGenerator {
+        //     margin-bottom: 10px;
+        // }
 
         button {
             border-radius: 500px;

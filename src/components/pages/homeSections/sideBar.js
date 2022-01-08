@@ -1,7 +1,8 @@
 import linkedIn from '../../../img/socialMediaIcons/linkedin.png';
 import GitHub from '../../../img/socialMediaIcons/github.png';
 import resume from '../../../img/socialMediaIcons/resume.png';
-import {useEffect} from 'react';
+import {useEffect, useContext} from 'react';
+import { pageInfoContext } from '../../context';
 import {Link} from 'react-router-dom';
 
 const SideBar = () => {
@@ -25,17 +26,19 @@ const SideBar = () => {
 
     document.addEventListener('resize', () => homeProfileHeight());
 
+    const h1Text = useContext(pageInfoContext).h1Text;
+
     return (
         <>
             <div className='home--header'>
-                <h1>Mark Bucholski</h1>
+                {h1Text('home')}
                 <div className='home--header--nav'>
                     <Link to='/portfolio'><button type='button' >Portfolio</button></Link>
                     <Link to='/about'><button type='button' >About</button></Link>
                 </div>
                 <hr/>
             </div>
-            <div className='home--profile .large-profile-height'>
+            <div className='home--profile'>
                 <p>-- A Software engineer from a galaxy up north --</p>
                 <hr/>
                 <p>Educated with a diploma in Front-End Web Development from <a href='https://openclassrooms.com/en/about-us' target='_blank' rel='noreferrer'>OpenClassrooms</a>.</p>

@@ -4,7 +4,6 @@
 }
 
 .home {
-    @include buttons;
     @extend %main-container;
     letter-spacing: 2px;
     overflow-y: auto;
@@ -18,33 +17,34 @@
         @extend %sub-container;
         border-radius: 5px 5px 0 0;
 
-        h1 {
-            text-align: center;
-            margin: 12px;
-        }
-
         &--nav {
             @include nav;
+            @include buttons;
             a {
                 @media (max-width: 300px) {
                     width: auto;
                 }
                 @media (min-width: $brkpoint-md) and (max-width: $brkpoint-lg) {
                     width: 100%;
+                    &:first-of-type button[type='button'] {
+                        margin-bottom: 10px;
+                    }  
                 }
             }
+
             button {
                 @media (min-width: $brkpoint-md) and (max-width: $brkpoint-lg) {
                     border-radius: 0%;
                 }
-            }
+            }  
+
             @media (min-width: $brkpoint-md) and (max-width: $brkpoint-lg) {
                 display: block;
             }
         }
 
         @include mq('medium') {
-            @include home-sideBar;            
+            @include home-sideBar;         
         }
     }
 
@@ -52,6 +52,8 @@
         @extend %sub-container;
         border-radius: 0 0 5px 5px;
         min-height: var(--min-home-profile-height);
+        display: flex;
+        flex-direction: column;
         justify-content: var(--justify-content-home-profile);
         
         p {

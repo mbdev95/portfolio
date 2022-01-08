@@ -22,16 +22,17 @@
     padding: 5px 8px;
     color: $text-color;
     border: 1px solid white;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     letter-spacing: 2px;
 }
 
 %hr {
     background-color: $text-color;
     height: 1px;
-    width: 100%;
+    width: 99%;
     margin-top: 12px;
     margin-bottom: 12px;
+    padding-left: 0.5px;
 }
 
 
