@@ -40,9 +40,12 @@
     &--main {
         @extend %sub-container;
         text-align: start;
+        overflow-y: auto;
+
         hr:first-of-type {
             @extend %hr;
         }
+
         p:first-of-type {
             margin-top: 22.5px;
         }

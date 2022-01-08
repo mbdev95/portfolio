@@ -32,10 +32,10 @@ const SideBar = () => {
         <>
             <div className='home--header'>
                 {h1Text('home')}
-                <div className='home--header--nav'>
+                <nav className='home--header--nav'>
                     <Link to='/portfolio'><button type='button' >Portfolio</button></Link>
                     <Link to='/about'><button type='button' >About</button></Link>
-                </div>
+                </nav>
                 <hr/>
             </div>
             <div className='home--profile'>

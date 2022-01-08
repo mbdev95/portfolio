@@ -26,13 +26,13 @@ const Portfolio = () => {
         <div className='portfolio'>
             <div className='portfolio--header'>
                 {h1Text('portfolio')}
-                <div className='portfolio--header--nav'>
+                <nav className='portfolio--header--nav'>
                     <Link exact='true' to='/' ><button type='button' >Home</button></Link>
                     <Link to='/about'><button type='button' >About</button></Link>
-                </div>
+                </nav>
+                <hr/>
             </div>
             <div className='projects'>
-                <hr/>
                 <WarOfWeapons />
                 <RestaurantReviewLocator /> 
                 <FilmFestival />

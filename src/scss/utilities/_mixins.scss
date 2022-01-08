@@ -70,7 +70,6 @@
 
 // A mixin for styling each project in the portfolio
 @mixin project {
-    &--project {
         h2 {
             margin-top: 10px;
             margin-bottom: 5px;
@@ -99,10 +98,6 @@
         a[href^='https://github.com/mbdev95'] button {
             margin-bottom: 10px;
         }
-
-        // #OrwellianRandomQuoteGenerator {
-        //     margin-bottom: 10px;
-        // }
 
         button {
             border-radius: 500px;
@@ -140,7 +135,7 @@
                 width: 66%;
             }
         }
-    }
+    
 }
 
 @mixin previewProjects {

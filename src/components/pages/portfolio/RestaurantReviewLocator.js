@@ -5,9 +5,6 @@ import { useContext } from 'react';
 import { pageInfoContext } from '../../context';
 
 const RestaurantReviewLocator = () => {
-
-    const context = useContext(pageInfoContext);
-
     return (
         <div className='portfolio--project' id='RestaurantReviewLocator' >
             <hr/>

@@ -10,15 +10,16 @@ const About = () => {
         <div className="about">
             <div className='about--header'>
                 {h1Text('about')}
-                <div className='about--header--nav'>
+                <nav className='about--header--nav'>
                     <Link exact='true' to='/'><button type="button" >Home</button></Link>
                     <Link to='/portfolio'><button type="button" >Portfolio</button></Link>
-                </div>
+                </nav>
             </div>
             <div className='about--main'>
                 <hr/>
                 <p>This is the start of the about section...</p>
                 <p>Hi my name is Mark!</p>
+                <p>eeeeeeeeeeeeeeeeeeeeeeeeeeeeeejjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiieeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeehhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhsssssssssssssssssssssssssssssssssssssssssssss</p>
             </div>
         </div>
     )
