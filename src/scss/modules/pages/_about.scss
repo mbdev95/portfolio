@@ -3,6 +3,11 @@
     @include buttons;
     overflow-y: visible;
     background-color: $box-bg-color;
+
+    
+    hr:first-of-type {
+        @extend %hr;
+    }
     
     &--header {
         @extend %sub-container;
@@ -41,10 +46,6 @@
         @extend %sub-container;
         text-align: start;
         overflow-y: auto;
-
-        hr:first-of-type {
-            @extend %hr;
-        }
 
         p:first-of-type {
             margin-top: 22.5px;

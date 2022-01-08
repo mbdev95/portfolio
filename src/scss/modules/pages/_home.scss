@@ -9,16 +9,17 @@
     letter-spacing: 2px;
     overflow-y: auto;
     background-color: $box-bg-color;
-
-    hr {
-        @extend %hr;
-    }
     
     &--header {
-        @extend %sub-container;
         border-radius: 5px 5px 0 0;
+        padding-bottom: 10px;
+
+        h1 {
+            @extend %sub-container;
+        }
         
         &--nav {
+            @extend %sub-container;
             @include nav;
             @include buttons;
             a {
@@ -31,14 +32,14 @@
                         margin-bottom: 10px;
                     }  
                 }
-            }
-
-            button {
-                @media (min-width: $brkpoint-md) and (max-width: $brkpoint-lg) {
-                    border-radius: 0%;
+                button[type='button'] {
+                    margin-bottom: 6px !important;
+                    @media (min-width: $brkpoint-md) and (max-width: $brkpoint-lg) {
+                        border-radius: 0%;
+                    }
                 }
-            }  
-
+            }
+            
             @media (min-width: $brkpoint-md) and (max-width: $brkpoint-lg) {
                 display: block;
             }
@@ -47,6 +48,12 @@
         @include mq('medium') {
             @include home-sideBar;         
         }
+
+        hr {
+            width: 99%;
+            background-color: $text-color;
+        }
+
     }
 
     &--profile {
@@ -57,7 +64,12 @@
         flex-direction: column;
         justify-content: var(--justify-content-home-profile);
         overflow-y: auto;
-        
+        overflow-x: hidden;
+
+        hr {
+            @extend %hr;
+        }
+
         p {
             margin-top: 0px;
             margin-bottom: 0px;

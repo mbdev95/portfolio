@@ -30,8 +30,8 @@ const Portfolio = () => {
                     <Link exact='true' to='/' ><button type='button' >Home</button></Link>
                     <Link to='/about'><button type='button' >About</button></Link>
                 </nav>
-                <hr/>
             </div>
+            <hr/>
             <div className='projects'>
                 <WarOfWeapons />
                 <RestaurantReviewLocator /> 
