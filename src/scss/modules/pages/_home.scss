@@ -1,7 +1,6 @@
 :root {
     --min-home-profile-height: auto;
     --justify-content-home-profile: none;
-    // --header-height: '';
 }
 
 .home {
@@ -28,15 +27,17 @@
                 }
                 @media (min-width: $brkpoint-md) and (max-width: $brkpoint-lg) {
                     width: 100%;
-                    &:first-of-type button[type='button'] {
-                        margin-bottom: 10px;
-                    }  
-                }
-                button[type='button'] {
-                    margin-bottom: 6px !important;
-                    @media (min-width: $brkpoint-md) and (max-width: $brkpoint-lg) {
-                        border-radius: 0%;
+                    button {
+                    border-radius: 0%;
                     }
+
+                    &:first-of-type button {
+                        margin-bottom: 10px;
+                    }
+
+                    &:last-of-type button {
+                        margin-bottom: 5px;
+                    }  
                 }
             }
             
@@ -52,6 +53,7 @@
         hr {
             width: 99%;
             background-color: $text-color;
+            margin-top: 12px;
         }
 
     }

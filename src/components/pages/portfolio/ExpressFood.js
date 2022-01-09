@@ -19,7 +19,9 @@ const ExpressFood = () => {
                 <li key={1}>MySQL</li>
                 <li key={2}>UML Diagrams</li>
             </ul>
-            <a href='https://github.com/mbdev95/OpenClassrooms-Project-4-Database-For-Express-Food/blob/master/README.md' target='_blank' rel='noreferrer'><button type='button'>Application Explanation</button></a>
+            <a href='https://github.com/mbdev95/OpenClassrooms-Project-4-Database-For-Express-Food/blob/master/README.md' target='_blank' rel='noreferrer'>
+                <button type='button'>Application Explanation</button>
+            </a>
         </div>
     );
 }

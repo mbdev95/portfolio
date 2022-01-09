@@ -24,7 +24,7 @@
                 }
             }
             @include nav;
-            @media (min-width: $brkpoint-md) and (max-width: $brkpoint-lg) {
+            @media (min-width: $brkpoint-md) {
                 width: 42%;
             }
             button[type='button'] {
@@ -34,7 +34,7 @@
             }
         }
 
-        @media (min-width: $brkpoint-md) and (max-width: $brkpoint-lg) {
+        @media (min-width: $brkpoint-md) {
             display: flex;
             justify-content: space-between;
             align-items: center;
