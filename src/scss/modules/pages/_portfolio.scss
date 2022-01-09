@@ -43,6 +43,10 @@
             align-items: center;
             padding-top: 12px;
         }
+
+        @media (min-width: $brkpoint-lg) {
+            @include socialMediaInHeader(30%, 25%);
+        }
     }
 
     & > .projects {

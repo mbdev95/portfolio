@@ -20,12 +20,13 @@ const Portfolio = () => {
         projectHeightCalculator();
     }, [] );
 
-    const h1Text = useContext(pageInfoContext).h1Text;
+    const context = useContext(pageInfoContext);
 
     return (
         <div className='portfolio'>
             <div className='portfolio--header'>
-                {h1Text('portfolio')}
+                {context.h1Text('portfolio')}
+                {context.socialMediaInHeader('portfolio')}
                 <nav className='portfolio--header--nav'>
                     <Link exact='true' to='/' ><button type='button' >Home</button></Link>
                     <Link to='/about'><button type='button' >About</button></Link>

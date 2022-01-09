@@ -264,6 +264,31 @@
     }
 }
 
+@mixin socialMediaInHeader($socialMediaNavWidth, $mainNavWidth) {
+    h1 {
+        width: auto;
+    }
+
+    &--socialMedia {
+        display: flex;
+        justify-content: space-evenly;
+        width: 30%;
+        margin-top: 5px;
+    }
+
+    &--socialMedia a {
+        width: $socialMediaNavWidth;
+    }
+
+    &--socialMedia a img {
+        width: 40%;
+    }
+
+    &--nav {
+        width: $mainNavWidth;
+    }
+}
+
 // A media query mixin creator to create media query statements.
 @mixin mq($break) {
     @if $break == 'small' {

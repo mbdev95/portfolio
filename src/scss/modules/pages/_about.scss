@@ -8,6 +8,10 @@
     hr:first-of-type {
         @extend %hr;
     }
+
+    p:first-of-type {
+        margin-top: 7px;
+    }
     
     &--header {
         @extend %sub-container;
@@ -40,15 +44,15 @@
             align-items: center;
             padding-top: 12px;
         }
+
+        @media (min-width: $brkpoint-lg) {
+            @include socialMediaInHeader(30%, 35%);
+        }
     }
 
     &--main {
         @extend %sub-container;
         text-align: start;
         overflow-y: auto;
-
-        p:first-of-type {
-            margin-top: 22.5px;
-        }
     }
 }
