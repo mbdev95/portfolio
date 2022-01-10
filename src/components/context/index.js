@@ -67,10 +67,24 @@ export const Provider = (props) => {
         }
     }
 
+    const numberOfStars = () => {
+        let numberOfStars = 0;
+        if ( viewportWidth < 480 ) {
+            numberOfStars = 60;
+        } else if ( viewportWidth >= 480 && viewportWidth <= 768 ) {
+            numberOfStars = 115;
+        } else if ( viewportWidth > 768 && viewportWidth <= 1025 ) {
+            numberOfStars = 170;
+        } else {
+            numberOfStars = 250;
+        }
+        return numberOfStars;
+    }
+
     return (
         <>
             <pageInfoContext.Provider value={ {
-                numberOfStars: 250,
+                numberOfStars: numberOfStars,
                 projectPhotoSelector: projectPhotoSelector,
                 isLargeViewport: isLargeViewport(),
                 h1Text: h1Text,

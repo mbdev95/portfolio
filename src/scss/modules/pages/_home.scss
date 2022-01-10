@@ -77,8 +77,12 @@
             margin-bottom: 0px;
         }
 
+        p a[href^='https://openclassrooms.com/'] {
+            color: rgb(204, 93, 49);
+        }
+
         p a:hover {
-            color: rgb(131, 75, 180);
+            color: rgb(201, 136, 110);
         }
 
         &--socialMedia {

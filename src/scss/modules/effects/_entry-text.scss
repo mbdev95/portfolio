@@ -28,19 +28,24 @@
         opacity: 1;
     }
 
+    @include vanishingLetters;
+
     @include mq('small') {
         font-size: 3.8em;
     }
+
     @include mq('medium') {
         margin-left: 0.5%;
         font-size: 4.75em;
         margin-left: 15%;
         margin-right: 15%;
     }
+
     @include mq('large') {
         font-size: 5.8em;
         margin-top: 0%;
     }
+
     @include mq('extra-large') {
         font-size: 6.3em;
     }
@@ -50,6 +55,5 @@
         perspective: 1000px;
         margin-left: 1%;
     }
-    @include vanishingLetters;
 }
 
