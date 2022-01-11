@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import linkedIn from '../../img/socialMediaIcons/linkedin.png';
 import GitHub from '../../img/socialMediaIcons/github.png';
 import resume from '../../img/socialMediaIcons/resume.png';
@@ -7,9 +7,8 @@ export const pageInfoContext = React.createContext();
 
 export const Provider = (props) => {
     
-    const [viewportWidth, setViewportWidth] = useState(document.documentElement.clientWidth);
-    window.addEventListener('resize', () => setViewportWidth(document.documentElement.clientWidth) );
-    
+    const viewportWidth = document.documentElement.clientWidth;
+
     const isLargeViewport = () => { 
         if ( viewportWidth >= 1025 ) {
             return true;
@@ -67,18 +66,26 @@ export const Provider = (props) => {
         }
     }
 
-    const numberOfStars = () => {
+    const numberOfStars = (vw) => {
         let numberOfStars = 0;
-        if ( viewportWidth < 480 ) {
+        if ( vw < 480 ) {
             numberOfStars = 60;
-        } else if ( viewportWidth >= 480 && viewportWidth <= 768 ) {
+        } else if ( vw >= 480 && vw <= 768 ) {
             numberOfStars = 115;
-        } else if ( viewportWidth > 768 && viewportWidth <= 1025 ) {
+        } else if ( vw > 768 && vw <= 1025 ) {
             numberOfStars = 170;
         } else {
             numberOfStars = 250;
         }
         return numberOfStars;
+    }
+
+    const starsCreator = (vw, isResized) => {
+        let stars = [];
+        for (let i = 1; i < numberOfStars(vw) + 1; i++) {
+            isResized ? stars.push(<div className={`star--${i}`} key={i}></div>) : stars.push(<div className={`star--${i} star--${i}__start-animation`} key={i}></div>);
+        }
+        return stars;
     }
 
     return (
@@ -88,7 +95,9 @@ export const Provider = (props) => {
                 projectPhotoSelector: projectPhotoSelector,
                 isLargeViewport: isLargeViewport(),
                 h1Text: h1Text,
-                socialMediaInHeader: socialMediaInHeader
+                socialMediaInHeader: socialMediaInHeader,
+                starsCreator: starsCreator,
+                numberOfStars: numberOfStars
             } }>
                 {props.children}
             </pageInfoContext.Provider>

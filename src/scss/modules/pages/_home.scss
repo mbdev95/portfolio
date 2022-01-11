@@ -6,7 +6,6 @@
 .home {
     @extend %main-container;
     letter-spacing: 2px;
-    overflow-y: auto;
     background-color: $box-bg-color;
     
     &--header {
@@ -146,7 +145,7 @@
                 margin-bottom: 10px;
             }
 
-            @media (max-height: 768px) {
+            @media (max-height: 710px) {
                 &--skills, & p:last-of-type, & hr:last-of-type {
                     display: none;
                 }

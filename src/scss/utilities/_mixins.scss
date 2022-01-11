@@ -312,6 +312,6 @@
         }
     }
     @else {
-        @error 'Whoops! No value could be retrieved for `#{$break}`. '
+        @error 'No value could be retrieved for `#{$break}`. '
     }
 }
