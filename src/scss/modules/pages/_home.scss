@@ -120,15 +120,18 @@
 
         @include lists;
 
+        @media (max-height: 450px) {
+            font-size: 0.9em;
+            justify-content: normal;
+
+            a {
+                width: 10%;
+            }
+
+        }
+
         @include mq('medium') {
             @include home-sideBar;
-
-            @media (max-height: 450px) {
-                font-size: 0.8em;
-                a {
-                    width: 15%;
-                }
-            }
 
             @media (max-width: 1024px) and (max-height: 975px) {
                 &--skills, & p:last-of-type, & hr:last-of-type {

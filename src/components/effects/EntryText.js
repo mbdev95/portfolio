@@ -23,21 +23,21 @@ const EntryText = () => {
         }
     }
 
+    const entryText = () => {
+        const entryString = "HI, I'M MARK! A COMPUTER SOFTWARE ENGINEER";
+        return entryString.split('').map((letter, index) => <span key={index}>{letter}</span>);
+    }
+
     useEffect(() => { 
         fadeTextIn();
-        setTimeout(() => fadeTextOut(), 4500); 
-        setTimeout(() => document.getElementsByClassName('entryText')[0].remove(), 6500);
+        const fadeOutTimeOut = setTimeout(() => fadeTextOut(), 4500); 
+        const removeTextClassTimeOut = setTimeout(() => document.getElementsByClassName('entryText')[0].remove(), 6500);
+        return () => clearTimeout(fadeOutTimeOut, removeTextClassTimeOut);
     }, []);
 
     return (
         <div className='entryText'>
-            <span>H</span><span>I</span><span>,</span><span>{' '}</span><span>I</span><span>'</span>
-            <span>M</span><span>{' '}</span><span>M</span><span>A</span><span>R</span><span>K</span><span>!</span>
-            <span>{' '}</span><span>A</span><span>{' '}</span><span>C</span><span>O</span><span>M</span><span>P</span>
-            <span>U</span><span>T</span><span>E</span><span>R</span><span>{' '}</span><span>S</span>
-            <span>O</span><span>F</span><span>T</span><span>W</span><span>A</span><span>R</span>
-            <span>E</span><span>{' '}</span><span>E</span><span>N</span><span>G</span><span>I</span>
-            <span>N</span><span>E</span><span>E</span><span>R</span>
+            {entryText()}
         </div>
     );
 }
