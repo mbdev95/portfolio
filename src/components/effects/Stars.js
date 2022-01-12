@@ -9,13 +9,13 @@ const Stars = () => {
     const [resizedViewportStars, setResizedViewportStars] = useState(null);
 
     window.onresize = () => {
-        setResizedViewportStars(starsCreator(document.documentElement.clientWidth, true));
+        setResizedViewportStars(starsCreator(document.documentElement.clientWidth, document.documentElement.clientHeight, true));
         starPosition();
         shooting();
     } 
 
     const shooting = () => {
-        for (let i = 1; i < numberOfStars(document.documentElement.clientWidth) + 1; i++) {
+        for (let i = 1; i < numberOfStars(document.documentElement.clientWidth, document.documentElement.clientHeight) + 1; i++) {
             const randomStarSpeed = Math.floor(Math.random() * 25) + 5;
             const randomStarDelay = Math.floor(Math.random() * 10);
             const randomTwinkleSpeed = Math.floor(Math.random() * 7) + 2;
@@ -33,7 +33,7 @@ const Stars = () => {
         const body = document.getElementsByTagName('BODY')[0];
         const html = document.getElementsByTagName('HTML')[0];
         const totalPageHeight = Math.max(html.scrollHeight, body.scrollHeight, html.clientHeight, body.offsetHeight, html.offsetHeight);
-        for (let i = 1; i < numberOfStars(document.documentElement.clientWidth) + 1; i++) {
+        for (let i = 1; i < numberOfStars(document.documentElement.clientWidth, document.documentElement.clientHeight) + 1; i++) {
             const pageHeight = Math.floor(Math.random() * totalPageHeight);
             const star = document.getElementsByClassName(`star--${i}`)[0];
             star.style.setProperty('--percentage-below-top', pageHeight + 'px');
@@ -42,19 +42,21 @@ const Stars = () => {
 
     useEffect(() => {
         starPosition();
-        setTimeout(() => {
-            for (let i = 1; i < numberOfStars(document.documentElement.clientWidth) + 1; i++) {
+        const starTimeout = setTimeout(() => {
+            for (let i = 1; i < numberOfStars(document.documentElement.clientWidth, document.documentElement.clientHeight) + 1; i++) {
                 const star = document.getElementsByClassName(`star--${i}`)[0];
                 star.classList.remove(`star--${i}__start-animation`);
             }
             shooting();
-        }, 5400);
-        return () => clearTimeout();
+        }, 5500);
+        return () => clearTimeout(starTimeout);
     }, [])
 
     return (
         <>
-            { resizedViewportStars ? resizedViewportStars.map(star => star) : starsCreator(document.documentElement.clientWidth, false) }
+            <div  className='stars'>
+                { resizedViewportStars ? resizedViewportStars.map(star => star) : starsCreator(document.documentElement.clientWidth, document.documentElement.clientHeight, false) }
+            </div>
         </>
     )
 }

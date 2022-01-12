@@ -32,6 +32,9 @@
 
     @include mq('small') {
         font-size: 3.8em;
+        @media (max-height: 600px) {
+            font-size: 2.5em;
+        }
     }
 
     @include mq('medium') {
@@ -39,6 +42,9 @@
         font-size: 4.75em;
         margin-left: 15%;
         margin-right: 15%;
+        @media (max-height: 600px) {
+            font-size: 2.8em;
+        }
     }
 
     @include mq('large') {

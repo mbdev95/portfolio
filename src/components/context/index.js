@@ -18,7 +18,7 @@ export const Provider = (props) => {
     }
 
     const projectPhotoSelector = (logoImage, applicationImageMedium, applicationImageLarge) => {
-        if ( ( viewportWidth >= 768 && viewportWidth < 1200 ) || ( applicationImageLarge === null && viewportWidth >= 768 ) ) {
+        if ( ( viewportWidth >= 700 && viewportWidth < 1200 ) || ( applicationImageLarge === null && viewportWidth >= 768 ) ) {
             return applicationImageMedium;
         } else if ( viewportWidth >= 1200 && applicationImageLarge !== null ) {
             return applicationImageLarge
@@ -30,9 +30,10 @@ export const Provider = (props) => {
         const body = document.getElementsByTagName('BODY')[0];
         const html = document.getElementsByTagName('HTML')[0];
         const totalPageWidth = Math.max(html.scrollWidth, body.scrollWidth, html.clientWidth, body.offsetWidth, html.offsetWidth);
-        if (totalPageWidth > 400 && page === 'home') {
+        const totalPageHeight = Math.max(html.scrollHeight, body.scrollHeight, html.clientHeight, body.offsetHeight, html.offsetHeight);
+        if ((totalPageWidth > 400 && totalPageHeight > 600 ) && page === 'home' ) {
             return <h1>Mark Bucholski</h1>
-        } else if (totalPageWidth < 400 && page === 'home') {
+        } else if ((totalPageWidth < 400 || totalPageHeight <= 600 )  && page === 'home') {
             return <h1>Mark</h1>
         } else if (totalPageWidth > 420 && page === 'portfolio') {
             return <h1>Mark's Portfolio</h1>
@@ -66,10 +67,12 @@ export const Provider = (props) => {
         }
     }
 
-    const numberOfStars = (vw) => {
+    const numberOfStars = (vw, vh) => {
         let numberOfStars = 0;
         if ( vw < 480 ) {
             numberOfStars = 60;
+        } else if ( vw < 1000 && vh < 450 ) {
+            numberOfStars = 85;
         } else if ( vw >= 480 && vw <= 768 ) {
             numberOfStars = 115;
         } else if ( vw > 768 && vw <= 1025 ) {
@@ -80,9 +83,9 @@ export const Provider = (props) => {
         return numberOfStars;
     }
 
-    const starsCreator = (vw, isResized) => {
+    const starsCreator = (vw, vh, isResized) => {
         let stars = [];
-        for (let i = 1; i < numberOfStars(vw) + 1; i++) {
+        for (let i = 1; i < numberOfStars(vw, vh) + 1; i++) {
             isResized ? stars.push(<div className={`star--${i}`} key={i}></div>) : stars.push(<div className={`star--${i} star--${i}__start-animation`} key={i}></div>);
         }
         return stars;

@@ -22,7 +22,7 @@
                 position: absolute;
                 left: math.floor(math.random() * 100%);
                 animation: twinkle 3.5s ease-out, 
-                disappearing 2s ease-out 3.5s; 
+                disappearing 2.2s ease-out 3.5s; 
             }
 // An animation for causing stars to shoot infinitely across the page and restart at the left side of the page once the star reaches the right edge of the page
             &__shooting {
@@ -290,14 +290,14 @@
 }
 
 // A media query mixin creator to create media query statements.
-@mixin mq($break, $orientation: 'portrait') {
+@mixin mq($break) {
     @if $break == 'small' {
-        @media (min-width: $brkpoint-sm) and (orientation: $orientation) {
+        @media (min-width: $brkpoint-sm) {
             @content;
         }
     }
     @else if $break == 'medium' {
-        @media (min-width: $brkpoint-md) and (orientation: $orientation) {
+        @media (min-width: $brkpoint-md) {
             @content;
         }
     }

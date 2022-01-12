@@ -13,14 +13,22 @@ const SideBar = () => {
         const totalPageHeight = Math.max(html.scrollHeight, body.scrollHeight, html.clientHeight, body.offsetHeight, html.offsetHeight);
         const homeHeaderHeight = document.getElementsByClassName('home--header')[0].offsetHeight;
         const minProfileHeight = Math.round((totalPageHeight * 0.9) - homeHeaderHeight);
-        const homeProfileHeight = document.getElementsByClassName('home--profile')[0].offsetHeight;
+        const homeProfileHeight = document.getElementsByClassName('home--profile')[0].clientHeight;
         if ( homeProfileHeight < minProfileHeight ) {
             document.getElementsByClassName('home--profile')[0].style.setProperty('--min-home-profile-height', minProfileHeight + 'px');
             document.getElementsByClassName('home--profile')[0].style.setProperty('--justify-content-home-profile', 'space-evenly');
         }
     }
 
+    const socialMediaIconsWidth = () => {
+        const socialMediaWidth = document.getElementsByClassName('home--profile--socialMedia')[0].offsetWidth;
+        if ( socialMediaWidth > 300 ) {
+            document.getElementsByClassName('home--profile--socialMedia')[0].style.setProperty('--social-media-a-width', 10 + '%');
+        }
+    }
+
     useEffect(() => {
+        socialMediaIconsWidth();
         homeProfileHeight();
     }, []);
 
