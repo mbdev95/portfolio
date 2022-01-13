@@ -1,14 +1,14 @@
-// import cssLogo from '../../../img/programmingLogos/css.png';
-// import BrooklynBridgeFilmFestival from '../../../img/applications/BrooklynBridgeFilmFestival.png';
-// import { useContext } from 'react';
-// import { pageInfoContext } from '../../context';
+import cssLogo from '../../../img/programmingLogos/css.png';
+import BrooklynBridgeFilmFestival from '../../../img/applications/universal/BrooklynBridgeFilmFestival.png';
+import { useContext } from 'react';
+import { pageInfoContext } from '../../context';
 
 const FilmFestival = () => {
     return (
         <div className='portfolio--project' id='BrooklynBridgeFilmFestival' >
             <hr/>
             <h2>Brooklyn Bridge Film Festival</h2>
-            {/* {useContext(pageInfoContext).projectPhotoSelector(<img src={cssLogo} alt='CSS3 Logo' />, <img src={BrooklynBridgeFilmFestival} alt='Brooklyn Bridge Film Festival 3D Cubes' />, null)} */}
+            {useContext(pageInfoContext).projectPhotoSelector(<img src={cssLogo} alt='CSS3 Logo' />, <img src={BrooklynBridgeFilmFestival} alt='Brooklyn Bridge Film Festival 3D Cubes' />, null)}
             <p>I created a marketing page for the fictitious Brooklyn Bridge Film Festival using HTML5, CSS3, and Bootstrap.</p>
             <h3>Skills Used:</h3>
             <ul>
