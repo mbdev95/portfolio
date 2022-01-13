@@ -29,10 +29,10 @@ const EntryText = () => {
     }
 
     useEffect(() => { 
-        fadeTextIn();
+        const fadeTextInTimeOut = setTimeout(() => fadeTextIn(), 500);
         const fadeOutTimeOut = setTimeout(() => fadeTextOut(), 4500); 
         const removeTextClassTimeOut = setTimeout(() => document.getElementsByClassName('entryText')[0].remove(), 6500);
-        return () => clearTimeout(fadeOutTimeOut, removeTextClassTimeOut);
+        return () => clearTimeout(fadeTextInTimeOut, fadeOutTimeOut, removeTextClassTimeOut);
     }, []);
 
     return (
