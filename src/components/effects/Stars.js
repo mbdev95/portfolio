@@ -41,7 +41,7 @@ const Stars = () => {
     }, [numberOfStars])
 
     useEffect(() => {
-        const starPositionTimeOut = setTimeout(() => starPosition(), 500);
+        starPosition();
         const starTimeout = setTimeout(() => {
             for (let i = 1; i < numberOfStars(document.documentElement.clientWidth, document.documentElement.clientHeight) + 1; i++) {
                 const star = document.getElementsByClassName(`star--${i}`)[0];
@@ -49,7 +49,7 @@ const Stars = () => {
             }
             shooting();
         }, 5500);
-        return () => clearTimeout(starPositionTimeOut, starTimeout);
+        return () => clearTimeout(starTimeout);
     }, [numberOfStars, starPosition, shooting])
 
     return (
