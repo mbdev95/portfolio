@@ -1,5 +1,5 @@
 import html5Logo from '../../../img/programmingLogos/html.png';
-import RandomQuotationGenerator from '../../../img/applications/RandomQuotationGenerator.png';
+import RandomQuotationGenerator from '../../../img/applications/universal/RandomQuotationGenerator.png';
 import { useContext } from 'react';
 import { pageInfoContext } from '../../context';
 

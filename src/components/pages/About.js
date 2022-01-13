@@ -18,6 +18,7 @@ const About = () => {
             </div>
             <hr/>
             <div className='about--main'>
+                <h1>Hello</h1>
                 <p>I have recently graduated from the online learning school, OpenClassrooms, with a diploma in web development.  The program involved creating a series of web applications, which were then presented virtually and assessed.  Each project involved a different aspect of web development including: mobile-first responsive web design, animations, SASS, object-oriented programming for JavaScript, MySQL databases, React, jQuery and Bootstrap.</p>
                 <p>I love computer programming for the problems it forces me to solve and the need for constant improvement through learning.  I enjoy dynamic work where the problems and solutions are constantly changing, keeping me on my toes.</p>
                 <p>I enjoy learning from those around me and achieving a common goal through focused work.  Furthermore, I learned programming in a mostly independent fashion, solving problems through efficient research, making me a quick learner.</p>

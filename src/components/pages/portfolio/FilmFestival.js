@@ -1,5 +1,5 @@
 import cssLogo from '../../../img/programmingLogos/css.png';
-import BrooklynBridgeFilmFestival from '../../../img/applications/BrooklynBridgeFilmFestival.png';
+import BrooklynBridgeFilmFestival from '../../../img/applications/universal/BrooklynBridgeFilmFestival.png';
 import { useContext } from 'react';
 import { pageInfoContext } from '../../context';
 

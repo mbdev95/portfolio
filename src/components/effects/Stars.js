@@ -1,4 +1,4 @@
-import {useEffect, useContext, useState} from 'react';
+import {useEffect, useContext, useState, useCallback} from 'react';
 import {pageInfoContext} from '../context';
 
 const Stars = () => {
@@ -14,7 +14,7 @@ const Stars = () => {
         shooting();
     } 
 
-    const shooting = () => {
+    const shooting = useCallback(() => {
         for (let i = 1; i < numberOfStars(document.documentElement.clientWidth, document.documentElement.clientHeight) + 1; i++) {
             const randomStarSpeed = Math.floor(Math.random() * 25) + 5;
             const randomStarDelay = Math.floor(Math.random() * 10);
@@ -27,9 +27,9 @@ const Stars = () => {
             star.style.setProperty(`--twinkle-speed`, randomTwinkleSpeed + 's');
             star.style.setProperty(`--twinkle-delay`, randomTwinkleDelay + 's');
         } 
-    }
+    }, [numberOfStars])
 
-    const starPosition = () => {
+    const starPosition = useCallback(() => {
         const body = document.getElementsByTagName('BODY')[0];
         const html = document.getElementsByTagName('HTML')[0];
         const totalPageHeight = Math.max(html.scrollHeight, body.scrollHeight, html.clientHeight, body.offsetHeight, html.offsetHeight);
@@ -38,7 +38,7 @@ const Stars = () => {
             const star = document.getElementsByClassName(`star--${i}`)[0];
             star.style.setProperty('--percentage-below-top', pageHeight + 'px');
         }
-    }
+    }, [numberOfStars])
 
     useEffect(() => {
         starPosition();
@@ -50,12 +50,12 @@ const Stars = () => {
             shooting();
         }, 5500);
         return () => clearTimeout(starTimeout);
-    }, [])
+    }, [numberOfStars, starPosition, shooting])
 
     return (
         <>
             <div  className='stars'>
-                { resizedViewportStars ? resizedViewportStars.map(star => star) : starsCreator(document.documentElement.clientWidth, document.documentElement.clientHeight, false) }
+                { resizedViewportStars ? resizedViewportStars : starsCreator(document.documentElement.clientWidth, document.documentElement.clientHeight, false) }
             </div>
         </>
     )

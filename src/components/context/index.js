@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import linkedIn from '../../img/socialMediaIcons/linkedin.png';
 import GitHub from '../../img/socialMediaIcons/github.png';
 import resume from '../../img/socialMediaIcons/resume.png';
@@ -100,7 +100,6 @@ export const Provider = (props) => {
                 h1Text: h1Text,
                 socialMediaInHeader: socialMediaInHeader,
                 starsCreator: starsCreator,
-                numberOfStars: numberOfStars
             } }>
                 {props.children}
             </pageInfoContext.Provider>
