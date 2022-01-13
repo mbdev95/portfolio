@@ -33,10 +33,12 @@ const Stars = () => {
         const body = document.getElementsByTagName('BODY')[0];
         const html = document.getElementsByTagName('HTML')[0];
         const totalPageHeight = Math.max(html.scrollHeight, body.scrollHeight, html.clientHeight, body.offsetHeight, html.offsetHeight);
+        console.log(totalPageHeight + ' ' + 'totalPageHeight for stars');
         for (let i = 1; i < numberOfStars(document.documentElement.clientWidth, document.documentElement.clientHeight) + 1; i++) {
-            const pageHeight = Math.floor(Math.random() * totalPageHeight);
+            const starYLocation = Math.floor(Math.random() * totalPageHeight);
+            console.log(starYLocation + ' ' + 'for star' + i);
             const star = document.getElementsByClassName(`star--${i}`)[0];
-            star.style.setProperty('--percentage-below-top', pageHeight + 'px');
+            star.style.setProperty('--percentage-below-top', starYLocation + 'px');
         }
     }, [numberOfStars])
 

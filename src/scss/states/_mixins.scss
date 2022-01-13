@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 // A mixin for making all the letters disappear into black hole
 @mixin vanishingLetters {
     @for $i from 1 through $number-intro-letters {
@@ -6,6 +8,39 @@
             top: var(--top-entry-letter);
             left: var(--left-entry-letter);
             animation: blackHoleLetters 1.5s linear forwards;
+        }
+    }
+}
+
+// A mixin to generate the stars
+@mixin starGenerator {
+    $star-colors-list: map-get($bg-colors, star-colors);
+    @for $i from 1 through $numberOfStars {
+        &--#{$i} {
+            position: absolute;
+            left: -5px;
+            top: var(--percentage-below-top);
+            width: math.random(2) * 1px;
+            height: math.random(2) * 1px;
+            border-radius: (math.random() * 10%) + 45%;
+            filter: blur(0.7px);
+            @each $starColor in $star-colors-list {
+                @if math.random(5) == index($star-colors-list, $starColor) {
+                    background-color: $starColor;
+                }
+            }
+// Animation for causing the star to twinkle and then become a shooting star
+            &__start-animation {
+                position: absolute;
+                left: math.floor(math.random() * 100%);
+                animation: twinkle 3.5s ease-out, 
+                disappearing 2.2s ease-out 3.5s; 
+            }
+// An animation for causing stars to shoot infinitely across the page and restart at the left side of the page once the star reaches the right edge of the page
+            &__shooting {
+                animation: shooting var(--star-speed) linear var(--star-delay) infinite backwards,
+                           twinkle var(--twinkle-speed) ease-out var(--twinkle-delay) infinite;
+            }
         }
     }
 }
