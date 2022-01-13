@@ -2,15 +2,13 @@
 
 // Variables for holding random values to randomize the vanishing of the initial letters
 :root {
-    --translate-x: 0;
-    --translate-y: 0;
     --top-entry-letter: 0;
     --left-entry-letter: 0;
 }
 
 @keyframes blackHoleLetters {
     100% {
-        transform: translate(var(--translate-x), var(--translate-y)) rotateZ(360deg) scale(0); 
+        transform: rotateZ(360deg) scale(0); 
     }
 }
 

@@ -14,14 +14,8 @@ const EntryText = () => {
 
     const fadeTextOut = () => {
         const introLetters = document.querySelectorAll('.entryText span');
-        const randomX = Math.floor(Math.random() * 90) + 10;
-        const randomY = Math.floor(Math.random() * 90) + 10;
-        console.log(randomX + ' ' + 'randomX for intro letters fading out');
-        console.log(randomY + ' ' + 'randomY for intro letters fading out');
         for ( let i = 0; i < introLetters.length; i++ ) {
             introLetters[i].classList.add(`entryText--${i + 1}__rotate-away`);
-            introLetters[i].style.setProperty('--translate-x', randomX + '%');
-            introLetters[i].style.setProperty('--translate-y', randomY + '%');
         }
     }
 
