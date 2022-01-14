@@ -11,7 +11,8 @@ const Stars = () => {
     window.onresize = () => {
         setResizedViewportStars(starsCreator(document.documentElement.clientWidth, document.documentElement.clientHeight, true));
         starPosition();
-        shooting();
+        // shooting();
+        console.log('resize');
     } 
 
     const shooting = useCallback(() => {
