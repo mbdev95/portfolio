@@ -8,7 +8,8 @@ const Stars = () => {
 
     const [resizedViewportStars, setResizedViewportStars] = useState(null);
 
-    window.addEventListener('resize', () => {
+    window.addEventListener('resize', (e) => {
+        console.log(e);
         setResizedViewportStars(starsCreator(document.documentElement.clientWidth, document.documentElement.clientHeight, true));
         starPosition();
         shooting();
