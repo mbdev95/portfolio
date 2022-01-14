@@ -10,7 +10,6 @@ const EntryText = () => {
         const introLetters = document.querySelectorAll('.entryText span');
         for ( let i = 0; i < introLetters.length; i++ ) {
             const location = introLetters[i].getBoundingClientRect();
-            console.log(location.top + ' ' + location.left);
             introLetters[i].style.setProperty('--top-entry-letter', location.top + 'px');
             introLetters[i].style.setProperty('--left-entry-letter', location.left + 'px');
         }
@@ -22,7 +21,7 @@ const EntryText = () => {
         return entryString.split('').map((letter, index) => <span key={index}>{letter}</span>);
     }
 
-    useEffect(() => { 
+    useEffect(() => {
         fadeTextIn();
         const fadeOutTimeOut = setTimeout(() => fadeTextOut(), 4500); 
         const removeTextClassTimeOut = setTimeout(() => document.getElementsByClassName('entryText')[0].remove(), 6500);
