@@ -45,17 +45,14 @@ const Stars = () => {
 
     useEffect(() => {
         starPosition();
-        const portfolio = document.getElementsByClassName('.portfolio')[0];
-        const starTimeout = setTimeout(() => {
-            if ( !portfolio ) {
+        const starRemoveStartTimeout = setTimeout(() => {
                 for (let i = 1; i < numberOfStars(document.documentElement.clientWidth, document.documentElement.clientHeight) + 1; i++) {
                     const star = document.getElementsByClassName(`star--${i}`)[0];
                     star.classList.remove(`star--${i}__start-animation`);
                 }
-                shooting();
-            }
         }, 5500);
-        return () => clearTimeout(starTimeout);
+        const startShootingStar = setTimeout(shooting, 5600);
+        return () => clearTimeout(starRemoveStartTimeout, startShootingStar);
     }, [numberOfStars, starPosition, shooting])
 
     return (
