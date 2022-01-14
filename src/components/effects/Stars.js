@@ -35,8 +35,6 @@ const Stars = () => {
         const body = document.getElementsByTagName('BODY')[0];
         const html = document.getElementsByTagName('HTML')[0];
         const totalPageHeight = html.clientHeight;
-        console.log(totalPageHeight + ' ' + 'totalPageHeight for stars');
-        console.log(`${html.scrollHeight} html.scrollHeight, ${body.scrollHeight} body.scrollHeight, ${html.clientHeight} html.clientHeight, ${body.offsetHeight} body.offsetHeight, ${html.offsetHeight} html.offsetHeight`);
         for (let i = 1; i < numberOfStars(document.documentElement.clientWidth, document.documentElement.clientHeight) + 1; i++) {
             const starYLocation = Math.floor(Math.random() * totalPageHeight);
             const star = document.getElementsByClassName(`star--${i}`)[0];

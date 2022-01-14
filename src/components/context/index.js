@@ -78,7 +78,7 @@ export const Provider = (props) => {
         } else if ( vw > 768 && vw <= 1025 ) {
             numberOfStars = 170;
         } else {
-            numberOfStars = 250;
+            numberOfStars = 225;
         }
         return numberOfStars;
     }
