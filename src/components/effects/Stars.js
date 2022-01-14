@@ -9,12 +9,10 @@ const Stars = () => {
     const [resizedViewportStars, setResizedViewportStars] = useState(null);
 
     window.addEventListener('resize', () => {
-        console.log('hi');
         if ( document.getElementsByClassName('star--1')[0].classList.contains('star--1__shooting') ) {
             setResizedViewportStars(starsCreator(document.documentElement.clientWidth, document.documentElement.clientHeight, true));
             starPosition();
             shooting();
-            console.log('inside resize');
         }
     } )
 
@@ -30,7 +28,6 @@ const Stars = () => {
             star.style.setProperty(`--star-delay`, randomStarDelay + 's');
             star.style.setProperty(`--twinkle-speed`, randomTwinkleSpeed + 's');
             star.style.setProperty(`--twinkle-delay`, randomTwinkleDelay + 's');
-            console.log('shooting function');
         } 
     }, [numberOfStars])
 
@@ -39,9 +36,9 @@ const Stars = () => {
         const html = document.getElementsByTagName('HTML')[0];
         const totalPageHeight = Math.max(html.scrollHeight, body.scrollHeight, html.clientHeight, body.offsetHeight, html.offsetHeight);
         console.log(totalPageHeight + ' ' + 'totalPageHeight for stars');
+        console.log(`${html.scrollHeight} html.scrollHeight, ${body.scrollHeight} body.scrollHeight, ${html.clientHeight} html.clientHeight, ${body.offsetHeight} body.offsetHeight, ${html.offsetHeight} html.offsetHeight`);
         for (let i = 1; i < numberOfStars(document.documentElement.clientWidth, document.documentElement.clientHeight) + 1; i++) {
             const starYLocation = Math.floor(Math.random() * totalPageHeight);
-            console.log(starYLocation + ' ' + 'for star' + i);
             const star = document.getElementsByClassName(`star--${i}`)[0];
             star.style.setProperty('--percentage-below-top', starYLocation + 'px');
         }
