@@ -7,6 +7,7 @@ const EntryText = () => {
         const introLetters = document.querySelectorAll('.entryText span');
         for ( let i = 0; i < introLetters.length; i++ ) {
             const location = introLetters[i].getBoundingClientRect();
+            console.log(location.top);
             introLetters[i].style.setProperty('--top-entry-letter', location.top + 'px');
             introLetters[i].style.setProperty('--left-entry-letter', location.left + 'px');
         }
@@ -14,9 +15,7 @@ const EntryText = () => {
 
     const fadeTextOut = () => {
         const introLetters = document.querySelectorAll('.entryText span');
-        for ( let i = 0; i < introLetters.length; i++ ) {
-            introLetters[i].classList.add(`entryText--${i + 1}__rotate-away`);
-        }
+        introLetters.forEach(letter => letter.classList.add(`entryText__rotate-away`));
     }
 
     const entryText = () => {

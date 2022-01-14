@@ -36,7 +36,7 @@ const Stars = () => {
         console.log(totalPageHeight + ' ' + 'totalPageHeight for stars');
         for (let i = 1; i < numberOfStars(document.documentElement.clientWidth, document.documentElement.clientHeight) + 1; i++) {
             const starYLocation = Math.floor(Math.random() * totalPageHeight);
-            console.log(starYLocation + ' ' + 'for star' + i);
+            // console.log(starYLocation + ' ' + 'for star' + i);
             const star = document.getElementsByClassName(`star--${i}`)[0];
             star.style.setProperty('--percentage-below-top', starYLocation + 'px');
         }

@@ -2,14 +2,14 @@
 
 // A mixin for making all the letters disappear into black hole
 @mixin vanishingLetters {
-    @for $i from 1 through $number-intro-letters {
-        &--#{$i}__rotate-away {
+        &__rotate-away {
             position: absolute;
             top: var(--top-entry-letter);
             left: var(--left-entry-letter);
-            animation: blackHoleLetters 1.5s linear forwards;
+            perspective: 1000px;
+            transform: rotateZ(360deg) scale(0);
+            transition: transform 1.5s linear;
         }
-    }
 }
 
 // A mixin to generate the stars

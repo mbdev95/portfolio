@@ -6,12 +6,6 @@
     --left-entry-letter: 0;
 }
 
-@keyframes blackHoleLetters {
-    100% {
-        transform: rotateZ(360deg) scale(0); 
-    }
-}
-
 .entryText {
     text-align: center;
     font-size: 2.1em;
@@ -22,8 +16,8 @@
     opacity: 0;
 
     &__fade-in {
-        transition: opacity 2s ease-out;
         opacity: 1;
+        transition: opacity 4.5s cubic-bezier(.57,.43,0,1.06);
     }
 
     @include vanishingLetters;
@@ -56,7 +50,6 @@
 
     span {
         @include introTextShadow;
-        perspective: 1000px;
         margin-left: 1%;
     }
 }
