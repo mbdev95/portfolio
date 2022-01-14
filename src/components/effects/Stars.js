@@ -8,13 +8,6 @@ const Stars = () => {
 
     const [resizedViewportStars, setResizedViewportStars] = useState(null);
 
-    window.addEventListener('resize', (e) => {
-        console.log(e);
-        setResizedViewportStars(starsCreator(document.documentElement.clientWidth, document.documentElement.clientHeight, true));
-        starPosition();
-        shooting();
-    } )
-
     const shooting = useCallback(() => {
         for (let i = 1; i < numberOfStars(document.documentElement.clientWidth, document.documentElement.clientHeight) + 1; i++) {
             const randomStarSpeed = Math.floor(Math.random() * 25) + 5;
@@ -45,6 +38,12 @@ const Stars = () => {
     }, [numberOfStars])
 
     useEffect(() => {
+        window.addEventListener('resize', () => {
+            setResizedViewportStars(starsCreator(document.documentElement.clientWidth, document.documentElement.clientHeight, true));
+            starPosition();
+            shooting();
+        } )
+
         starPosition();
         const starRemoveStartTimeout = setTimeout(() => {
                 for (let i = 1; i < numberOfStars(document.documentElement.clientWidth, document.documentElement.clientHeight) + 1; i++) {
@@ -54,7 +53,7 @@ const Stars = () => {
         }, 5500);
         const startShootingStar = setTimeout(shooting, 5600);
         return () => clearTimeout(starRemoveStartTimeout, startShootingStar);
-    }, [numberOfStars, starPosition, shooting])
+    }, [numberOfStars, starPosition, shooting, starsCreator])
 
     return (
         <>
