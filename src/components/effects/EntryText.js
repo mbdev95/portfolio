@@ -4,17 +4,24 @@ const EntryText = () => {
 
     const fadeTextIn = () => {
         document.getElementsByClassName('entryText')[0].classList.add('entryText__fade-in');
-        const introLetters = document.querySelectorAll('.entryText span');
-        for ( let i = 0; i < introLetters.length; i++ ) {
-            const location = introLetters[i].getBoundingClientRect();
-            console.log(location.top);
-            introLetters[i].style.setProperty('--top-entry-letter', location.top + 'px');
-            introLetters[i].style.setProperty('--left-entry-letter', location.left + 'px');
-        }
+        // const introLetters = document.querySelectorAll('.entryText span');
+        // for ( let i = 0; i < introLetters.length; i++ ) {
+        //     const location = introLetters[i].getBoundingClientRect();
+        //     console.log(location.top);
+        //     introLetters[i].style.setProperty('--top-entry-letter', location.top + 'px');
+        //     introLetters[i].style.setProperty('--left-entry-letter', location.left + 'px');
+        // }
     }
 
     const fadeTextOut = () => {
         const introLetters = document.querySelectorAll('.entryText span');
+        for ( let i = 0; i < introLetters.length; i++ ) {
+            const location = introLetters[i].getBoundingClientRect();
+            console.log(location.top + ' ' + location.left);
+            introLetters[i].style.setProperty('--top-entry-letter', location.top + 'px');
+            introLetters[i].style.setProperty('--left-entry-letter', location.left + 'px');
+        }
+        // const introLetters = document.querySelectorAll('.entryText span');
         introLetters.forEach(letter => letter.classList.add(`entryText__rotate-away`));
     }
 
