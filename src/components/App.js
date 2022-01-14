@@ -17,7 +17,7 @@ const App = () => {
     useEffect(() => { 
         const firstSlideDelay = setTimeout(() => setFirstSlide(true), 6000);
         return () => clearTimeout(firstSlideDelay); 
-    } );
+    }, [setFirstSlide] );
 
 // A funtion to delay the home page module for the time the opening effects are executing.
 // The portfolio module is initially rendered to the left side of the viewport so the images can be saved in memory allowing for accurate relative links to the projects in the portfolio page linked from the home page.
