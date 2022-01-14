@@ -34,7 +34,7 @@ const Stars = () => {
     const starPosition = useCallback(() => {
         const body = document.getElementsByTagName('BODY')[0];
         const html = document.getElementsByTagName('HTML')[0];
-        const totalPageHeight = Math.max(html.scrollHeight, body.scrollHeight, html.clientHeight, body.offsetHeight, html.offsetHeight);
+        const totalPageHeight = html.clientHeight;
         console.log(totalPageHeight + ' ' + 'totalPageHeight for stars');
         console.log(`${html.scrollHeight} html.scrollHeight, ${body.scrollHeight} body.scrollHeight, ${html.clientHeight} html.clientHeight, ${body.offsetHeight} body.offsetHeight, ${html.offsetHeight} html.offsetHeight`);
         for (let i = 1; i < numberOfStars(document.documentElement.clientWidth, document.documentElement.clientHeight) + 1; i++) {
