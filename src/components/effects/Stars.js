@@ -32,10 +32,10 @@ const Stars = () => {
     }, [numberOfStars])
 
     const starPosition = useCallback(() => {
-        const body = document.getElementsByTagName('BODY')[0];
         const html = document.getElementsByTagName('HTML')[0];
         const totalPageHeight = html.clientHeight;
         for (let i = 1; i < numberOfStars(document.documentElement.clientWidth, document.documentElement.clientHeight) + 1; i++) {
+            console.log(totalPageHeight);
             const starYLocation = Math.floor(Math.random() * totalPageHeight);
             const star = document.getElementsByClassName(`star--${i}`)[0];
             star.style.setProperty('--percentage-below-top', starYLocation + 'px');
