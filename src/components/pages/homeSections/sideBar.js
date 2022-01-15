@@ -7,22 +7,6 @@ import {Link} from 'react-router-dom';
 
 const SideBar = () => {
 
-    const homeProfileHeight = () => {
-        const body = document.getElementsByTagName('BODY')[0];
-        const html = document.getElementsByTagName('HTML')[0];
-        const totalPageHeight = Math.max(html.scrollHeight, body.scrollHeight, html.clientHeight, body.offsetHeight, html.offsetHeight);
-        const homeHeaderHeight = document.getElementsByClassName('home--header')[0].offsetHeight;
-        const minProfileHeight = Math.round((totalPageHeight * 0.9) - homeHeaderHeight);
-        const homeProfile = document.getElementsByClassName('home--profile')[0];
-        const homeProfileHeight = Math.max(homeProfile.scrollHeight, homeProfile.clientHeight, homeProfile.offsetHeight);
-        if ( homeProfileHeight < minProfileHeight ) {
-            console.log(homeProfileHeight);
-            console.log(minProfileHeight);
-            document.getElementsByClassName('home--profile')[0].style.setProperty('--min-home-profile-height', minProfileHeight + 'px');
-            document.getElementsByClassName('home--profile')[0].style.setProperty('--justify-content-home-profile', 'space-evenly');
-        }
-    }
-
     const socialMediaIconsWidth = () => {
         const socialMediaWidth = document.getElementsByClassName('home--profile--socialMedia')[0].offsetWidth;
         if ( socialMediaWidth > 300 ) {
@@ -30,9 +14,21 @@ const SideBar = () => {
         }
     }
 
+    const homeProfileHeight = () => {
+        const home = document.getElementsByClassName('home')[0].getBoundingClientRect();
+        const homeHeader = document.getElementsByClassName('home--header')[0].getBoundingClientRect();
+        const homeProfile = document.getElementsByClassName('home--profile')[0].getBoundingClientRect();
+        const homeProfileHeight = home.height - homeHeader.height;
+        if ( home.bottom > homeProfile.bottom ) {
+            document.getElementsByClassName('home--profile')[0].style.setProperty('--min-home-profile-height', homeProfileHeight + 'px');
+            document.getElementsByClassName('home--profile')[0].style.setProperty('--justify-content-home-profile', 'space-evenly');
+        }
+    }
+
     useEffect(() => {
         socialMediaIconsWidth();
-        homeProfileHeight();
+        const homeProfileHeightTimeout = setTimeout(() => homeProfileHeight(), 250);
+        return () => clearTimeout(homeProfileHeightTimeout);
     }, []);
 
     document.addEventListener('resize', () => homeProfileHeight());
