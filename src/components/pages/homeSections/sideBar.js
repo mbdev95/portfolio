@@ -13,8 +13,11 @@ const SideBar = () => {
         const totalPageHeight = Math.max(html.scrollHeight, body.scrollHeight, html.clientHeight, body.offsetHeight, html.offsetHeight);
         const homeHeaderHeight = document.getElementsByClassName('home--header')[0].offsetHeight;
         const minProfileHeight = Math.round((totalPageHeight * 0.9) - homeHeaderHeight);
-        const homeProfileHeight = document.getElementsByClassName('home--profile')[0].clientHeight;
+        const homeProfile = document.getElementsByClassName('home--profile')[0];
+        const homeProfileHeight = Math.max(homeProfile.scrollHeight, homeProfile.clientHeight, homeProfile.offsetHeight);
         if ( homeProfileHeight < minProfileHeight ) {
+            console.log(homeProfileHeight);
+            console.log(minProfileHeight);
             document.getElementsByClassName('home--profile')[0].style.setProperty('--min-home-profile-height', minProfileHeight + 'px');
             document.getElementsByClassName('home--profile')[0].style.setProperty('--justify-content-home-profile', 'space-evenly');
         }

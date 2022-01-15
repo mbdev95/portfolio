@@ -66,6 +66,10 @@
         a[href^='https://github.com/mbdev95'] button {
             margin-bottom: 7px;
         }
+
+        a[href$='Project-6-War-Of-Weapons-Board-Game/'] button {
+            display: none;
+        }
     }
 
     button {
@@ -111,6 +115,23 @@
             justify-content: space-between;
             a {
                 width: 48%;
+            }
+        }
+
+        &:first-of-type .portfolio--project--githubLinks {
+            display: inline-block;
+            justify-content: none;
+            width: 100%;
+        }
+    }
+
+    @include mq('large') {
+        &:first-of-type .portfolio--project--githubLinks {
+            display: flex;
+            justify-content: space-between;
+
+            a[href$='Project-6-War-Of-Weapons-Board-Game/'] button {
+                display: inline-block;
             }
         }
     }
