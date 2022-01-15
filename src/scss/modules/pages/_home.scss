@@ -96,9 +96,7 @@
                 }
                 
                 &:hover {
-                    cursor: pointer;
-                    transition: transform 0.2s ease-out;
-                    transform: scale(1.1);
+                    @extend %social-media-hover;
                 }
             }
         }

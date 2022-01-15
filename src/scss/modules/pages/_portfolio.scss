@@ -25,6 +25,11 @@
             }
         }
 
+        
+        &--socialMedia a:hover {
+            @extend %social-media-hover;
+        }
+
         &--nav {
             @include nav;
             @media (min-width: $brkpoint-md) {

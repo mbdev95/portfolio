@@ -1,6 +1,7 @@
 import linkedIn from '../../../img/socialMediaIcons/linkedin.png';
 import GitHub from '../../../img/socialMediaIcons/github.png';
 import resume from '../../../img/socialMediaIcons/resume.png';
+import email from '../../../img/socialMediaIcons/email.png';
 import {useEffect, useContext} from 'react';
 import { pageInfoContext } from '../../context';
 import {Link} from 'react-router-dom';
@@ -52,13 +53,16 @@ const SideBar = () => {
                 <hr/>
                 <div className='home--profile--socialMedia'>
                     <a href='https://www.linkedin.com/in/mb-developer/' target='_blank' rel='noreferrer'>
-                        <img src={linkedIn} alt='LinkedIn Logo'/>
+                        <img src={linkedIn} alt='LinkedIn Icon'/>
                     </a>
                     <a href='https://github.com/mbdev95' target='_blank' rel='noreferrer'>
-                        <img src={GitHub} alt='GitHub Logo'/>
+                        <img src={GitHub} alt='GitHub Icon'/>
                     </a>
-                    <a href="https://drive.google.com/file/d/1n0NB2EoaBSwEKQFYxxccZPMg-a6-USHs/view?usp=sharing" target='_blank' rel='noreferrer'>
+                    <a href='https://drive.google.com/file/d/1n0NB2EoaBSwEKQFYxxccZPMg-a6-USHs/view?usp=sharing' target='_blank' rel='noreferrer'>
                         <img src={resume} alt='Resume Icon'/>
+                    </a>
+                    <a href='mailto:mbucholski95@gmail.com' target='_blank' rel='noreferrer'>
+                        <img src={email} alt='Email Icon'/>
                     </a>
                 </div>
                 <hr/>

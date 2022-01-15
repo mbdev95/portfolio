@@ -21,6 +21,10 @@
             }
         }
 
+        &--socialMedia a:hover {
+            @extend %social-media-hover;
+        }
+
         &--nav {
             a {
                 @media (max-width: 300px) {

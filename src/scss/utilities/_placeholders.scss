@@ -33,5 +33,11 @@
     margin-bottom: 12px;
 }
 
+%social-media-hover {
+    cursor: pointer;
+    transition: transform 0.2s ease-out;
+    transform: scale(1.1);
+}
+
 
 
