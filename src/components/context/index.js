@@ -95,6 +95,13 @@ export const Provider = (props) => {
         return stars;
     }
 
+    window.onresize = () => {
+        document.body.height = window.innerHeight;
+        console.log(document.body.height);
+        console.log(window.innerHeight)
+    }
+
+
     return (
         <>
             <pageInfoContext.Provider value={ {
