@@ -17,7 +17,7 @@ const EntryText = () => {
     }
 
     const entryText = () => {
-        const entryString = "HI, I'M MARK! A COMPUTER SOFTWARE ENGINEER";
+        const entryString = "HI, I'M MARK! A COMPUTER SOFTWARE DEVELOPER";
         return entryString.split('').map((letter, index) => <span key={index}>{letter}</span>);
     }
 
