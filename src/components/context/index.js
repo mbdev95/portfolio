@@ -68,7 +68,7 @@ export const Provider = (props) => {
                     </a>
                 </div>
             );
-        }
+        } 
     }
 
     const numberOfStars = (vw, vh) => {
