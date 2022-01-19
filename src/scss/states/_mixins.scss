@@ -30,17 +30,12 @@
                 }
             }
 
-// The stars will not display until positioned properly on the page otherwise in mobile devices the stars appear at the top of the viewport for a second when the page is loading.
-            &__no-starting-display {
-                display: none;
-            }
-
 // Animation for causing the star to twinkle and then become a shooting star
             &__start-animation {
                 position: absolute;
                 left: math.floor(math.random() * 100%);
                 animation: twinkle 3.5s ease-out, 
-                disappearing 2.2s ease-out 3.5s; 
+                disappearing 2s ease-out 3.5s; 
             }
 // An animation for causing stars to shoot infinitely across the page and restart at the left side of the page once the star reaches the right edge of the page
             &__shooting {

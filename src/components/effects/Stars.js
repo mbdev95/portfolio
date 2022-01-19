@@ -5,19 +5,13 @@ const Stars = () => {
 
     const starsCreator = useContext(pageInfoContext).starsCreator;
     const numberOfStars = useContext(pageInfoContext).numberOfStars;
+    const clientWidth = document.documentElement.clientWidth;
+    const clientHeight = document.documentElement.clientHeight;
 
-    const [resizedViewportStars, setResizedViewportStars] = useState(null);
-
-    window.addEventListener('resize', () => {
-        if ( document.getElementsByClassName('star--1')[0].classList.contains('star--1__shooting') ) {
-            setResizedViewportStars(starsCreator(document.documentElement.clientWidth, document.documentElement.clientHeight, true));
-            starPosition();
-            shooting();
-        }
-    } )
+    window.onresize = () => starPosition(numberOfStars(document.documentElement.clientWidth, document.documentElement.clientHeight), document.documentElement.clientHeight);
 
     const shooting = useCallback(() => {
-        for (let i = 1; i < numberOfStars(document.documentElement.clientWidth, document.documentElement.clientHeight) + 1; i++) {
+        for (let i = 1; i < numberOfStars(clientWidth, clientHeight) + 1; i++) {
             const randomStarSpeed = Math.floor(Math.random() * 25) + 5;
             const randomStarDelay = Math.floor(Math.random() * 10);
             const randomTwinkleSpeed = Math.floor(Math.random() * 7) + 2;
@@ -29,35 +23,34 @@ const Stars = () => {
             star.style.setProperty(`--twinkle-speed`, randomTwinkleSpeed + 's');
             star.style.setProperty(`--twinkle-delay`, randomTwinkleDelay + 's');
         } 
-    }, [numberOfStars])
+    }, [clientWidth, clientHeight, numberOfStars])
 
-    const starPosition = useCallback(() => {
-        const html = document.getElementsByTagName('HTML')[0];
-        const totalPageHeight = html.clientHeight;
-        for (let i = 1; i < numberOfStars(document.documentElement.clientWidth, document.documentElement.clientHeight) + 1; i++) {
-            const starYLocation = Math.floor(Math.random() * totalPageHeight);
+    const starPosition = useCallback((numberOfStars, clientHeight) => {
+        for (let i = 1; i < numberOfStars + 1; i++) {
+            const starYLocation = Math.floor(Math.random() * clientHeight);
             const star = document.getElementsByClassName(`star--${i}`)[0];
-            star.style.setProperty('--percentage-below-top', starYLocation + 'px');
-            star.classList.remove(`star--${i}__no-starting-display`);
+            if ( star ) {
+                star.style.setProperty('--percentage-below-top', starYLocation + 'px');
+            }
         }
-    }, [numberOfStars])
+    }, [])
 
     useEffect(() => {
-        starPosition();
+        starPosition(numberOfStars(clientWidth, clientHeight), clientHeight);
         const starRemoveStartTimeout = setTimeout(() => {
-                for (let i = 1; i < numberOfStars(document.documentElement.clientWidth, document.documentElement.clientHeight) + 1; i++) {
+                for (let i = 1; i < numberOfStars(clientWidth, clientHeight) + 1; i++) {
                     const star = document.getElementsByClassName(`star--${i}`)[0];
                     star.classList.remove(`star--${i}__start-animation`);
                 }
-        }, 5500);
-        const startShootingStar = setTimeout(shooting, 5600);
+        }, 5400);
+        const startShootingStar = setTimeout(shooting, 5500);
         return () => clearTimeout(starRemoveStartTimeout, startShootingStar);
-    }, [numberOfStars, starPosition, shooting])
+    }, [ clientWidth, clientHeight, numberOfStars, starPosition, shooting])
 
     return (
         <>
             <div  className='stars'>
-                { resizedViewportStars ? resizedViewportStars : starsCreator(document.documentElement.clientWidth, document.documentElement.clientHeight, false) }
+                { starsCreator(clientWidth, clientHeight) }
             </div>
         </>
     )

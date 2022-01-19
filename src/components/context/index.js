@@ -87,10 +87,10 @@ export const Provider = (props) => {
         return numberOfStars;
     }
 
-    const starsCreator = (vw, vh, isResized) => {
+    const starsCreator = (vw, vh) => {
         let stars = [];
         for (let i = 1; i < numberOfStars(vw, vh) + 1; i++) {
-            isResized ? stars.push(<div className={`star--${i}`} key={i}></div>) : stars.push(<div className={`star--${i} star--${i}__start-animation star--${i}__no-starting-display`} key={i}></div>);
+            stars.push(<div className={`star--${i} star--${i}__start-animation`} key={i}></div>);
         }
         return stars;
     }

@@ -16,11 +16,13 @@ const SideBar = () => {
     }
 
     const homeProfileHeight = () => {
+        // console.log('v');
         const home = document.getElementsByClassName('home')[0].getBoundingClientRect();
         const homeHeader = document.getElementsByClassName('home--header')[0].getBoundingClientRect();
         const homeProfile = document.getElementsByClassName('home--profile')[0].getBoundingClientRect();
         const homeProfileHeight = home.height - homeHeader.height;
         if ( home.bottom > homeProfile.bottom ) {
+            // console.log('h');
             document.getElementsByClassName('home--profile')[0].style.setProperty('--min-home-profile-height', homeProfileHeight + 'px');
             document.getElementsByClassName('home--profile')[0].style.setProperty('--justify-content-home-profile', 'space-evenly');
         }
@@ -32,7 +34,10 @@ const SideBar = () => {
         return () => clearTimeout(homeProfileHeightTimeout);
     }, []);
 
-    document.addEventListener('resize', () => homeProfileHeight());
+    // useEffect(() => {
+    //     document.addEventListener('resize', homeProfileHeight());
+    //     return () => document.removeEventListener('resize', homeProfileHeight());
+    // })
 
     const h1Text = useContext(pageInfoContext).h1Text;
 

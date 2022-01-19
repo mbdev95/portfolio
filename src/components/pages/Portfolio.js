@@ -1,4 +1,4 @@
-import {useEffect, useContext, useState} from 'react';
+import {useEffect, useContext} from 'react';
 import { pageInfoContext } from '../context';
 import {Link} from 'react-router-dom';
 import ExpressFood from './portfolio/ExpressFood';
@@ -18,7 +18,7 @@ const Portfolio = () => {
 
     useEffect(() => {
         projectHeightCalculator();
-    }, [] );
+    }, []);
 
     const context = useContext(pageInfoContext);
 
@@ -33,13 +33,13 @@ const Portfolio = () => {
                 </nav>
             </div>
             <hr/>
-            <div className='projects'>
-                <WarOfWeapons />
-                <RestaurantReviewLocator /> 
-                <FilmFestival />
-                <ExpressFood />
-                <RandomQuotes />
-            </div>
+                <div className='projects'>
+                    <WarOfWeapons />
+                    <RestaurantReviewLocator /> 
+                    <FilmFestival />
+                    <ExpressFood />
+                    <RandomQuotes /> 
+                </div>
         </div>
     );
 }
