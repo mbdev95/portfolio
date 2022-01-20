@@ -2,21 +2,14 @@
 
 // Variables for holding random values to randomize the vanishing of the initial letters
 :root {
-    --translate-x: 0;
-    --translate-y: 0;
     --top-entry-letter: 0;
     --left-entry-letter: 0;
-}
-
-@keyframes blackHoleLetters {
-    100% {
-        transform: translate(var(--translate-x), var(--translate-y)) rotateZ(360deg) scale(0); 
-    }
 }
 
 .entryText {
     text-align: center;
     font-size: 2.1em;
+    font-family: "Courier New", Courier, monospace;
     line-height: 1.4;
     margin-top: 5%;
     margin-left: 5%;
@@ -24,8 +17,8 @@
     opacity: 0;
 
     &__fade-in {
-        transition: opacity 2s ease-out;
         opacity: 1;
+        transition: opacity 4.5s cubic-bezier(.57,.43,0,1.06);
     }
 
     @include vanishingLetters;
@@ -58,7 +51,6 @@
 
     span {
         @include introTextShadow;
-        perspective: 1000px;
         margin-left: 1%;
     }
 }

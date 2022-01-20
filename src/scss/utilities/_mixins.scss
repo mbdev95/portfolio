@@ -1,38 +1,5 @@
 @use 'sass:math';
 
-// A mixin to generate the stars
-@mixin starGenerator {
-    $star-colors-list: map-get($bg-colors, star-colors);
-    @for $i from 1 through $numberOfStars {
-        &--#{$i} {
-            position: absolute;
-            left: -5px;
-            top: var(--percentage-below-top);
-            width: math.random(2) * 1px;
-            height: math.random(2) * 1px;
-            border-radius: (math.random() * 10%) + 45%;
-            filter: blur(0.7px);
-            @each $starColor in $star-colors-list {
-                @if math.random(5) == index($star-colors-list, $starColor) {
-                    background-color: $starColor;
-                }
-            }
-// Animation for causing the star to twinkle and then become a shooting star
-            &__start-animation {
-                position: absolute;
-                left: math.floor(math.random() * 100%);
-                animation: twinkle 3.5s ease-out, 
-                disappearing 2.2s ease-out 3.5s; 
-            }
-// An animation for causing stars to shoot infinitely across the page and restart at the left side of the page once the star reaches the right edge of the page
-            &__shooting {
-                animation: shooting var(--star-speed) linear var(--star-delay) infinite backwards,
-                           twinkle var(--twinkle-speed) ease-out var(--twinkle-delay) infinite;
-            }
-        }
-    }
-}
-
 // A mixin for creating the intro text shadow 3D effect
 @mixin introTextShadow() {
     $introTextShadows: ();
@@ -75,13 +42,27 @@
         margin-bottom: 5px;
     }
 
-    img:first-of-type {
-        background: white;
+    &--img {
+        margin-top: 10px;
+        width: auto;
+        height: 175px;
+        margin: 10px auto 0px;
     }
 
-    img {
-        margin-top: 10px;
-        width: 55%;
+    @for $i from 1 through $numberOfProjects {
+        &:nth-of-type(#{$i}) &--img {
+            @if $i == 1 {
+                @include setProjectImage("#{$imgLogo}/javascript.png", '#{$imgMd}/WarOfWeaponsMedium.png', '#{$imgLg}/WarOfWeaponsLarge.png');
+            } @else if $i == 2 {
+                @include setProjectImage("#{$imgLogo}/css.png", '#{$imgUniversal}/BrooklynBridgeFilmFestival.png', null);
+            } @else if $i == 3 {
+                @include setProjectImage("#{$imgLogo}/mysql.jpg", '#{$imgMd}/ExpressFoodMedium.png', '#{$imgLg}/ExpressFoodLarge.png');
+            } @else if $i == 4 {
+                @include setProjectImage("#{$imgLogo}/react.png", '#{$imgMd}/RestaurantReviewLocatorMedium.png', '#{$imgLg}/RestaurantReviewLocatorLarge.png');
+            } @else {
+                @include setProjectImage("#{$imgLogo}/html.png", '#{$imgUniversal}/RandomQuotationGenerator.png', null);
+            }
+        }
     }
 
     h3 {
@@ -99,6 +80,10 @@
         a[href^='https://github.com/mbdev95'] button {
             margin-bottom: 7px;
         }
+
+        a[href$='Project-6-War-Of-Weapons-Board-Game/'] button {
+            display: none;
+        }
     }
 
     button {
@@ -112,12 +97,20 @@
         background-color: rgb(47, 47, 160);
     }
 
+    &:nth-of-type(3) a button {
+        margin-bottom: 7px;
+    }
+
     &:nth-of-type(4) a button[type='button'] {
         margin-bottom: 7px;
     }
 
     &:nth-of-type(5) a:last-of-type button[type='button'] {
         margin-bottom: 19px;
+    }
+
+    &:last-of-type a[href^='https://mbdev95.github.io/'] button {
+        margin-bottom: 10px;
     }
 
     @include mq('medium') {
@@ -146,6 +139,25 @@
                 width: 48%;
             }
         }
+
+        &:first-of-type .portfolio--project--githubLinks {
+            display: inline-block;
+            justify-content: none;
+            width: 100%;
+        }
+    }
+
+    @include projectImageResizing;
+
+    @media (min-width: 1020px) {
+        &:first-of-type .portfolio--project--githubLinks {
+            display: flex;
+            justify-content: space-between;
+
+            a[href$='Project-6-War-Of-Weapons-Board-Game/'] button {
+                display: inline-block;
+            }
+        }
     }
 
     @include mq('extra-large') {
@@ -154,6 +166,67 @@
         }
     }
     
+}
+
+// Mixin for alternating project images depending on viewport width
+@mixin setProjectImage($logoImage, $applicationImageMedium, $applicationImageLarge) {
+    background-image: url($logoImage);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @media (min-width: 699px) {
+        background-image: url($applicationImageMedium);
+    }
+
+    @media (min-width: 1200px) {
+        @if $applicationImageLarge != null {
+            background-image: url($applicationImageLarge);
+        } @else {
+            background-image: url($applicationImageMedium);
+        }
+    }
+}
+
+// Mixin for media queries resizing images in portfolio page
+@mixin projectImageResizing {
+    &--img {
+        @media(min-width: 699px) {
+            height: 300px;
+        }
+
+        @media(min-width: 900px) {
+            height: 450px;
+        }
+
+        @media(min-width: 1200px) {
+            height: 475px;
+        }
+    }
+
+    &:nth-of-type(2) &--img, &:nth-of-type(5) &--img {
+        @media(min-width: 699px) {
+            height: 175px;
+        }
+
+        @media(min-width: 900px) {
+            height: 225px;
+        }
+
+        @media(min-width: 1100px) {
+            height: 275px
+        }
+
+        @media(min-width: 1300px) {
+            height: 350px;
+        }
+    }
+
+    &:nth-of-type(3) &--img {
+        @media(min-width: 1200px) {
+            height: 400px;
+        }
+    }
 }
 
 @mixin previewProjects {

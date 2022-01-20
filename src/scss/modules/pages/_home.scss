@@ -12,7 +12,6 @@
     
     &--header {
         border-radius: 5px 5px 0 0;
-        padding-bottom: 5px;
 
         h1 {
             @extend %sub-container;
@@ -79,11 +78,12 @@
         }
 
         p a[href^='https://openclassrooms.com/'] {
-            color: rgb(204, 93, 49);
+            color: rgb(226, 133, 97);
         }
 
         p a:hover {
-            color: rgb(201, 136, 110);
+            color: rgb(211, 111, 72);
+            transition: color 0.25s ease-out;
         }
 
         &--socialMedia {
@@ -97,9 +97,7 @@
                 }
                 
                 &:hover {
-                    cursor: pointer;
-                    transition: transform 0.2s ease-out;
-                    transform: scale(1.1);
+                    @extend %social-media-hover;
                 }
             }
         }

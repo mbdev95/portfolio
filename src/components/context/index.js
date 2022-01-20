@@ -2,6 +2,7 @@ import React from 'react';
 import linkedIn from '../../img/socialMediaIcons/linkedin.png';
 import GitHub from '../../img/socialMediaIcons/github.png';
 import resume from '../../img/socialMediaIcons/resume.png';
+import email from '../../img/socialMediaIcons/email.png';
 
 export const pageInfoContext = React.createContext();
 
@@ -15,15 +16,6 @@ export const Provider = (props) => {
         } else {
             return false;
         }
-    }
-
-    const projectPhotoSelector = (logoImage, applicationImageMedium, applicationImageLarge) => {
-        if ( ( viewportWidth >= 700 && viewportWidth < 1200 ) || ( applicationImageLarge === null && viewportWidth >= 768 ) ) {
-            return applicationImageMedium;
-        } else if ( viewportWidth >= 1200 && applicationImageLarge !== null ) {
-            return applicationImageLarge
-        } 
-        return logoImage;
     }
 
     const h1Text = (page) => {
@@ -54,17 +46,20 @@ export const Provider = (props) => {
             return (
                 <div className={`${page}--header--socialMedia`}>
                     <a href='https://www.linkedin.com/in/mb-developer/' target='_blank' rel='noreferrer'>
-                        <img src={linkedIn} alt='LinkedIn Logo'/>
+                        <img src={linkedIn} alt='LinkedIn Icon'/>
                     </a>
                     <a href='https://github.com/mbdev95' target='_blank' rel='noreferrer'>
-                        <img src={GitHub} alt='GitHub Logo'/>
+                        <img src={GitHub} alt='GitHub Icon'/>
                     </a>
                     <a href="https://drive.google.com/file/d/1n0NB2EoaBSwEKQFYxxccZPMg-a6-USHs/view?usp=sharing" target='_blank' rel='noreferrer'>
                         <img src={resume} alt='Resume Icon'/>
                     </a>
+                    <a href='mailto:mbucholski95@gmail.com' target='_blank' rel='noreferrer'>
+                        <img src={email} alt='Email Icon'/>
+                    </a>
                 </div>
             );
-        }
+        } 
     }
 
     const numberOfStars = (vw, vh) => {
@@ -76,17 +71,17 @@ export const Provider = (props) => {
         } else if ( vw >= 480 && vw <= 768 ) {
             numberOfStars = 115;
         } else if ( vw > 768 && vw <= 1025 ) {
-            numberOfStars = 170;
+            numberOfStars = 150;
         } else {
-            numberOfStars = 250;
+            numberOfStars = 225;
         }
         return numberOfStars;
     }
 
-    const starsCreator = (vw, vh, isResized) => {
+    const starsCreator = (vw, vh) => {
         let stars = [];
         for (let i = 1; i < numberOfStars(vw, vh) + 1; i++) {
-            isResized ? stars.push(<div className={`star--${i}`} key={i}></div>) : stars.push(<div className={`star--${i} star--${i}__start-animation`} key={i}></div>);
+            stars.push(<div className={`star--${i} star--${i}__start-animation`} key={i}></div>);
         }
         return stars;
     }
@@ -95,11 +90,10 @@ export const Provider = (props) => {
         <>
             <pageInfoContext.Provider value={ {
                 numberOfStars: numberOfStars,
-                projectPhotoSelector: projectPhotoSelector,
                 isLargeViewport: isLargeViewport(),
                 h1Text: h1Text,
                 socialMediaInHeader: socialMediaInHeader,
-                starsCreator: starsCreator,
+                starsCreator: starsCreator
             } }>
                 {props.children}
             </pageInfoContext.Provider>

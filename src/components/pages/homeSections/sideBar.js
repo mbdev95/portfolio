@@ -1,24 +1,12 @@
 import linkedIn from '../../../img/socialMediaIcons/linkedin.png';
 import GitHub from '../../../img/socialMediaIcons/github.png';
 import resume from '../../../img/socialMediaIcons/resume.png';
+import email from '../../../img/socialMediaIcons/email.png';
 import {useEffect, useContext} from 'react';
 import { pageInfoContext } from '../../context';
 import {Link} from 'react-router-dom';
 
 const SideBar = () => {
-
-    const homeProfileHeight = () => {
-        const body = document.getElementsByTagName('BODY')[0];
-        const html = document.getElementsByTagName('HTML')[0];
-        const totalPageHeight = Math.max(html.scrollHeight, body.scrollHeight, html.clientHeight, body.offsetHeight, html.offsetHeight);
-        const homeHeaderHeight = document.getElementsByClassName('home--header')[0].offsetHeight;
-        const minProfileHeight = Math.round((totalPageHeight * 0.9) - homeHeaderHeight);
-        const homeProfileHeight = document.getElementsByClassName('home--profile')[0].clientHeight;
-        if ( homeProfileHeight < minProfileHeight ) {
-            document.getElementsByClassName('home--profile')[0].style.setProperty('--min-home-profile-height', minProfileHeight + 'px');
-            document.getElementsByClassName('home--profile')[0].style.setProperty('--justify-content-home-profile', 'space-evenly');
-        }
-    }
 
     const socialMediaIconsWidth = () => {
         const socialMediaWidth = document.getElementsByClassName('home--profile--socialMedia')[0].offsetWidth;
@@ -27,12 +15,29 @@ const SideBar = () => {
         }
     }
 
+    const homeProfileHeight = () => {
+        // console.log('v');
+        const home = document.getElementsByClassName('home')[0].getBoundingClientRect();
+        const homeHeader = document.getElementsByClassName('home--header')[0].getBoundingClientRect();
+        const homeProfile = document.getElementsByClassName('home--profile')[0].getBoundingClientRect();
+        const homeProfileHeight = home.height - homeHeader.height;
+        if ( home.bottom > homeProfile.bottom ) {
+            // console.log('h');
+            document.getElementsByClassName('home--profile')[0].style.setProperty('--min-home-profile-height', homeProfileHeight + 'px');
+            document.getElementsByClassName('home--profile')[0].style.setProperty('--justify-content-home-profile', 'space-evenly');
+        }
+    }
+
     useEffect(() => {
         socialMediaIconsWidth();
-        homeProfileHeight();
+        const homeProfileHeightTimeout = setTimeout(() => homeProfileHeight(), 250);
+        return () => clearTimeout(homeProfileHeightTimeout);
     }, []);
 
-    document.addEventListener('resize', () => homeProfileHeight());
+    // useEffect(() => {
+    //     document.addEventListener('resize', homeProfileHeight());
+    //     return () => document.removeEventListener('resize', homeProfileHeight());
+    // })
 
     const h1Text = useContext(pageInfoContext).h1Text;
 
@@ -53,13 +58,16 @@ const SideBar = () => {
                 <hr/>
                 <div className='home--profile--socialMedia'>
                     <a href='https://www.linkedin.com/in/mb-developer/' target='_blank' rel='noreferrer'>
-                        <img src={linkedIn} alt='LinkedIn Logo'/>
+                        <img src={linkedIn} alt='LinkedIn Icon'/>
                     </a>
                     <a href='https://github.com/mbdev95' target='_blank' rel='noreferrer'>
-                        <img src={GitHub} alt='GitHub Logo'/>
+                        <img src={GitHub} alt='GitHub Icon'/>
                     </a>
-                    <a href="https://drive.google.com/file/d/1n0NB2EoaBSwEKQFYxxccZPMg-a6-USHs/view?usp=sharing" target='_blank' rel='noreferrer'>
+                    <a href='https://drive.google.com/file/d/1n0NB2EoaBSwEKQFYxxccZPMg-a6-USHs/view?usp=sharing' target='_blank' rel='noreferrer'>
                         <img src={resume} alt='Resume Icon'/>
+                    </a>
+                    <a href='mailto:mbucholski95@gmail.com' target='_blank' rel='noreferrer'>
+                        <img src={email} alt='Email Icon'/>
                     </a>
                 </div>
                 <hr/>

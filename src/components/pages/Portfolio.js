@@ -18,7 +18,7 @@ const Portfolio = () => {
 
     useEffect(() => {
         projectHeightCalculator();
-    }, [] );
+    }, []);
 
     const context = useContext(pageInfoContext);
 
@@ -33,13 +33,13 @@ const Portfolio = () => {
                 </nav>
             </div>
             <hr/>
-            <div className='projects'>
-                <WarOfWeapons />
-                <RestaurantReviewLocator /> 
-                <FilmFestival />
-                <ExpressFood />
-                <RandomQuotes />
-            </div>
+                <div className='projects'>
+                    <WarOfWeapons />
+                    <FilmFestival />
+                    <ExpressFood />
+                    <RestaurantReviewLocator /> 
+                    <RandomQuotes /> 
+                </div>
         </div>
     );
 }
