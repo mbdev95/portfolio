@@ -16,6 +16,8 @@ const Portfolio = () => {
         document.querySelector('.projects').style.setProperty('--project-height', projectHeightPercentage + '%');
     }
 
+    window.onresize = () => projectHeightCalculator();
+
     useEffect(() => {
         projectHeightCalculator();
     }, []);

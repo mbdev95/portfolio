@@ -28,6 +28,8 @@ const SideBar = () => {
         }
     }
 
+    window.onresize = () => homeProfileHeight();
+
     useEffect(() => {
         socialMediaIconsWidth();
         const homeProfileHeightTimeout = setTimeout(() => homeProfileHeight(), 250);
