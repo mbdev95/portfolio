@@ -18,15 +18,6 @@ export const Provider = (props) => {
         }
     }
 
-    const projectPhotoSelector = (logoImage, applicationImageMedium, applicationImageLarge) => {
-        if ( ( viewportWidth >= 700 && viewportWidth < 1200 ) || ( applicationImageLarge === null && viewportWidth >= 768 ) ) {
-            return applicationImageMedium;
-        } else if ( viewportWidth >= 1200 && applicationImageLarge !== null ) {
-            return applicationImageLarge
-        } 
-        return logoImage;
-    }
-
     const h1Text = (page) => {
         const body = document.getElementsByTagName('BODY')[0];
         const html = document.getElementsByTagName('HTML')[0];
@@ -99,11 +90,10 @@ export const Provider = (props) => {
         <>
             <pageInfoContext.Provider value={ {
                 numberOfStars: numberOfStars,
-                projectPhotoSelector: projectPhotoSelector,
                 isLargeViewport: isLargeViewport(),
                 h1Text: h1Text,
                 socialMediaInHeader: socialMediaInHeader,
-                starsCreator: starsCreator,
+                starsCreator: starsCreator
             } }>
                 {props.children}
             </pageInfoContext.Provider>

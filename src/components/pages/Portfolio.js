@@ -35,9 +35,9 @@ const Portfolio = () => {
             <hr/>
                 <div className='projects'>
                     <WarOfWeapons />
-                    <RestaurantReviewLocator /> 
                     <FilmFestival />
                     <ExpressFood />
+                    <RestaurantReviewLocator /> 
                     <RandomQuotes /> 
                 </div>
         </div>
