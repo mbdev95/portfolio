@@ -67,13 +67,13 @@ export const Provider = (props) => {
         if ( vw < 480 ) {
             numberOfStars = 50;
         } else if ( vw < 1000 && vh < 450 ) {
-            numberOfStars = 75;
+            numberOfStars = 70;
         } else if ( vw >= 480 && vw <= 768 ) {
-            numberOfStars = 100;
+            numberOfStars = 90;
         } else if ( vw > 768 && vw <= 1025 ) {
             numberOfStars = 135;
         } else {
-            numberOfStars = 225;
+            numberOfStars = 175;
         }
         return numberOfStars;
     }
