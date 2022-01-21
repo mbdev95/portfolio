@@ -2,17 +2,13 @@ import linkedIn from '../../../img/socialMediaIcons/linkedin.png';
 import GitHub from '../../../img/socialMediaIcons/github.png';
 import resume from '../../../img/socialMediaIcons/resume.png';
 import email from '../../../img/socialMediaIcons/email.png';
-import {useEffect, useContext, useState} from 'react';
+import {useEffect, useContext} from 'react';
 import { pageInfoContext } from '../../context';
 import {Link} from 'react-router-dom';
 
 const SideBar = () => {
 
-    const [originalProfileHeight, setOriginalProfileHeight] = useState(null);
-
     useEffect(() => {
-        const originalProfileHeight = document.getElementsByClassName('home--profile')[0].getBoundingClientRect().height;
-        setOriginalProfileHeight(originalProfileHeight);
         const homeProfileHeightTimeout = setTimeout(() => homeProfileHeight(), 250);
         return () => clearTimeout(homeProfileHeightTimeout);
     }, []);

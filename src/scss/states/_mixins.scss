@@ -46,3 +46,16 @@
     }
 }
 
+// A mixin for creating the intro text shadow 3D effect
+@mixin introTextShadow() {
+    $introTextShadows: ();
+    @for $i from 1 through 50 {
+        $x: 0.125 * $i + px;
+        $y: 0.125 * $i + px;
+        $rgb: 255 - $i * 5;
+        $shadow: $x $y rgb($rgb, $rgb, $rgb);
+        $introTextShadows: append($introTextShadows, $shadow, comma);
+    }
+    text-shadow: $introTextShadows;
+}
+
