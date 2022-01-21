@@ -16,6 +16,7 @@ const App = () => {
     const [firstSlide, setFirstSlide] = useState(false);
     useEffect(() => { 
         const html = document.getElementsByTagName('html')[0];
+        html.style.setProperty('--window-height', window.innerHeight);
         const firstSlideDelay = setTimeout(() => setFirstSlide(true), 6000);
         return () => clearTimeout(firstSlideDelay); 
     }, [setFirstSlide] );

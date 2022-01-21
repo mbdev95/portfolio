@@ -1,13 +1,18 @@
 @import '../utilities/variables';
 @import '../utilities/mixins';
 
+:root {
+    --window-height: 100%;
+}
+
 * {
     box-sizing: border-box;
 }
 
-html, .root, body {
+html, body, .root {
     scroll-behavior: smooth;
     overflow: hidden;
+    height: var(--window-height);
 }
 
 body {
