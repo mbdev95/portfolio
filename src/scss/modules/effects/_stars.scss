@@ -1,5 +1,3 @@
-@import '../../states/mixins';
-
 // Custom css properties for delaying star movement and for star speed.  These properties hold random numbers generated in JavaScript
 :root {
     --star-speed: 0s;
@@ -34,7 +32,7 @@
         left: -1%;
     }
     100% {
-        left: 99.45%;
+        left: 99.4%;
     }
 }
 
