@@ -26,11 +26,6 @@
         }
 
         &--nav {
-            a {
-                @media (max-width: 300px) {
-                    font-size: 0.825em;
-                }
-            }
             @include nav;
             @media (min-width: $brkpoint-md) {
                 width: 42%;

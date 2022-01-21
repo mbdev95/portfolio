@@ -330,6 +330,9 @@
 
     a {
         width: 45%;
+        @media (max-width: 300px) {
+            font-size: 0.825em;
+        }
     }
     
     button {

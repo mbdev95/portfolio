@@ -1,4 +1,4 @@
-import {useEffect, useContext, useState, useCallback} from 'react';
+import {useEffect, useContext, useCallback} from 'react';
 import {pageInfoContext} from '../context';
 
 const Stars = () => {
@@ -8,7 +8,7 @@ const Stars = () => {
     const clientWidth = document.documentElement.clientWidth;
     const clientHeight = document.documentElement.clientHeight;
 
-    window.onresize = () => starPosition(numberOfStars(document.documentElement.clientWidth, document.documentElement.clientHeight), document.documentElement.clientHeight);
+    window.addEventListener('resize', () => starPosition(numberOfStars(document.documentElement.clientWidth, document.documentElement.clientHeight), document.documentElement.clientHeight));
 
     const shooting = useCallback(() => {
         for (let i = 1; i < numberOfStars(clientWidth, clientHeight) + 1; i++) {

@@ -2,44 +2,38 @@ import linkedIn from '../../../img/socialMediaIcons/linkedin.png';
 import GitHub from '../../../img/socialMediaIcons/github.png';
 import resume from '../../../img/socialMediaIcons/resume.png';
 import email from '../../../img/socialMediaIcons/email.png';
-import {useEffect, useContext} from 'react';
+import {useEffect, useContext, useState} from 'react';
 import { pageInfoContext } from '../../context';
 import {Link} from 'react-router-dom';
 
 const SideBar = () => {
 
-    const socialMediaIconsWidth = () => {
-        const socialMediaWidth = document.getElementsByClassName('home--profile--socialMedia')[0].offsetWidth;
-        if ( socialMediaWidth > 300 ) {
-            document.getElementsByClassName('home--profile--socialMedia')[0].style.setProperty('--social-media-a-width', 10 + '%');
-        }
-    }
-
-    const homeProfileHeight = () => {
-        // console.log('v');
-        const home = document.getElementsByClassName('home')[0].getBoundingClientRect();
-        const homeHeader = document.getElementsByClassName('home--header')[0].getBoundingClientRect();
-        const homeProfile = document.getElementsByClassName('home--profile')[0].getBoundingClientRect();
-        const homeProfileHeight = home.height - homeHeader.height;
-        if ( home.bottom > homeProfile.bottom ) {
-            // console.log('h');
-            document.getElementsByClassName('home--profile')[0].style.setProperty('--min-home-profile-height', homeProfileHeight + 'px');
-            document.getElementsByClassName('home--profile')[0].style.setProperty('--justify-content-home-profile', 'space-evenly');
-        }
-    }
-
-    window.onresize = () => homeProfileHeight();
+    const [originalProfileHeight, setOriginalProfileHeight] = useState(null);
 
     useEffect(() => {
-        socialMediaIconsWidth();
+        const originalProfileHeight = document.getElementsByClassName('home--profile')[0].getBoundingClientRect().height;
+        setOriginalProfileHeight(originalProfileHeight);
         const homeProfileHeightTimeout = setTimeout(() => homeProfileHeight(), 250);
         return () => clearTimeout(homeProfileHeightTimeout);
     }, []);
 
-    // useEffect(() => {
-    //     document.addEventListener('resize', homeProfileHeight());
-    //     return () => document.removeEventListener('resize', homeProfileHeight());
-    // })
+    window.onresize = () => homeProfileHeight();
+
+    const homeProfileHeight = () => {
+        const home = document.getElementsByClassName('home')[0].getBoundingClientRect();
+        const homeHeader = document.getElementsByClassName('home--header')[0].getBoundingClientRect();
+        const homeProfile = document.getElementsByClassName('home--profile')[0];
+        const homeProfileHeight = home.height - homeHeader.height;
+        const emptySpace = document.getElementsByClassName('home--profile--empty')[0];
+        emptySpace.style.display = 'block';
+        if ( home.bottom > homeProfile.getBoundingClientRect().bottom || emptySpace.getBoundingClientRect().height > 0 ) {
+            homeProfile.style.setProperty('--home-profile-height', homeProfileHeight + 'px');
+            emptySpace.style.display = 'none';
+            homeProfile.style.setProperty('--justify-content-home-profile', 'space-evenly');
+        } else {
+            homeProfile.style.setProperty('--justify-content-home-profile', 'initial');
+        }
+    }
 
     const h1Text = useContext(pageInfoContext).h1Text;
 
@@ -90,6 +84,7 @@ const SideBar = () => {
                 </div>
                 <hr/>
                 <p>&#169; mbdev95</p>
+                <div className='home--profile--empty'></div>
             </div> 
         </>
     );

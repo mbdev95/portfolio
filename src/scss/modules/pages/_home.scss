@@ -1,7 +1,10 @@
 :root {
-    --min-home-profile-height: auto;
+    --home-profile-height: auto;
     --justify-content-home-profile: none;
     --social-media-a-width: 20%;
+    @media (min-width: 475px) and (max-width: $brkpoint-md) {
+        --social-media-a-width: 14%;
+    }
     --font-size: 1rem;
 }
 
@@ -22,9 +25,7 @@
             @include nav;
             @include buttons;
             a {
-                @media (max-width: 300px) {
-                    width: auto;
-                }
+          
                 @media (min-width: $brkpoint-md) and (max-width: $brkpoint-lg) and (min-height: 600px) {
                     width: 100%;
                     button {
@@ -61,7 +62,7 @@
     &--profile {
         @extend %sub-container;
         border-radius: 0 0 5px 5px;
-        min-height: var(--min-home-profile-height);
+        height: var(--home-profile-height);
         display: flex;
         flex-direction: column;
         justify-content: var(--justify-content-home-profile);
@@ -82,7 +83,7 @@
         }
 
         p a:hover {
-            color: rgb(211, 111, 72);
+            color: rgb(196, 147, 126);
             transition: color 0.25s ease-out;
         }
 
@@ -121,11 +122,6 @@
         @media (max-height: 450px) {
             font-size: 0.9em;
             justify-content: normal;
-
-            a {
-                width: 10%;
-            }
-
         }
 
         @include mq('medium') {
@@ -146,7 +142,7 @@
                 margin-bottom: 10px;
             }
 
-            @media (max-height: 710px) {
+            @media (max-height: $brkpoint-md) {
                 &--skills, & p:last-of-type, & hr:last-of-type {
                     display: none;
                 }
@@ -163,6 +159,10 @@
                 font-size: 0.8em;
             }
         }
+    }
+
+    &--profile--empty {
+        height: 100%;
     }
 
     @include mq('medium') {
