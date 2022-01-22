@@ -44,6 +44,9 @@
     @include mq('large') {
         font-size: 5.8em;
         margin-top: 0%;
+        @media (max-height: 600px) {
+            font-size: 4em;
+        }
     }
 
     @include mq('extra-large') {
