@@ -21,6 +21,10 @@
             }
         }
 
+        &--socialMedia {
+            display: none;
+        }
+
         &--socialMedia a:hover {
             @extend %social-media-hover;
         }
