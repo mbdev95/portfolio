@@ -20,7 +20,7 @@
             } @else if $i == 2 {
                 @include setProjectImage("#{$imgLogo}/css.png", '#{$imgUniversal}/BrooklynBridgeFilmFestival.png', null);
             } @else if $i == 3 {
-                @include setProjectImage("#{$imgLogo}/mysql.jpg", '#{$imgMd}/ExpressFoodMedium.png', '#{$imgLg}/ExpressFoodLarge.png');
+                @include setProjectImage("#{$imgLogo}/mysql.jpg", '#{$imgMd}/ExpressFoodMedium.webp', '#{$imgLg}/ExpressFoodLarge.webp');
             } @else if $i == 4 {
                 @include setProjectImage("#{$imgLogo}/react.png", '#{$imgMd}/RestaurantReviewLocatorMedium.png', '#{$imgLg}/RestaurantReviewLocatorLarge.png');
             } @else {
