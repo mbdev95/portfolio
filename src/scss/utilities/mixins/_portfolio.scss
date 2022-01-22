@@ -18,7 +18,7 @@
             @if $i == 1 {
                 @include setProjectImage("#{$imgLogo}/javascript.webp", '#{$imgMd}/WarOfWeaponsMedium.webp', '#{$imgLg}/WarOfWeaponsLarge.webp');
             } @else if $i == 2 {
-                @include setProjectImage("#{$imgLogo}/css.webp", '#{$imgUniversal}/BrooklynBridgeFilmFestival.webp', null);
+                @include setProjectImage("#{$imgLogo}/css.webp", '#{$imgUniversal}/BrooklynBridgeFilmFestival.png', null);
             } @else if $i == 3 {
                 @include setProjectImage("#{$imgLogo}/mysql.webp", '#{$imgMd}/ExpressFoodMedium.webp', '#{$imgLg}/ExpressFoodLarge.webp');
             } @else if $i == 4 {
