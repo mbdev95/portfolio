@@ -14,20 +14,24 @@ const App = () => {
     const context = useContext(pageInfoContext);
 
     const [firstSlide, setFirstSlide] = useState(false);
+
+// The innerheight of the window is passed to CSS to set height of html as inner height to avoid browser header affecting vertical page layout.
+// The first slide is delayed until after the opening animation has ended.
     useEffect(() => { 
         const html = document.getElementsByTagName('html')[0];
+        html.style.setProperty('--window-height', window.innerHeight);
         const firstSlideDelay = setTimeout(() => setFirstSlide(true), 6000);
         return () => clearTimeout(firstSlideDelay); 
     }, [setFirstSlide] );
 
+// When the window resized the height of the document will still be measured as innerHeight.
     window.onresize = () => {
         document.body.height = window.innerHeight;
     }
 
-    window.onresize();
-
 // A funtion to delay the home page module for the time the opening effects are executing.
 // The portfolio module is initially rendered to the left side of the viewport so the images can be saved in memory allowing for accurate relative links to the projects in the portfolio page linked from the home page.
+// I used Transition Groups and CSS Transition from react router to do the animations of the page slides.
     const firstSlideTiming = () => {
         if ( firstSlide ) { 
             return (

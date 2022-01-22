@@ -1,11 +1,13 @@
-@import '../../states/mixins';
+@import '../../utilities/mixins/effects';
+@import '../../utilities/mixins/foundation';
 
-// Variables for holding random values to randomize the vanishing of the initial letters
+// Variables for holding random values to randomize the vanishing of the initial letters.
 :root {
     --top-entry-letter: 0;
     --left-entry-letter: 0;
 }
 
+// Styling for div containing the entry letters including the transitions for each letter to fade in and out.
 .entryText {
     text-align: center;
     font-size: 2.1em;
@@ -43,12 +45,16 @@
     @include mq('large') {
         font-size: 5.8em;
         margin-top: 0%;
+        @media (max-height: 600px) {
+            font-size: 4em;
+        }
     }
 
     @include mq('extra-large') {
         font-size: 6.3em;
     }
 
+// Each span is a letter which is styled to have appear 3D with layered shadows.
     span {
         @include introTextShadow;
         margin-left: 1%;

@@ -5,7 +5,8 @@ import { pageInfoContext } from '../context';
 const About = () => {
 
     const context = useContext(pageInfoContext);
-
+    
+// The h1Text and socialMediaInHeader functions will display the h1 text and social media icons differently depending on the viewport width.
     return (
         <div className="about">
             <div className='about--header'>

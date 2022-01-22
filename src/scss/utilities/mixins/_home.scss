@@ -1,0 +1,74 @@
+// A mixin for giving the basic layout and background of the side bar on the home page.
+@mixin home-sideBar {
+    display: flex;
+    flex-direction: column;
+    background-color: $box-bg-color;
+    width: 40% !important;
+}
+
+// A mixin to give the layout, positioning and styles for the display of each rectangular project preview on the right side of the home page in large viewport widths.
+@mixin previewProjects {
+    display: flex;
+    flex-direction: column;
+    background-color: $box-bg-color;
+
+    & a {
+        color: $text-color;
+    }
+
+    @for $i from 1 through $numberOfProjects {
+        &--project--#{$i} {
+            background-color: $box-bg-color;
+            position: absolute;
+            top: calc((($i - 1)* $projectHeight) + (($i - 1) * $projectSeparation));
+            left: 45%;
+            width: 55%;
+            height: $projectHeight;
+            padding-left: 10px;
+            padding-right: 10px;
+            border-radius: 5px;
+            transition: background-color 0.325s ease-out;
+            @include lists;
+
+            li {
+                display: inline;
+                padding-right: 10px;
+                line-height: 1.75;
+            }
+
+            h2 {
+                text-align: center;
+                margin-top: 10px;
+                margin-bottom: 0px;
+            }
+
+            ul {
+                margin: 10px 0;
+            }
+
+            &:hover {
+                cursor: pointer;
+                background-color: rgba(17, 17, 73, 0.35);
+            }
+
+            &:active {
+                background-color: transparent;
+            }
+
+            @media (max-width: 1225px) and (max-height: 1000px) {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                ul {
+                    display: none;
+                }
+
+                h2 {
+                    margin: 0;
+                }
+
+            }
+        }
+    }
+}

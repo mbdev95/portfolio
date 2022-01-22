@@ -1,7 +1,14 @@
+@import '../../utilities/mixins/_foundation.scss';
+@import '../../utilities/mixins/_home.scss';
+
+// Custom styles generated in JS which will alter layout styles of the main home page in order to make them responsive.
 :root {
-    --min-home-profile-height: auto;
+    --home-profile-height: auto;
     --justify-content-home-profile: none;
     --social-media-a-width: 20%;
+    @media (min-width: 475px) and (max-width: $brkpoint-md) {
+        --social-media-a-width: 14%;
+    }
     --font-size: 1rem;
 }
 
@@ -22,9 +29,7 @@
             @include nav;
             @include buttons;
             a {
-                @media (max-width: 300px) {
-                    width: auto;
-                }
+          
                 @media (min-width: $brkpoint-md) and (max-width: $brkpoint-lg) and (min-height: 600px) {
                     width: 100%;
                     button {
@@ -61,7 +66,7 @@
     &--profile {
         @extend %sub-container;
         border-radius: 0 0 5px 5px;
-        min-height: var(--min-home-profile-height);
+        height: var(--home-profile-height);
         display: flex;
         flex-direction: column;
         justify-content: var(--justify-content-home-profile);
@@ -82,7 +87,7 @@
         }
 
         p a:hover {
-            color: rgb(211, 111, 72);
+            color: rgb(196, 147, 126);
             transition: color 0.25s ease-out;
         }
 
@@ -121,11 +126,6 @@
         @media (max-height: 450px) {
             font-size: 0.9em;
             justify-content: normal;
-
-            a {
-                width: 10%;
-            }
-
         }
 
         @include mq('medium') {
@@ -146,7 +146,7 @@
                 margin-bottom: 10px;
             }
 
-            @media (max-height: 710px) {
+            @media (max-height: $brkpoint-md) {
                 &--skills, & p:last-of-type, & hr:last-of-type {
                     display: none;
                 }
@@ -154,6 +154,7 @@
         }
     }
 
+// The section of preview projects on left side of the screen are displayed only in large viewports
     .previewProjects {
         display: none;
         @include mq('medium') {
@@ -165,6 +166,12 @@
         }
     }
 
+// An empty div is used at bottom of home--profile section in side bar to determine if extra empty space exists in side bar which needs to be filled with a justify-content value of 'space-evenly'.
+    &--profile--empty {
+        height: 100%;
+    }
+
+// Forces no overflow in medium viewports to ensure a more pleasurable home page experience in devices with viewport width tablet sized or greater.
     @include mq('medium') {
         overflow-y: hidden;
         background-color: transparent;

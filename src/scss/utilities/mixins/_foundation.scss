@@ -1,0 +1,114 @@
+// A mixin for styling buttons.
+@mixin buttons {
+    button {
+        @extend %project-buttons;
+        background-color: rgb(39, 58, 226);
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    a button {
+        width: 100%;
+    }
+
+    button:hover {
+        cursor: pointer;
+        background-color: rgba(70, 83, 207, 0.35);
+    }
+
+    button:active {
+        background-color: transparent;
+    }
+}
+
+// Basic layout styles for lists in home and portfolio pages.
+@mixin lists {
+    ul {
+        list-style: none;
+        padding: 0px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    ul li:before {
+        content: "\2022";  
+        color: $text-color; 
+        width: 1em; 
+        height: 1em;
+        padding-right: 10px;
+        line-height: 1.75;
+    }
+
+    ul li {
+        padding-right: 15px;
+    }
+}
+
+// Basic layout styles for the navigation in the header of each page.
+@mixin nav {
+    display: flex;
+    justify-content: space-between;
+
+    a {
+        width: 45%;
+        @media (max-width: 300px) {
+            font-size: 0.825em;
+        }
+    }
+    
+    button {
+        border-radius: 5px;
+    }
+}
+
+// Basic layout for social media buttons in the header of each page.
+@mixin socialMediaInHeader($socialMediaNavWidth, $mainNavWidth) {
+    h1 {
+        width: auto;
+    }
+
+    &--socialMedia {
+        display: flex;
+        justify-content: space-evenly;
+        width: 30%;
+        margin-top: 5px;
+    }
+
+    &--socialMedia a {
+        width: $socialMediaNavWidth;
+    }
+
+    &--socialMedia a img {
+        width: 40%;
+    }
+
+    &--nav {
+        width: $mainNavWidth;
+    }
+}
+
+// A media query mixin creator to create commonly used media query statements.
+@mixin mq($break) {
+    @if $break == 'small' {
+        @media (min-width: $brkpoint-sm) {
+            @content;
+        }
+    }
+    @else if $break == 'medium' {
+        @media (min-width: $brkpoint-md) {
+            @content;
+        }
+    }
+    @else if $break == 'large' {
+        @media (min-width: $brkpoint-lg) {
+            @content;
+        }
+    }
+    @else if $break == 'extra-large' {
+        @media (min-width: $brkpoint-xl) {
+            @content;
+        }
+    }
+    @else {
+        @error 'No value could be retrieved for `#{$break}`. '
+    }
+}

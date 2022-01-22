@@ -9,6 +9,7 @@ import WarOfWeapons from './portfolio/WarOfWeapons';
 
 const Portfolio = () => {
 
+// The project div's height is adjusted on page load and resize to ensure the project div is properly sized at ninety percent minus the portfolio header's height.
     const projectHeightCalculator = () => {
         const portfolioHeaderHeight = document.querySelector('.portfolio--header').offsetHeight;
         const portolioHeight = document.querySelector('.portfolio').offsetHeight;
@@ -16,12 +17,15 @@ const Portfolio = () => {
         document.querySelector('.projects').style.setProperty('--project-height', projectHeightPercentage + '%');
     }
 
+    window.onresize = () => projectHeightCalculator();
+
     useEffect(() => {
         projectHeightCalculator();
     }, []);
 
     const context = useContext(pageInfoContext);
 
+// The h1Text and socialMediaInHeader functions will display the h1 text and social media icons differently depending on the viewport width.
     return (
         <div className='portfolio'>
             <div className='portfolio--header'>

@@ -6,7 +6,7 @@ import './scss/App.scss';
 import App from './components/App.js';
 import {Provider} from './components/context';
 
-
+// I use the provider as the parent element and pass all other elements as children so context can be provided to all elements.
 ReactDOM.render(
     <Provider>
         <BrowserRouter>
