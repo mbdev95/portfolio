@@ -1,8 +1,8 @@
 import React from 'react';
-import linkedIn from '../../img/socialMediaIcons/linkedin.png';
-import GitHub from '../../img/socialMediaIcons/github.png';
-import resume from '../../img/socialMediaIcons/resume.png';
-import email from '../../img/socialMediaIcons/email.png';
+import linkedIn from '../../img/socialMediaIcons/linkedin.webp';
+import GitHub from '../../img/socialMediaIcons/github.webp';
+import resume from '../../img/socialMediaIcons/resume.webp';
+import email from '../../img/socialMediaIcons/email.webp';
 
 // Context is initialized as pageInfoContext.
 export const pageInfoContext = React.createContext();

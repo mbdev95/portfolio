@@ -16,15 +16,15 @@
     @for $i from 1 through $numberOfProjects {
         &:nth-of-type(#{$i}) &--img {
             @if $i == 1 {
-                @include setProjectImage("#{$imgLogo}/javascript.png", '#{$imgMd}/WarOfWeaponsMedium.png', '#{$imgLg}/WarOfWeaponsLarge.png');
+                @include setProjectImage("#{$imgLogo}/javascript.webp", '#{$imgMd}/WarOfWeaponsMedium.webp', '#{$imgLg}/WarOfWeaponsLarge.webp');
             } @else if $i == 2 {
-                @include setProjectImage("#{$imgLogo}/css.png", '#{$imgUniversal}/BrooklynBridgeFilmFestival.png', null);
+                @include setProjectImage("#{$imgLogo}/css.webp", '#{$imgUniversal}/BrooklynBridgeFilmFestival.webp', null);
             } @else if $i == 3 {
-                @include setProjectImage("#{$imgLogo}/mysql.jpg", '#{$imgMd}/ExpressFoodMedium.webp', '#{$imgLg}/ExpressFoodLarge.webp');
+                @include setProjectImage("#{$imgLogo}/mysql.webp", '#{$imgMd}/ExpressFoodMedium.webp', '#{$imgLg}/ExpressFoodLarge.webp');
             } @else if $i == 4 {
-                @include setProjectImage("#{$imgLogo}/react.png", '#{$imgMd}/RestaurantReviewLocatorMedium.png', '#{$imgLg}/RestaurantReviewLocatorLarge.png');
+                @include setProjectImage("#{$imgLogo}/react.webp", '#{$imgMd}/RestaurantReviewLocatorMedium.webp', '#{$imgLg}/RestaurantReviewLocatorLarge.webp');
             } @else {
-                @include setProjectImage("#{$imgLogo}/html.png", '#{$imgUniversal}/RandomQuotationGenerator.png', null);
+                @include setProjectImage("#{$imgLogo}/html.webp", '#{$imgUniversal}/RandomQuotationGenerator.webp', null);
             }
         }
     }
