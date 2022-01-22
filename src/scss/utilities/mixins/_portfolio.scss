@@ -1,4 +1,4 @@
-// A mixin for styling each project in the portfolio
+// A mixin for styling each project in the portfolio.
 @mixin project {
     h2 {
         margin-top: 10px;
@@ -12,6 +12,7 @@
         margin: 10px auto 0px;
     }
 
+    // Looping the number of iterations as projects to give each project the appropriate images based on viewport width.
     @for $i from 1 through $numberOfProjects {
         &:nth-of-type(#{$i}) &--img {
             @if $i == 1 {
@@ -131,7 +132,7 @@
     
 }
 
-// Mixin for alternating project images depending on viewport width
+// Mixin for alternating project images depending on viewport width.
 @mixin setProjectImage($logoImage, $applicationImageMedium, $applicationImageLarge) {
     background-image: url($logoImage);
     background-size: auto 100%;
@@ -151,7 +152,7 @@
     }
 }
 
-// Mixin for media queries resizing images in portfolio page
+//A mixin for media queries resizing images in portfolio page.
 @mixin projectImageResizing {
     &--img {
         @media(min-width: 699px) {

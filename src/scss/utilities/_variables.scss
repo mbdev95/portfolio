@@ -7,7 +7,7 @@
          url('../../fonts/Xolonium.woff2');
 }
 
-// Star colors are in a list so they can be indexed and randomly assigned to a star.
+// Star colors are in a list where they can be indexed and randomly assigned to a star.
 $bg-colors: (
     base-color: black,
     star-colors:( white, rgb(235, 232, 221), rgb(223, 217, 200), rgb(201, 192, 170), rgb(185, 173, 138) )

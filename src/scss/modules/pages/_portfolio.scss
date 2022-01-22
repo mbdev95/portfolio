@@ -1,5 +1,6 @@
 @import '../../utilities/mixins/portfolio';
 
+// Ensure project height is full height as determined by height calculation from JavaScript.
 :root {
     --project-height: 0;
 }
@@ -59,12 +60,14 @@
         }
     }
 
+// Styling for main project div containing each project in the portfolio
     & > .projects {
         @extend %sub-container;
         height: var(--project-height);
         overflow-y: auto;
     }
 
+// Styling for each project
     &--project {
         @include project;
     }

@@ -1,6 +1,7 @@
 @import '../../utilities/mixins/_foundation.scss';
 @import '../../utilities/mixins/_home.scss';
 
+// Custom styles generated in JS which will alter layout styles of the main home page in order to make them responsive.
 :root {
     --home-profile-height: auto;
     --justify-content-home-profile: none;
@@ -153,6 +154,7 @@
         }
     }
 
+// The section of preview projects on left side of the screen are displayed only in large viewports
     .previewProjects {
         display: none;
         @include mq('medium') {
@@ -164,10 +166,12 @@
         }
     }
 
+// An empty div is used at bottom of home--profile section in side bar to determine if extra empty space exists in side bar which needs to be filled with a justify-content value of 'space-evenly'.
     &--profile--empty {
         height: 100%;
     }
 
+// Forces no overflow in medium viewports to ensure a more pleasurable home page experience in devices with viewport width tablet sized or greater.
     @include mq('medium') {
         overflow-y: hidden;
         background-color: transparent;

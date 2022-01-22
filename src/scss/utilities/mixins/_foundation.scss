@@ -1,4 +1,4 @@
-// A mixin for styling buttons
+// A mixin for styling buttons.
 @mixin buttons {
     button {
         @extend %project-buttons;
@@ -20,7 +20,7 @@
     }
 }
 
-// Basic layout styles for lists in home and portfolio pages
+// Basic layout styles for lists in home and portfolio pages.
 @mixin lists {
     ul {
         list-style: none;

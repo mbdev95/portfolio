@@ -4,12 +4,15 @@ import GitHub from '../../img/socialMediaIcons/github.png';
 import resume from '../../img/socialMediaIcons/resume.png';
 import email from '../../img/socialMediaIcons/email.png';
 
+// Context is initialized as pageInfoContext.
 export const pageInfoContext = React.createContext();
 
+// The provider will provide the props to all child elements as required via the context.
 export const Provider = (props) => {
     
     const viewportWidth = document.documentElement.clientWidth;
 
+// Boolean value used to give different transition page slide speed based on viewport width length.
     const isLargeViewport = () => { 
         if ( viewportWidth >= 1025 ) {
             return true;
@@ -18,6 +21,7 @@ export const Provider = (props) => {
         }
     }
 
+// h1Text() returns different h1 values depending on the viewport width.  In smaller viewports my long last name is removed.
     const h1Text = (page) => {
         const body = document.getElementsByTagName('BODY')[0];
         const html = document.getElementsByTagName('HTML')[0];
@@ -38,6 +42,7 @@ export const Provider = (props) => {
         }
     }
 
+// A function which returns the social media icons in the header if the viewport width is over 1024px.
     const socialMediaInHeader = (page) => {
         const body = document.getElementsByTagName('BODY')[0];
         const html = document.getElementsByTagName('HTML')[0];
@@ -62,6 +67,7 @@ export const Provider = (props) => {
         } 
     }
 
+// The number of stars used in the background will depend on the viewport width.
     const numberOfStars = (vw, vh) => {
         let numberOfStars = 0;
         if ( vw < 480 ) {
@@ -78,6 +84,7 @@ export const Provider = (props) => {
         return numberOfStars;
     }
 
+// The star creator function will return an array populated with stars.
     const starsCreator = (vw, vh) => {
         let stars = [];
         for (let i = 1; i < numberOfStars(vw, vh) + 1; i++) {
@@ -86,6 +93,7 @@ export const Provider = (props) => {
         return stars;
     }
 
+// The above function declarations are passed as props to be used in child elements, and in many cases return data upwards via arguments.
     return (
         <>
             <pageInfoContext.Provider value={ {

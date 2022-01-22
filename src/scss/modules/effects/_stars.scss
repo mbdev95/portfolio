@@ -1,4 +1,4 @@
-// Custom css properties for delaying star movement and for star speed.  These properties hold random numbers generated in JavaScript
+// Custom css properties for delaying star movement and for star speed.  These properties hold random numbers generated in JavaScript.
 :root {
     --star-speed: 0s;
     --star-delay: 0s;
@@ -7,7 +7,7 @@
     --percentage-below-top: 0;
 }
 
-// Keyframes for twinkling disappearing and shooting star animations
+// Keyframes for twinkling, disappearing and shooting star animations.
 @keyframes twinkle {
     40% {
         transform: scale(1.35);
@@ -36,6 +36,7 @@
     }
 }
 
+// The star generator gives randomized styles to each star to give each star a unique look.
 .star {
     @include starGenerator;
 }

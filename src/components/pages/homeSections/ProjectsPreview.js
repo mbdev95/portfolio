@@ -1,5 +1,6 @@
 import { HashLink as Link } from 'react-router-hash-link';
 
+// React router's hash-link is used to enable the links to have the functionality of relative links, and link to a specific project on the portfolio page.
 const ProjectsPreview = () => {
     return (
         <div className='previewProjects' >

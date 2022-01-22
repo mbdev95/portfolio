@@ -8,8 +8,10 @@ const Stars = () => {
     const clientWidth = document.documentElement.clientWidth;
     const clientHeight = document.documentElement.clientHeight;
 
+// The stars are repositioned as the page is resized to avoid the stars not completely filling the vertical space if excess height occurs during resizing.
     window.addEventListener('resize', () => starPosition(numberOfStars(document.documentElement.clientWidth, document.documentElement.clientHeight), document.documentElement.clientHeight));
 
+// Random values are generated and passed to CSS to give stars varying speeds and scaling creating diverse shooting and twinkling effects.
     const shooting = useCallback(() => {
         for (let i = 1; i < numberOfStars(clientWidth, clientHeight) + 1; i++) {
             const randomStarSpeed = Math.floor(Math.random() * 25) + 5;
@@ -25,6 +27,7 @@ const Stars = () => {
         } 
     }, [clientWidth, clientHeight, numberOfStars])
 
+// The distance below the top of viewport for each star is randomly generated and passed to CSS giving each star a unique position.  The left offset is generated in CSS for the opening animation.
     const starPosition = useCallback((numberOfStars, clientHeight) => {
         for (let i = 1; i < numberOfStars + 1; i++) {
             const starYLocation = Math.floor(Math.random() * clientHeight);
@@ -35,6 +38,8 @@ const Stars = () => {
         }
     }, [])
 
+// The stars are position on page load for the opening animation.
+// After the opening animation the class causing the opening star animation is removed and the shooting star animation class is added.
     useEffect(() => {
         starPosition(numberOfStars(clientWidth, clientHeight), clientHeight);
         const starRemoveStartTimeout = setTimeout(() => {

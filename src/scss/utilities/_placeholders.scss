@@ -1,3 +1,4 @@
+// Main layout styles for home, portfolio and about pages.
 %main-container {
     overflow-x: hidden;
     position: absolute;
@@ -12,12 +13,14 @@
     text-align: center;
 }
 
+// Layout styles for the children divs of the main container divs.
 %sub-container {
     width: 100%;
     padding-left: 5%;
     padding-right: 5%;
 }
 
+// Layout styles for the buttons in each project in the portfolio page.
 %project-buttons {
     padding: 5px 8px;
     color: $text-color;
@@ -26,6 +29,7 @@
     letter-spacing: 2px;
 }
 
+// Layout styles for the hr page breaks.
 %hr {
     background-color: $text-color;
     width: 100%;
@@ -33,6 +37,7 @@
     margin-bottom: 12px;
 }
 
+// Social media on hover styles.
 %social-media-hover {
     cursor: pointer;
     transition: transform 0.2s ease-out;

@@ -8,13 +8,16 @@ import {Link} from 'react-router-dom';
 
 const SideBar = () => {
 
+// The homeProfileHeight function is executed 250ms after pageload to allow the home page to be rendered so the element's which have required height properties are already rendered.
     useEffect(() => {
         const homeProfileHeightTimeout = setTimeout(() => homeProfileHeight(), 250);
         return () => clearTimeout(homeProfileHeightTimeout);
     }, []);
 
+// The home profile will have justify-content values as the browser is resized.  This avoids scrolling and vertical layout spacing errors.
     window.onresize = () => homeProfileHeight();
 
+// The homeProfileHeight function declaration adjusts the height and justify content properties of the home profile depending on the available space in the home page.
     const homeProfileHeight = () => {
         const home = document.getElementsByClassName('home')[0].getBoundingClientRect();
         const homeHeader = document.getElementsByClassName('home--header')[0].getBoundingClientRect();

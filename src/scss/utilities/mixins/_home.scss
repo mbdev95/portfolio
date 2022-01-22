@@ -6,7 +6,7 @@
     width: 40% !important;
 }
 
-// A mixin to give the layout, positioning and styles for the display of rectangular project previews on the right side of the home page in large viewport widths.
+// A mixin to give the layout, positioning and styles for the display of each rectangular project preview on the right side of the home page in large viewport widths.
 @mixin previewProjects {
     display: flex;
     flex-direction: column;

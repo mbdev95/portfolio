@@ -1,6 +1,7 @@
 @import '../utilities/variables';
 @import '../utilities/mixins';
 
+// Window height is given in JS to equal the innerHeight of the window to push content below browser header.
 :root {
     --window-height: 100%;
 }
@@ -9,6 +10,7 @@
     box-sizing: border-box;
 }
 
+// Ensuring smooth scroll, hidden overflow on main page document, and the height is set to inner height to make sure content is pushed below browser header.
 html, body, .root {
     scroll-behavior: smooth;
     overflow: hidden;
@@ -21,6 +23,7 @@ body {
     color: $text-color;
 }
 
+// Avoiding bold font in headings to increase readability
 h1, h2, h3 {
     font-weight: normal;
 }
