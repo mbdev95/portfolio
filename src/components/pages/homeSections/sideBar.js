@@ -52,16 +52,16 @@ const SideBar = () => {
                 <p>Educated with a diploma in Front-End Web Development from <a href='https://openclassrooms.com/en/about-us' target='_blank' rel='noreferrer'>OpenClassrooms</a>.</p>
                 <hr/>
                 <div className='home--profile--socialMedia'>
-                    <a href='https://www.linkedin.com/in/mb-developer/' target='_blank' rel='noreferrer'>
+                    <a href='https://www.linkedin.com/in/mb-developer/' target='_blank' rel='noreferrer' title='linkedIn'>
                         <img src={linkedIn} alt='LinkedIn Icon'/>
                     </a>
-                    <a href='https://github.com/mbdev95' target='_blank' rel='noreferrer'>
+                    <a href='https://github.com/mbdev95' target='_blank' rel='noreferrer' title='GitHub'>
                         <img src={GitHub} alt='GitHub Icon'/>
                     </a>
-                    <a href='https://drive.google.com/file/d/1n0NB2EoaBSwEKQFYxxccZPMg-a6-USHs/view?usp=sharing' target='_blank' rel='noreferrer'>
+                    <a href='https://drive.google.com/file/d/1n0NB2EoaBSwEKQFYxxccZPMg-a6-USHs/view?usp=sharing' target='_blank' rel='noreferrer' title='resume'>
                         <img src={resume} alt='Resume Icon'/>
                     </a>
-                    <a href='mailto:mbucholski95@gmail.com' target='_blank' rel='noreferrer'>
+                    <a href='mailto:mbucholski95@gmail.com' target='_blank' rel='noreferrer' title='email'>
                         <img src={email} alt='Email Icon'/>
                     </a>
                 </div>

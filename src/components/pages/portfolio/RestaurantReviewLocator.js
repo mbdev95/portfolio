@@ -2,9 +2,9 @@ const RestaurantReviewLocator = () => {
     return (
         <div className='portfolio--project' id='RestaurantReviewLocator' >
             <hr/>
-            <h2>Restaruant Review Locator</h2>
+            <h2>Restaurant Review Locator</h2>
             <div className='portfolio--project--img'></div>
-            <p>I developed a Restarant Review Locator application using React and Google Maps' APIs.  The Google Maps' APIs retrieved an array of restaurant and review data which was communicated throughout the application using React.</p>
+            <p>I developed a Restaurant Review Locator application using React and Google Maps' APIs.  The Google Maps' APIs retrieved an array of restaurant and review data which was communicated throughout the application using React.</p>
             <h3>Skills Used:</h3>
             <ul>
                 <li key={1}>React</li>
