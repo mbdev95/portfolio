@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import reportWebVitals from './reportWebVitals';
 import './index.scss';
 import './scss/App.scss';
 import App from './components/App.js';
@@ -18,3 +19,4 @@ ReactDOM.render(
     document.getElementById('root')
 );
 
+reportWebVitals();
