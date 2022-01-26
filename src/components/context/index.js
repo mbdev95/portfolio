@@ -56,7 +56,7 @@ export const Provider = (props) => {
                     <a href='https://github.com/mbdev95' target='_blank' rel='noreferrer' title='GitHub' aria-label='GitHub'>
                         <img src={GitHub} alt='GitHub Icon'/>
                     </a>
-                    <a href="https://drive.google.com/file/d/1sGe7JiLJ0yV1L7vTUx2MXtMi1oEJroI1/view?usp=sharing" target='_blank' rel='noreferrer' title='resume' aria-label='resume' >
+                    <a href="https://drive.google.com/file/d/1K4_GvgHHHban97g2PGFySmTd7w8hLt7L/view?usp=sharing" target='_blank' rel='noreferrer' title='resume' aria-label='resume' >
                         <img src={resume} alt='Resume Icon'/>
                     </a>
                     <a href='mailto:mbucholski95@gmail.com' target='_blank' rel='noreferrer' title='email' aria-label='email' >
