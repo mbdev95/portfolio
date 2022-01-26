@@ -49,7 +49,7 @@ const SideBar = () => {
             <div className='home--profile'>
                 <p>-- A Software engineer from a galaxy up north --</p>
                 <hr/>
-                <p>Educated with a diploma in Front-End Web Development from <a href='https://openclassrooms.com/en/about-us' target='_blank' rel='noreferrer'>OpenClassrooms</a>.</p>
+                <p>Educated with a diploma in Front-End Web Development from <a href='https://openclassrooms.com/en/about-us' target='_blank' rel='noreferrer' aria-label='OpenClassrooms'>OpenClassrooms</a>.</p>
                 <hr/>
                 <div className='home--profile--socialMedia'>
                     <a href='https://www.linkedin.com/in/mb-developer/' target='_blank' rel='noreferrer' title='linkedIn' aria-label='linkedIn'>
