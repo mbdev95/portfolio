@@ -103,7 +103,7 @@ const SideBar = () => {
             <img src={GitHub} alt="GitHub Icon" />
           </a>
           <a
-            href="https://drive.google.com/file/d/1rStogdrhVUjLz7prsi4ITc-2X-KBGMuE/view?usp=sharing"
+            href="https://drive.google.com/file/d/1RVGC5N1veYTBrCW7piPt2vGOoDFNM_cJ/view?usp=sharing"
             target="_blank"
             rel="noreferrer"
             title="resume"
