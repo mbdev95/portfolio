@@ -4,23 +4,25 @@ import { HashLink as Link } from "react-router-hash-link";
 const ProjectsPreview = () => {
   return (
     <div className="previewProjects">
-      <Link to="/portfolio#AugmentedRealityPingPong">
+      <Link to="/portfolio#WorkExperience">
         <div className="previewProjects--project--1">
+          <h2>DataDrill Work Experience</h2>
+          <ul>
+            <li>Python</li>
+            <li>Django</li>
+            <li>MySQL</li>
+            <li>IIS</li>
+            <li>JavaScript</li>
+          </ul>
+        </div>
+      </Link>
+      <Link to="/portfolio#AugmentedRealityPingPong">
+        <div className="previewProjects--project--2">
           <h2>Augmented Reality Ping-Pong</h2>
           <ul>
             <li>A-frame</li>
             <li>AR.js</li>
             <li>Vanilla JavaScript</li>
-          </ul>
-        </div>
-      </Link>
-      <Link to="/portfolio#WarOfWeapons">
-        <div className="previewProjects--project--2">
-          <h2>War of Weapons Board Game</h2>
-          <ul>
-            <li>Object-oriented JavaScript</li>
-            <li>jQuery</li>
-            <li>CSS Grid</li>
           </ul>
         </div>
       </Link>
