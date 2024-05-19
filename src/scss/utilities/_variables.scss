@@ -1,29 +1,33 @@
 // Importing main font with a space style
 @font-face {
-    font-family: 'Xolonium';
-    src: url('../../fonts/Xolonium.eot'),
-         url('../../fonts/Xolonium.ttf'),
-         url('../../fonts/Xolonium.woff'),
-         url('../../fonts/Xolonium.woff2');
+  font-family: "Xolonium";
+  src: url("../../fonts/Xolonium.eot"), url("../../fonts/Xolonium.ttf"),
+    url("../../fonts/Xolonium.woff"), url("../../fonts/Xolonium.woff2");
 }
 
 // Star colors are in a list where they can be indexed and randomly assigned to a star.
 $bg-colors: (
-    base-color: black,
-    star-colors:( white, rgb(235, 232, 221), rgb(223, 217, 200), rgb(201, 192, 170), rgb(185, 173, 138) )
+  base-color: black,
+  star-colors: (
+    white,
+    rgb(235, 232, 221),
+    rgb(223, 217, 200),
+    rgb(201, 192, 170),
+    rgb(185, 173, 138),
+  ),
 );
 
 // Main text color
-$text-color: rgb(235, 226, 226); 
+$text-color: rgb(235, 226, 226);
 
 // Number of stars
 $numberOfStars: 250;
 
 // Base font
-$base-font: 'Xolonium', Verdana, Tahoma, sans-serif;
+$base-font: "Xolonium", Verdana, Tahoma, sans-serif;
 
 // Text
-$base__font-size : 16px;
+$base__font-size: 16px;
 
 // Breaking Points
 $brkpoint-sm: 480px;
@@ -35,20 +39,21 @@ $brkpoint-xl: 1200px;
 $number-intro-letters: 42;
 
 // Projects in Portfolio Variables
-$numberOfProjects: 5;
-$projectHeight: calc((100% / $numberOfProjects) - ((100% / $numberOfProjects) / $numberOfProjects));
-$projectSeparation: calc((($projectHeight * $numberOfProjects) / ($numberOfProjects - 1)) / ($numberOfProjects - 1));
+$numberOfProjects: 7;
+$projectHeight: calc(
+  (100% / $numberOfProjects) - ((100% / $numberOfProjects) / $numberOfProjects)
+);
+$projectSeparation: calc(
+  (($projectHeight * $numberOfProjects) / ($numberOfProjects - 1)) /
+    ($numberOfProjects - 1)
+);
 
 // Box Variables
 $box-opacity: 0.8;
 $box-bg-color: rgba(20, 25, 90, $box-opacity);
 
 // Project Images Urls
-$imgLogo: '../../../img/programmingLogos';
-$imgMd: '../../../img/applications/medium';
-$imgLg: '../../../img/applications/large';
-$imgUniversal: '../../../img/applications/universal';
-
-
-
-
+$imgLogo: "../../../img/programmingLogos";
+$imgMd: "../../../img/applications/medium";
+$imgLg: "../../../img/applications/large";
+$imgUniversal: "../../../img/applications/universal";

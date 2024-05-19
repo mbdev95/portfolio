@@ -16,8 +16,18 @@ const ProjectsPreview = () => {
           </ul>
         </div>
       </Link>
-      <Link to="/portfolio#AugmentedRealityPingPong">
+      <Link to="/portfolio#BrooklynBridgeFilmFestival">
         <div className="previewProjects--project--2">
+          <h2>Brooklyn Bridge Film Festival</h2>
+          <ul>
+            <li>Bootstrap</li>
+            <li>CSS3</li>
+            <li>HTML5</li>
+          </ul>
+        </div>
+      </Link>
+      <Link to="/portfolio#AugmentedRealityPingPong">
+        <div className="previewProjects--project--3">
           <h2>Augmented Reality Ping-Pong</h2>
           <ul>
             <li>A-frame</li>
@@ -26,22 +36,13 @@ const ProjectsPreview = () => {
           </ul>
         </div>
       </Link>
-      <Link to="/portfolio#RestaurantReviewLocator">
-        <div className="previewProjects--project--3">
-          <h2>Restaurant Review Locator</h2>
-          <ul>
-            <li>React</li>
-            <li>REST-APIs</li>
-          </ul>
-        </div>
-      </Link>
-      <Link to="/portfolio#BrooklynBridgeFilmFestival">
+      <Link to="/portfolio#WarOfWeapons">
         <div className="previewProjects--project--4">
-          <h2>Brooklyn Bridge Film Festival</h2>
+          <h2>War of Weapons Board Game</h2>
           <ul>
-            <li>Bootstrap</li>
-            <li>CSS3</li>
-            <li>HTML5</li>
+            <li>Object-oriented JavaScript</li>
+            <li>jQuery</li>
+            <li>CSS Grid</li>
           </ul>
         </div>
       </Link>
