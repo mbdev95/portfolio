@@ -39,7 +39,8 @@ $brkpoint-xl: 1200px;
 $number-intro-letters: 42;
 
 // Projects in Portfolio Variables
-$numberOfProjects: 7;
+$numberOfProjects: 5;
+$numberOfProjectsInPortfolioPage: 7;
 $projectHeight: calc(
   (100% / $numberOfProjects) - ((100% / $numberOfProjects) / $numberOfProjects)
 );

@@ -13,7 +13,7 @@
   }
 
   // Looping the number of iterations as projects to give each project the appropriate images based on viewport width.
-  @for $i from 1 through $numberOfProjects {
+  @for $i from 1 through $numberOfProjectsInPortfolioPage {
     &:nth-of-type(#{$i}) &--img {
       @if $i == 1 {
         @include setProjectImage(

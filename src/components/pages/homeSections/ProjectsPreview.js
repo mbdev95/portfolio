@@ -12,7 +12,7 @@ const ProjectsPreview = () => {
             <li>Django</li>
             <li>MySQL</li>
             <li>IIS</li>
-            <li>JavaScript</li>
+            <li>React</li>
           </ul>
         </div>
       </Link>

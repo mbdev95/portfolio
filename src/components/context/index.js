@@ -89,7 +89,7 @@ export const Provider = (props) => {
             <img src={GitHub} alt="GitHub Icon" />
           </a>
           <a
-            href="https://drive.google.com/file/d/1ML-H5Nqaig6LPD7HB895wYpdaE6aqgp3/view?usp=sharing"
+            href="https://drive.google.com/file/d/1RhpDx7ZinwLFbtKP66IKcv6a8XSYyDj2/view?usp=sharing"
             target="_blank"
             rel="noreferrer"
             title="resume"
