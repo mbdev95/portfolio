@@ -7,6 +7,7 @@ import ARPingPong from "./portfolio/ARPingPong";
 import RestaurantReviewLocator from "./portfolio/RestaurantReviewLocator";
 import WarOfWeapons from "./portfolio/WarOfWeapons";
 import DataDrillCommunications from "./portfolio/DataDrillCommunications";
+import HarvestBuildersIncubator from "./portfolio/HarvestBuildersIncubator";
 
 const Portfolio = () => {
   // The project div's height is adjusted on page load and resize to ensure the project div is properly sized at ninety percent minus the portfolio header's height.
@@ -47,6 +48,7 @@ const Portfolio = () => {
       <hr />
       <div className="projects">
         <DataDrillCommunications />
+        <HarvestBuildersIncubator />
         <FilmFestival />
         <ARPingPong />
         <WarOfWeapons />

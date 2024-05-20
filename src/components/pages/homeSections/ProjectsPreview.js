@@ -16,8 +16,20 @@ const ProjectsPreview = () => {
           </ul>
         </div>
       </Link>
-      <Link to="/portfolio#BrooklynBridgeFilmFestival">
+      <Link to="/portfolio#HarvestBuildersIncubatorProgram">
         <div className="previewProjects--project--2">
+          <h2>Harvest Incubator Program</h2>
+          <ul>
+            <li>GraphQL</li>
+            <li>TypeScript</li>
+            <li>Jest</li>
+            <li>React</li>
+            <li>Docker</li>
+          </ul>
+        </div>
+      </Link>
+      <Link to="/portfolio#BrooklynBridgeFilmFestival">
+        <div className="previewProjects--project--3">
           <h2>Brooklyn Bridge Film Festival</h2>
           <ul>
             <li>Bootstrap</li>
@@ -27,7 +39,7 @@ const ProjectsPreview = () => {
         </div>
       </Link>
       <Link to="/portfolio#AugmentedRealityPingPong">
-        <div className="previewProjects--project--3">
+        <div className="previewProjects--project--4">
           <h2>Augmented Reality Ping-Pong</h2>
           <ul>
             <li>A-frame</li>
@@ -37,21 +49,12 @@ const ProjectsPreview = () => {
         </div>
       </Link>
       <Link to="/portfolio#WarOfWeapons">
-        <div className="previewProjects--project--4">
+        <div className="previewProjects--project--5">
           <h2>War of Weapons Board Game</h2>
           <ul>
             <li>Object-oriented JavaScript</li>
             <li>jQuery</li>
             <li>CSS Grid</li>
-          </ul>
-        </div>
-      </Link>
-      <Link to="/portfolio#ExpressFood">
-        <div className="previewProjects--project--5">
-          <h2>Express Food Database</h2>
-          <ul>
-            <li>UML Diagrams</li>
-            <li>MySQL Database/Queries</li>
           </ul>
         </div>
       </Link>

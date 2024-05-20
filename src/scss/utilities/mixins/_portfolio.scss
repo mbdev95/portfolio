@@ -23,23 +23,29 @@
         );
       } @else if $i == 2 {
         @include setProjectImage(
+          "#{$imgUniversal}/HarvestBuildersIncubatorCertificate.png",
+          "#{$imgUniversal}/HarvestBuildersIncubatorCertificate.png",
+          null
+        );
+      } @else if $i == 3 {
+        @include setProjectImage(
           "#{$imgLogo}/css.webp",
           "#{$imgUniversal}/BrooklynBridgeFilmFestival.png",
           null
         );
-      } @else if $i == 3 {
+      } @else if $i == 4 {
         @include setProjectImage(
           "#{$imgLogo}/a-frame.webp",
           "#{$imgUniversal}/PlayingPong.webp",
           null
         );
-      } @else if $i == 4 {
+      } @else if $i == 5 {
         @include setProjectImage(
           "#{$imgLogo}/javascript.webp",
           "#{$imgMd}/WarOfWeaponsMedium.webp",
           "#{$imgLg}/WarOfWeaponsLarge.webp"
         );
-      } @else if $i == 5 {
+      } @else if $i == 6 {
         @include setProjectImage(
           "#{$imgLogo}/mysql.webp",
           "#{$imgMd}/ExpressFoodMedium.webp",
@@ -191,6 +197,7 @@
   }
 
   #WorkExperience &--img,
+  #HarvestBuildersIncubatorProgram &--img,
   #BrooklynBridgeFilmFestival &--img,
   #AugmentedRealityPingPong &--img {
     @media (min-width: 699px) {
