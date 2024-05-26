@@ -4,19 +4,35 @@ const DataDrillCommunications = () => {
       <h2>DataDrill Communications Work Experience</h2>
       <div className="portfolio--project--img"></div>
       <p>
-        I am currently employed with DataDrill Communications as a full stack
-        software developer. I have assisted DataDrill in improving upon
-        technologies which provide remote worksites with optimal connectivity by
-        leveraging the capabilities of Python, Django, AWS and Linux.
-        Additionally, I helped to program an algorithm which locates the
-        direction of the cell tower which will provide the best signal. I help
-        manage and improve existing software for a variety of accounting
-        applications which assist in payroll, HR and billing clients. I helped
-        make DataDrill serverless by migrating all the applications to the
-        cloud. I used REST APIs and direct SQL queries to effectively transfer
-        data between the client and server. I write unit tests and documentation
-        to ensure the code written is maintainable and future-proof. Finally, I
-        offer support to software requests.
+        I am currently employed with DataDrill Communications as a full-stack
+        software developer. My job duties involve the following tasks:
+      </p>
+      <p>
+        - Improving upon technologies that provide remote worksites with optimal
+        connectivity by leveraging the capabilities of Python, Django, AWS and
+        Linux.
+      </p>
+      <p>
+        - Work as part of a team to program an algorithm which locates the
+        direction of a cell tower that provides the best signal.
+      </p>
+      <p>
+        - Manage and improve existing software for a variety of accounting
+        applications that assist with payroll, Human Resources and invoicing
+        clients.
+      </p>
+      <p>
+        - Migrating all the applications to the cloud so that DataDrill has less
+        reliance on on-premise servers.
+      </p>
+      <p>
+        - Use of REST APIs, and direct SOL queries to effectively transfer data
+        between the client and server.
+      </p>
+      <p>
+        - Writing unit tests, documentation and using organized nomenclature to
+        ensure the code written is maintainable and future-proof to support
+        software requests.
       </p>
       <h3>Skills Used:</h3>
       <ul>

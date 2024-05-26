@@ -23,36 +23,31 @@ const About = () => {
       <hr />
       <div className="about--main">
         <p>
-          At this time I am working for DataDrill Communications as a software
+          Currently, I am working for DataDrill Communications as a software
           developer. I help to create new applications and manage existing
           applications. I work on accounting applications and programming a
           device to locate an optimal cell signal.
         </p>
         <p>
-          I have graduated from the online learning school, OpenClassrooms, with
-          a diploma in web development. The program involved creating a series
-          of web applications, which were then presented virtually and assessed.
-          Each project involved a different aspect of web development including:
-          mobile-first responsive web design, animations, object-oriented
-          programming for JavaScript, MySQL databases, React, jQuery and
-          Bootstrap.
+          Previously, I graduated from the online learning school,
+          OpenClassrooms, with a diploma in web development. The program
+          involved creating a series of web applications, which were then
+          presented and assessed. Each project involved a different aspect of
+          web development including: mobile-first responsive web design,
+          animations, object-oriented programming for JavaScript, MySQL
+          databases, React and Bootstrap.
         </p>
         <p>
-          I love computer programming for the problems it presents which force
-          me to constantly improve through learning. I enjoy dynamic work where
-          the problems and solutions are constantly changing, keeping me on my
-          toes. I have completed various side project, and a bootcamp run by the
-          tech company Neo Financial.
+          Solving computer problems through consistent learning has been my
+          drive and inspiration. I enjoy learning from those around me and
+          achieving a common goal through focused work. The work I enjoy the
+          most is dynamic, where the problems and solutions are constantly
+          changing. I have completed various side projects, and a bootcamp run
+          by the tech company Harvest Builders.
         </p>
         <p>
-          I enjoy learning from those around me and achieving a common goal
-          through focused work. Furthermore, I learned programming in a mostly
-          independent fashion, solving problems through efficient research,
-          making me a quick learner.
-        </p>
-        <p>
-          My time away from the computer is usually spent outside. I am
-          passionate about the outdoors and enjoy skiing, kayaking, biking and
+          My time away from the computer is usually spent outside enjoying
+          activities such as skiing, kayaking, biking, backcountry camping and
           hiking. Also, I love meeting people from all over the world and
           learning from their experiences.
         </p>
