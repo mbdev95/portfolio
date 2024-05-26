@@ -49,6 +49,9 @@
       "last 1 safari version"
     ]
   },
+  "engines": {
+    "node": "20.x"
+  },
   "devDependencies": {
     "gh-pages": "^3.2.3"
   }
